@@ -1,0 +1,10 @@
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_1-C#与Visual Studio\Unit_1\Unit_1\bin\Debug\Unit_1.exe.config
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_1-C#与Visual Studio\Unit_1\Unit_1\bin\Debug\Unit_1.exe
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_1-C#与Visual Studio\Unit_1\Unit_1\bin\Debug\Unit_1.pdb
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_1-C#与Visual Studio\Unit_1\Unit_1\obj\Debug\Unit_1.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_1-C#与Visual Studio\Unit_1\Unit_1\obj\Debug\Unit_1.Form1.resources
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_1-C#与Visual Studio\Unit_1\Unit_1\obj\Debug\Unit_1.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_1-C#与Visual Studio\Unit_1\Unit_1\obj\Debug\Unit_1.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_1-C#与Visual Studio\Unit_1\Unit_1\obj\Debug\Unit_1.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_1-C#与Visual Studio\Unit_1\Unit_1\obj\Debug\Unit_1.exe
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_1-C#与Visual Studio\Unit_1\Unit_1\obj\Debug\Unit_1.pdb
