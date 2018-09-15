@@ -1,0 +1,6 @@
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\基本语法\基本语法\bin\Debug\基本语法.exe.config
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\基本语法\基本语法\bin\Debug\基本语法.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\基本语法\基本语法\bin\Debug\基本语法.pdb
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\基本语法\基本语法\obj\Debug\基本语法.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\基本语法\基本语法\obj\Debug\基本语法.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\基本语法\基本语法\obj\Debug\基本语法.pdb
