@@ -1,0 +1,7 @@
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\方法函数\方法函数\obj\Debug\方法函数.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\方法函数\方法函数\obj\Debug\方法函数.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\方法函数\方法函数\bin\Debug\方法函数.exe.config
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\方法函数\方法函数\bin\Debug\方法函数.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\方法函数\方法函数\bin\Debug\方法函数.pdb
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\方法函数\方法函数\obj\Debug\方法函数.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\方法函数\方法函数\obj\Debug\方法函数.pdb

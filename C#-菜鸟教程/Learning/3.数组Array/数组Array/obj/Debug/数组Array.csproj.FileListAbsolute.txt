@@ -1,0 +1,7 @@
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\数组Array\数组Array\bin\Debug\数组Array.exe.config
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\数组Array\数组Array\bin\Debug\数组Array.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\数组Array\数组Array\bin\Debug\数组Array.pdb
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\数组Array\数组Array\obj\Debug\数组Array.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\数组Array\数组Array\obj\Debug\数组Array.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\数组Array\数组Array\obj\Debug\数组Array.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\数组Array\数组Array\obj\Debug\数组Array.pdb
