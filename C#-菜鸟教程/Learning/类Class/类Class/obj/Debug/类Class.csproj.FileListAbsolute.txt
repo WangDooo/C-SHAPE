@@ -1,0 +1,7 @@
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\类Class\类Class\bin\Debug\类Class.exe.config
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\类Class\类Class\bin\Debug\类Class.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\类Class\类Class\bin\Debug\类Class.pdb
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\类Class\类Class\obj\Debug\类Class.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\类Class\类Class\obj\Debug\类Class.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\类Class\类Class\obj\Debug\类Class.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\类Class\类Class\obj\Debug\类Class.pdb
