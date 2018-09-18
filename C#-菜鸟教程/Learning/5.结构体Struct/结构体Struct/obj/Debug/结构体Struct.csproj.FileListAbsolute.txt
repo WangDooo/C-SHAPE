@@ -1,0 +1,7 @@
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\结构体Struct\结构体Struct\bin\Debug\结构体Struct.exe.config
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\结构体Struct\结构体Struct\bin\Debug\结构体Struct.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\结构体Struct\结构体Struct\bin\Debug\结构体Struct.pdb
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\结构体Struct\结构体Struct\obj\Debug\结构体Struct.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\结构体Struct\结构体Struct\obj\Debug\结构体Struct.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\结构体Struct\结构体Struct\obj\Debug\结构体Struct.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\结构体Struct\结构体Struct\obj\Debug\结构体Struct.pdb

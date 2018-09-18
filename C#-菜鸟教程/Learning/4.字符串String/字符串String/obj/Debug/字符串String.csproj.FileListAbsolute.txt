@@ -1,0 +1,7 @@
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\字符串String\字符串String\bin\Debug\字符串String.exe.config
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\字符串String\字符串String\bin\Debug\字符串String.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\字符串String\字符串String\bin\Debug\字符串String.pdb
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\字符串String\字符串String\obj\Debug\字符串String.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\字符串String\字符串String\obj\Debug\字符串String.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\字符串String\字符串String\obj\Debug\字符串String.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\字符串String\字符串String\obj\Debug\字符串String.pdb
