@@ -1,0 +1,7 @@
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\异常处理\异常处理\bin\Debug\异常处理.exe.config
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\异常处理\异常处理\bin\Debug\异常处理.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\异常处理\异常处理\bin\Debug\异常处理.pdb
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\异常处理\异常处理\obj\Debug\异常处理.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\异常处理\异常处理\obj\Debug\异常处理.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\异常处理\异常处理\obj\Debug\异常处理.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\异常处理\异常处理\obj\Debug\异常处理.pdb

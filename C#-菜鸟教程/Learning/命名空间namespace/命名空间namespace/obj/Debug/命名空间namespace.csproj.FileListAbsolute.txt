@@ -1,0 +1,7 @@
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\命名空间namespace\命名空间namespace\obj\Debug\命名空间namespace.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\命名空间namespace\命名空间namespace\obj\Debug\命名空间namespace.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\命名空间namespace\命名空间namespace\bin\Debug\命名空间namespace.exe.config
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\命名空间namespace\命名空间namespace\bin\Debug\命名空间namespace.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\命名空间namespace\命名空间namespace\bin\Debug\命名空间namespace.pdb
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\命名空间namespace\命名空间namespace\obj\Debug\命名空间namespace.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\命名空间namespace\命名空间namespace\obj\Debug\命名空间namespace.pdb
