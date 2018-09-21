@@ -1,0 +1,7 @@
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\文件的输出和输入\文件的输出和输入\bin\Debug\文件的输出和输入.exe.config
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\文件的输出和输入\文件的输出和输入\bin\Debug\文件的输出和输入.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\文件的输出和输入\文件的输出和输入\bin\Debug\文件的输出和输入.pdb
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\文件的输出和输入\文件的输出和输入\obj\Debug\文件的输出和输入.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\文件的输出和输入\文件的输出和输入\obj\Debug\文件的输出和输入.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\文件的输出和输入\文件的输出和输入\obj\Debug\文件的输出和输入.exe
+D:\Coding\Github\C-SHAPE\C#-菜鸟教程\Learning\文件的输出和输入\文件的输出和输入\obj\Debug\文件的输出和输入.pdb
