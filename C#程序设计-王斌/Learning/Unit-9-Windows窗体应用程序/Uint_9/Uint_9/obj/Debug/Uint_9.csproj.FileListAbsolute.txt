@@ -11,3 +11,6 @@ D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-9-Windows窗体应�
 D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-9-Windows窗体应用程序\Uint_9\Uint_9\obj\Debug\WindowsFormsApp1.ColorForm.resources
 D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-9-Windows窗体应用程序\Uint_9\Uint_9\obj\Debug\WindowsFormsApp1.MainForm.resources
 D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-9-Windows窗体应用程序\Uint_9\Uint_9\obj\Debug\WindowsFormsApp1.NewForm.resources
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-9-Windows窗体应用程序\Uint_9\Uint_9\obj\Debug\WindowsFormsApp1.WidgetForm.resources
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-9-Windows窗体应用程序\Uint_9\Uint_9\obj\Debug\WindowsFormsApp1.LoginForm.resources
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-9-Windows窗体应用程序\Uint_9\Uint_9\obj\Debug\WindowsFormsApp1.RegForm.resources
