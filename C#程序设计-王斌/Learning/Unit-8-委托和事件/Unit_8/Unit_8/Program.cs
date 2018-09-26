@@ -60,7 +60,15 @@ namespace Unit_8 {
     class Program {
         public delegate void BookDelegate(Book[] books);
         static void Main(string[] args) {
-            
+            BookDelegate bookDelegate = new BookDelegate(Book.BookSort); 
+            Book[] book = new Book[3];
+            book[0] = new Book("123",45);
+            book[1] = new Book("12443",35);
+            book[2] = new Book("123999",945);
+            bookDelegate(book);
+            foreach(Book bk in book) {
+                Console.WriteLine(bk);
+            }
         }
     }
 }
