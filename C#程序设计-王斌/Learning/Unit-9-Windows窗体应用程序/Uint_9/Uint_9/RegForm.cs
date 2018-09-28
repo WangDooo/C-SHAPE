@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1 {
     //声明委托 和 事件
-    public delegate void TransfDelegate(String value);
+    public delegate void TransfDelegate(string name,string pwd);
     public partial class RegForm : Form {
         public RegForm() {
             InitializeComponent();
         }
+        // 定义事件
+        public event TransfDelegate TransfEvent;
 
         private void button1_Click(object sender, EventArgs e) {
             string name = textBox1.Text;
@@ -34,6 +36,8 @@ namespace WindowsFormsApp1 {
             //WidgetForm widgetForm = new WidgetForm(name, pwd);
             //widgetForm.Show();
             //this.Close();
+            TransfEvent(name,pwd);
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e) {

@@ -32,8 +32,17 @@ namespace WindowsFormsApp1 {
         }
 
         private void button2_Click(object sender, EventArgs e) {
+            //RegForm regForm = new RegForm();
+            //regForm.Show();
             RegForm regForm = new RegForm();
-            regForm.Show();
+            // 注册事件
+            regForm.TransfEvent += regForm_TransfEvent;
+            regForm.ShowDialog();
+        }
+        // 事件处理方法
+        void regForm_TransfEvent(string name,string password) {
+            label5.Text = name;
+            label6.Text = password;
         }
     }
 }

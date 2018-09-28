@@ -57,18 +57,67 @@ namespace Unit_8 {
         }
     }
     
+    //class Program {
+    //    public delegate void BookDelegate(Book[] books);
+    //    static void Main(string[] args) {
+    //        BookDelegate bookDelegate = new BookDelegate(Book.BookSort); 
+    //        Book[] book = new Book[3];
+    //        book[0] = new Book("123",45);
+    //        book[1] = new Book("12443",35);
+    //        book[2] = new Book("123999",945);
+    //        bookDelegate(book);
+    //        foreach(Book bk in book) {
+    //            Console.WriteLine(bk);
+    //        }
+    //    }
+    //}
+
+    class Order {
+        public static void BuyFood() {
+            Console.WriteLine("FOOD!");
+        }
+        public static void BuyCake() {
+            Console.WriteLine("CAKE");
+        }
+        public static void BuyFlower() {
+            Console.WriteLine("Flower");
+        }
+    }
+
+    //class Program {
+    //    public delegate void OrderDelegate();
+    //    static void Main(string[] args) {
+    //        // 实例化委托
+    //        OrderDelegate orderDelegate = new OrderDelegate(Order.BuyFlower);
+    //        // 向委托中注册方法
+    //        orderDelegate += Order.BuyFood;
+    //        orderDelegate += Order.BuyCake;
+    //        // 调用委托
+    //        orderDelegate();
+    //    }
+    //}
+
     class Program {
-        public delegate void BookDelegate(Book[] books);
+        // 定义委托
+        public delegate void SayDelegate();
+        // 定义事件
+        public event SayDelegate SayEvent;
+        // 定义委托中调用的方法
+        public void SayHello() {
+            Console.WriteLine("Hello Event!");
+        }
+        // 创建触发事情的方法
+        public void SayEventTrigger() {
+            // 触发事件， 必须与事件是同名的方法
+            SayEvent();
+        }
         static void Main(string[] args) {
-            BookDelegate bookDelegate = new BookDelegate(Book.BookSort); 
-            Book[] book = new Book[3];
-            book[0] = new Book("123",45);
-            book[1] = new Book("12443",35);
-            book[2] = new Book("123999",945);
-            bookDelegate(book);
-            foreach(Book bk in book) {
-                Console.WriteLine(bk);
-            }
+            // 创建program类的实例
+            Program program = new Program();
+            // 实例化事件，使用委托指向处理方法
+            program.SayEvent = new SayDelegate(program.SayHello);
+            // 调用触发事件的方法
+            program.SayEventTrigger();
         }
     }
 }
