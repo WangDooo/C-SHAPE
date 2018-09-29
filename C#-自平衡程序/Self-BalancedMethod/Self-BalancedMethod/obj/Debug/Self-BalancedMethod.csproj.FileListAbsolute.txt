@@ -1,0 +1,20 @@
+C:\Users\123\AppData\Local\Temporary Projects\Self-BalancedMethod\bin\Debug\Self-BalancedMethod.exe.config
+C:\Users\123\AppData\Local\Temporary Projects\Self-BalancedMethod\bin\Debug\Self-BalancedMethod.exe
+C:\Users\123\AppData\Local\Temporary Projects\Self-BalancedMethod\bin\Debug\Self-BalancedMethod.pdb
+C:\Users\123\AppData\Local\Temporary Projects\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.csprojResolveAssemblyReference.cache
+C:\Users\123\AppData\Local\Temporary Projects\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.Main.resources
+C:\Users\123\AppData\Local\Temporary Projects\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.Properties.Resources.resources
+C:\Users\123\AppData\Local\Temporary Projects\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.csproj.GenerateResource.Cache
+C:\Users\123\AppData\Local\Temporary Projects\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.csproj.CoreCompileInputs.cache
+C:\Users\123\AppData\Local\Temporary Projects\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.exe
+C:\Users\123\AppData\Local\Temporary Projects\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.pdb
+D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\bin\Debug\Self-BalancedMethod.exe.config
+D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\bin\Debug\Self-BalancedMethod.exe
+D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\bin\Debug\Self-BalancedMethod.pdb
+D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.Main.resources
+D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.exe
+D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.pdb
