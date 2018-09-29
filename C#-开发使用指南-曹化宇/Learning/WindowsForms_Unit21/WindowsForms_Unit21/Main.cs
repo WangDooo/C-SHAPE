@@ -18,5 +18,15 @@ namespace WindowsForms_Unit21 {
             TransparentForm transparentForm = new TransparentForm();
             transparentForm.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e) {
+            MaskedTextBoxForm maskedTextBoxForm = new MaskedTextBoxForm();
+            maskedTextBoxForm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            GroupBoxForm groupBoxForm = new GroupBoxForm();
+            groupBoxForm.ShowDialog();
+        }
     }
 }

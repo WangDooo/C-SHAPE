@@ -45,6 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCheckData.cs" />
+    <Compile Include="GroupBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupBoxForm.Designer.cs">
+      <DependentUpon>GroupBoxForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +72,9 @@
     <Compile Include="TransparentForm.Designer.cs">
       <DependentUpon>TransparentForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GroupBoxForm.resx">
+      <DependentUpon>GroupBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

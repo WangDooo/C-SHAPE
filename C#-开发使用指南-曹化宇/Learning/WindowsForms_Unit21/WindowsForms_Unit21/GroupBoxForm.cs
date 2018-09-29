@@ -9,14 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsForms_Unit21 {
-    public partial class MaskedTextBoxForm : Form {
-        public MaskedTextBoxForm() {
+    public partial class GroupBoxForm : Form {
+        public GroupBoxForm() {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e) {
-            //   textBox1.Text = maskedTextBox1.Text;
-            textBox1.Text = CCheckData.IsDate(maskedTextBox1.Text).ToString();
         }
     }
 }

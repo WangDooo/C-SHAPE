@@ -10,3 +10,4 @@ D:\Coding\Github\C-SHAPE\C#-开发使用指南-曹化宇\Learning\WindowsForms_U
 D:\Coding\Github\C-SHAPE\C#-开发使用指南-曹化宇\Learning\WindowsForms_Unit21\WindowsForms_Unit21\obj\Debug\WindowsForms_Unit21.pdb
 D:\Coding\Github\C-SHAPE\C#-开发使用指南-曹化宇\Learning\WindowsForms_Unit21\WindowsForms_Unit21\obj\Debug\WindowsForms_Unit21.Main.resources
 D:\Coding\Github\C-SHAPE\C#-开发使用指南-曹化宇\Learning\WindowsForms_Unit21\WindowsForms_Unit21\obj\Debug\WindowsForms_Unit21.MaskedTextBoxForm.resources
+D:\Coding\Github\C-SHAPE\C#-开发使用指南-曹化宇\Learning\WindowsForms_Unit21\WindowsForms_Unit21\obj\Debug\WindowsForms_Unit21.GroupBoxForm.resources
