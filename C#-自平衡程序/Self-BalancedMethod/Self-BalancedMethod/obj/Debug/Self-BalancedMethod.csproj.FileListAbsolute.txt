@@ -20,3 +20,14 @@ D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMet
 D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.pdb
 D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.AboutUsForm.resources
 D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.EquivalentParametersForm.resources
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\bin\Debug\Self-BalancedMethod.exe.config
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\bin\Debug\Self-BalancedMethod.exe
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\bin\Debug\Self-BalancedMethod.pdb
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.csprojResolveAssemblyReference.cache
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.AboutUsForm.resources
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.EquivalentParametersForm.resources
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.Main.resources
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.Properties.Resources.resources
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.csproj.GenerateResource.Cache
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.exe
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.pdb
