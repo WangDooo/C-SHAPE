@@ -66,6 +66,7 @@
             this.linkUserLogin.TabIndex = 2;
             this.linkUserLogin.TabStop = true;
             this.linkUserLogin.Text = "用户登录";
+            this.linkUserLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkUserLogin_LinkClicked);
             // 
             // linkExit
             // 

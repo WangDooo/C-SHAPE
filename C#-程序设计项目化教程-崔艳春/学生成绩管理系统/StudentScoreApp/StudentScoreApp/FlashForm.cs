@@ -24,5 +24,16 @@ namespace StudentScoreApp {
         private void linkExit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             this.Close();
         }
+
+        public void LoginShow() {
+            LoginForm loginForm = new LoginForm();
+            Application.Run(loginForm);
+        }
+
+        private void linkUserLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Thread t = new Thread(new System.Threading.ThreadStart(LoginShow));
+            t.Start();
+            this.Close();
+        }
     }
 }

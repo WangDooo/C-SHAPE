@@ -28,6 +28,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.cmbType = new System.Windows.Forms.ComboBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtPwd = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -75,11 +78,40 @@
             this.btnExit.Text = "退出";
             this.btnExit.UseVisualStyleBackColor = false;
             // 
+            // cmbType
+            // 
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "教师",
+            "学生"});
+            this.cmbType.Location = new System.Drawing.Point(119, 29);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(121, 20);
+            this.cmbType.TabIndex = 5;
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(119, 75);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(120, 21);
+            this.txtID.TabIndex = 6;
+            // 
+            // txtPwd
+            // 
+            this.txtPwd.Location = new System.Drawing.Point(119, 124);
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.PasswordChar = '*';
+            this.txtPwd.Size = new System.Drawing.Size(120, 21);
+            this.txtPwd.TabIndex = 7;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.txtPwd);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.cmbType);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label3);
@@ -101,5 +133,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ComboBox cmbType;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtPwd;
     }
 }
