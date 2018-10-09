@@ -1,0 +1,11 @@
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\bin\Debug\StudentScoreApp.exe.config
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\bin\Debug\StudentScoreApp.exe
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\bin\Debug\StudentScoreApp.pdb
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.AdminLoginForm.resources
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.FlashForm.resources
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.exe
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.pdb
