@@ -10,3 +10,4 @@ D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩�
 D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.exe
 D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.pdb
 D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.LoginForm.resources
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.StudentForm.resources

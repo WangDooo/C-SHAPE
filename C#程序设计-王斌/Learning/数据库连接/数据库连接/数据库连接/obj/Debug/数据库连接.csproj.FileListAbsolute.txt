@@ -1,0 +1,14 @@
+C:\Users\123\AppData\Local\Temporary Projects\数据库连接\bin\Debug\数据库连接.exe.config
+C:\Users\123\AppData\Local\Temporary Projects\数据库连接\bin\Debug\数据库连接.exe
+C:\Users\123\AppData\Local\Temporary Projects\数据库连接\bin\Debug\数据库连接.pdb
+C:\Users\123\AppData\Local\Temporary Projects\数据库连接\obj\Debug\数据库连接.csprojResolveAssemblyReference.cache
+C:\Users\123\AppData\Local\Temporary Projects\数据库连接\obj\Debug\数据库连接.csproj.CoreCompileInputs.cache
+C:\Users\123\AppData\Local\Temporary Projects\数据库连接\obj\Debug\数据库连接.exe
+C:\Users\123\AppData\Local\Temporary Projects\数据库连接\obj\Debug\数据库连接.pdb
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\数据库连接\数据库连接\数据库连接\bin\Debug\数据库连接.exe.config
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\数据库连接\数据库连接\数据库连接\bin\Debug\数据库连接.exe
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\数据库连接\数据库连接\数据库连接\bin\Debug\数据库连接.pdb
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\数据库连接\数据库连接\数据库连接\obj\Debug\数据库连接.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\数据库连接\数据库连接\数据库连接\obj\Debug\数据库连接.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\数据库连接\数据库连接\数据库连接\obj\Debug\数据库连接.exe
+D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\数据库连接\数据库连接\数据库连接\obj\Debug\数据库连接.pdb

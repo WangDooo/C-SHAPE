@@ -45,7 +45,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 78);
+            this.label2.Location = new System.Drawing.Point(38, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 1;
@@ -54,11 +54,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 127);
+            this.label3.Location = new System.Drawing.Point(38, 127);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 2;
-            this.label3.Text = "密码";
+            this.label3.Text = "密    码";
             // 
             // btnLogin
             // 
@@ -68,6 +68,7 @@
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "登录";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnExit
             // 
@@ -84,21 +85,21 @@
             this.cmbType.Items.AddRange(new object[] {
             "教师",
             "学生"});
-            this.cmbType.Location = new System.Drawing.Point(119, 29);
+            this.cmbType.Location = new System.Drawing.Point(118, 26);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(121, 20);
             this.cmbType.TabIndex = 5;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(119, 75);
+            this.txtID.Location = new System.Drawing.Point(118, 75);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(120, 21);
             this.txtID.TabIndex = 6;
             // 
             // txtPwd
             // 
-            this.txtPwd.Location = new System.Drawing.Point(119, 124);
+            this.txtPwd.Location = new System.Drawing.Point(118, 124);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(120, 21);
