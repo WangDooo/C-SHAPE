@@ -17,7 +17,7 @@ namespace 数据库连接 {
             int sum = (int)(mycomm.ExecuteScalar());
             Console.WriteLine(sum);
             Console.WriteLine("-----------");
-            mycomm.CommandText = "select * from student";
+            mycomm.CommandText = "select * from Student";
             SqlDataReader mydr = mycomm.ExecuteReader();
             string str = "";
             while (mydr.Read()) {
@@ -26,6 +26,8 @@ namespace 数据库连接 {
                 str += "\n";
             }
             Console.WriteLine(str);
+            Console.WriteLine("-----------");
+            mycomm.CommandText = "select * from Student where ID='1' and Passwoed ='123'";
 
         }
     }

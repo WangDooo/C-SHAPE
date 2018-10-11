@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -31,6 +32,8 @@
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblmessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -78,6 +81,7 @@
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "退出";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // cmbType
             // 
@@ -105,11 +109,27 @@
             this.txtPwd.Size = new System.Drawing.Size(120, 21);
             this.txtPwd.TabIndex = 7;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 300;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblmessage
+            // 
+            this.lblmessage.AutoSize = true;
+            this.lblmessage.Location = new System.Drawing.Point(13, 237);
+            this.lblmessage.Name = "lblmessage";
+            this.lblmessage.Size = new System.Drawing.Size(53, 12);
+            this.lblmessage.TabIndex = 8;
+            this.lblmessage.Text = "欢迎使用";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.lblmessage);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.cmbType);
@@ -137,5 +157,7 @@
         private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtPwd;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblmessage;
     }
 }

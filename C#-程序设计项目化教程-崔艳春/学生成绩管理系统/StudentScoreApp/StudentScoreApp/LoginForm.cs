@@ -36,13 +36,31 @@ namespace StudentScoreApp {
                     if (string.IsNullOrEmpty(txtID.Text.Trim())) {
                         MessageBox.Show("请输入用户名");
                     }
-                    else if (string.IsNullOrEmpty(txtID.Text.Trim())) {
+                    else if (string.IsNullOrEmpty(txtPwd.Text.Trim())) {
                         MessageBox.Show("请输入密码");
                     } 
                     else {
-                        Thread t = new Thread(new ThreadStart(StudentShow));
-                        t.Start();
-                        this.Close();
+                        mycommand.CommandText = "select * from Student where ID=@name and Password =@pwd";
+                        SqlParameter TName = new SqlParameter ("@name", SqlDbType.NVarChar);
+                        SqlParameter TPwd = new SqlParameter ("@pwd", SqlDbType.NVarChar);
+                        mycommand.Parameters.Add(TName);
+                        mycommand.Parameters.Add(TPwd);
+                        TName.Value = txtID.Text.Trim();
+                        TPwd.Value = txtPwd.Text.Trim();
+                        mydr = mycommand.ExecuteReader();
+                        if (mydr.HasRows) {
+                            mydr.Read();
+                            App_Code.ShareClass.ID = mydr["ID"].ToString();
+                            App_Code.ShareClass.Name = mydr["StudentName"].ToString();
+                            App_Code.ShareClass.Type = "2";
+                            Thread t = new Thread(new ThreadStart(StudentShow));
+                            t.Start();
+                            this.Close();
+                        } 
+                        else {
+                            MessageBox.Show("用户名和密码不匹配，请重新输入");
+                            txtPwd.Clear();
+                        }
                     }
                 } 
                 else {
@@ -51,7 +69,20 @@ namespace StudentScoreApp {
                 mycon.Close();
             }
             catch(Exception e1) {
-                MessageBox.Show("连接问题");
+                MessageBox.Show("连接存在问题");
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e) {
+            if (lblmessage.Left >= this.Width) {
+                lblmessage.Left = -lblmessage.Width;
+            } 
+            else {
+                lblmessage.Left += 10;
             }
         }
     }
