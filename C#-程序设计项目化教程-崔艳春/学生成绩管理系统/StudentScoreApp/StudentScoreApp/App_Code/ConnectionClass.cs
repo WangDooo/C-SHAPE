@@ -11,5 +11,6 @@ namespace StudentScoreApp.App_Code {
                 return "Data Source=DESKTOP-403292K\\WANGDOO; Integrated Security=True; database=ScoreDB";
             }
         }
+
     }
 }

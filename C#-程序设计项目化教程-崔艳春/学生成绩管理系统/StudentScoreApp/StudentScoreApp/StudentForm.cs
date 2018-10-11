@@ -46,5 +46,10 @@ namespace StudentScoreApp {
         private void toolStripButton4_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e) {
+            ModifyStudentForm modifyStudentForm = new ModifyStudentForm();
+            modifyStudentForm.ShowDialog();
+        }
     }
 }
