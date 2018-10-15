@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="StudentScoreApp.exe" version="1.0.0.0" publicKeyToken="1b1ac4677633ba9f" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="StudentScoreApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="StudentScoreApp.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 清单选项
+         若想要更改 Windows 用户帐户控制级别，请
+         将 requestedExecutionLevel 节点替换为下述某项。
+
+       <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+       <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+       <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+        若想要使用文件和注册表虚拟化以实现向后
+        兼容，请删除 requestedExecutionLevel 节点。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="StudentScoreApp.exe" size="406000">
+      <assemblyIdentity name="StudentScoreApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>VNxQmoAJsZiaq0wVm6T9+YP4ymedznSuZiynAMp/OgY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="StudentScoreApp.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>rl5/qDc7Jz+tB+BIbOv9iMGPlRe6YJwrjmU09dnlPcs=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-403292K\WangDoo" issuerKeyHash="a833885e74c74e9dd3fe17069250464dea8e9a66" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>3+WG7zI5SV2lbQXfIrqcsBx8mDqGksKEnhrmdi9GvEw=</DigestValue></Reference></SignedInfo><SignatureValue>KR9pnkdR+3G/Q5Pwts5XjKuD1lDNylX1p+HTyMvs1ufZf3ymrEa67XURz0hLSbEwhq6vjcV5VMd8+KR23VvryWmEqKOKK0uvbjxDfVl3vn4EDakA3rlgFXBA//J+FQSiTDHmHjLOAgIGZVij4UmBdQNbh19eyhJPAwAxXUO4uWo=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>xmk2pPGrxcWsJJDInRYAHuXqcMuUuK13fojk2E6xfgzbL/aQldY1t0dZ4tTwsv/ihh8NivZl0aLxkJ4mr3AHAWBe8bTi/rcxD29WEZTbcgAL1s5sFQodiINgpCKlu2EPqHWig/Yrg5s+pwA8yFG2XVTMhlw2YWGIIOa6ybpccdE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="4cbc462f76e61a9e84c292863a987c1cb09cba22df056da55d493932ef86e5df" Description="" Url=""><as:assemblyIdentity name="StudentScoreApp.exe" version="1.0.0.0" publicKeyToken="1b1ac4677633ba9f" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-403292K\WangDoo</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>wP3QdQwwMYAMQpXyNOdFoLYtXi/6hGvNkJ8AUtTl3nE=</DigestValue></Reference></SignedInfo><SignatureValue>Lk6E3fMwtH3pPkp3SJc/9vM9o4zwZiACKRirPWjq0n26GXTrTZw5nVPwYHlDmm305iOx6dS9NsA/i3lWRSQVBXA2EXgGoYHIVH02yrytf/CRs4oGz+kzTx8cxUvlz5lAfjnyMF+pyWAgWay4EPN8hVh9uOQK9x8LE8LwYtSz5XI=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>xmk2pPGrxcWsJJDInRYAHuXqcMuUuK13fojk2E6xfgzbL/aQldY1t0dZ4tTwsv/ihh8NivZl0aLxkJ4mr3AHAWBe8bTi/rcxD29WEZTbcgAL1s5sFQodiINgpCKlu2EPqHWig/Yrg5s+pwA8yFG2XVTMhlw2YWGIIOa6ybpccdE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB9TCCAV6gAwIBAgIQdMayJpGHAJ1PavZXaHv32TANBgkqhkiG9w0BAQsFADA5MTcwNQYDVQQDHi4ARABFAFMASwBUAE8AUAAtADQAMAAzADIAOQAyAEsAXABXAGEAbgBnAEQAbwBvMB4XDTE4MTAxNTAzMjkyMFoXDTE5MTAxNTA5MjkyMFowOTE3MDUGA1UEAx4uAEQARQBTAEsAVABPAFAALQA0ADAAMwAyADkAMgBLAFwAVwBhAG4AZwBEAG8AbzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAxmk2pPGrxcWsJJDInRYAHuXqcMuUuK13fojk2E6xfgzbL/aQldY1t0dZ4tTwsv/ihh8NivZl0aLxkJ4mr3AHAWBe8bTi/rcxD29WEZTbcgAL1s5sFQodiINgpCKlu2EPqHWig/Yrg5s+pwA8yFG2XVTMhlw2YWGIIOa6ybpccdECAwEAATANBgkqhkiG9w0BAQsFAAOBgQBLMBITimoHfJXC8lA2IWLJzDG53o3M+KGkRqUy2T+1rmMz4ue05ecwKvV3qFTQcJrTR/RHkYs3alFv5clJBXoWYEYAfW7MipBjgzqE3PAzuPc0EXo4Z+rRJ7weCoGTT2+MusGpzNg6a2xRwKsraW57SBTtUYtC99D+PgeK2iGvxA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

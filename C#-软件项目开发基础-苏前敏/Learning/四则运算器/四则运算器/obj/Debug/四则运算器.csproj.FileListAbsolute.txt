@@ -1,0 +1,10 @@
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\四则运算器\四则运算器\obj\Debug\四则运算器.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\四则运算器\四则运算器\obj\Debug\四则运算器.Form1.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\四则运算器\四则运算器\obj\Debug\四则运算器.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\四则运算器\四则运算器\obj\Debug\四则运算器.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\四则运算器\四则运算器\obj\Debug\四则运算器.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\四则运算器\四则运算器\bin\Debug\四则运算器.exe.config
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\四则运算器\四则运算器\bin\Debug\四则运算器.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\四则运算器\四则运算器\bin\Debug\四则运算器.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\四则运算器\四则运算器\obj\Debug\四则运算器.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\四则运算器\四则运算器\obj\Debug\四则运算器.pdb

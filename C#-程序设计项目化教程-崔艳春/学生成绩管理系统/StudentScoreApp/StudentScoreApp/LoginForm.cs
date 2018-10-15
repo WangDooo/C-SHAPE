@@ -70,6 +70,7 @@ namespace StudentScoreApp {
             }
             catch(Exception e1) {
                 MessageBox.Show("连接存在问题");
+                throw e1;
             }
         }
 

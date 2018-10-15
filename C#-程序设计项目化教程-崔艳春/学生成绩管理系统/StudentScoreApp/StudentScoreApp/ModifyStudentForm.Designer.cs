@@ -32,17 +32,17 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbMale = new System.Windows.Forms.RadioButton();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtIdenID = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtIdenID = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +104,7 @@
             // 
             this.txtID.Location = new System.Drawing.Point(140, 31);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(200, 21);
             this.txtID.TabIndex = 6;
             // 
@@ -141,16 +142,86 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
-            // rbMale
+            // label10
             // 
-            this.rbMale.AutoSize = true;
-            this.rbMale.Location = new System.Drawing.Point(140, 111);
-            this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(35, 16);
-            this.rbMale.TabIndex = 8;
-            this.rbMale.TabStop = true;
-            this.rbMale.Text = "男";
-            this.rbMale.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(355, 191);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(11, 12);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "*";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(355, 154);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(11, 12);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "*";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(241, 115);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(11, 12);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "*";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(355, 70);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(11, 12);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "*";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(217, 274);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(89, 37);
+            this.btnCancel.TabIndex = 14;
+            this.btnCancel.Text = "取消";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(91, 275);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(83, 37);
+            this.btnOK.TabIndex = 13;
+            this.btnOK.Text = "修改";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(140, 221);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(199, 21);
+            this.txtAddress.TabIndex = 12;
+            // 
+            // txtIdenID
+            // 
+            this.txtIdenID.Location = new System.Drawing.Point(140, 182);
+            this.txtIdenID.Name = "txtIdenID";
+            this.txtIdenID.Size = new System.Drawing.Size(199, 21);
+            this.txtIdenID.TabIndex = 11;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(140, 145);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(200, 21);
+            this.txtPhone.TabIndex = 10;
             // 
             // rbFemale
             // 
@@ -163,84 +234,16 @@
             this.rbFemale.Text = "女";
             this.rbFemale.UseVisualStyleBackColor = true;
             // 
-            // txtPhone
+            // rbMale
             // 
-            this.txtPhone.Location = new System.Drawing.Point(140, 145);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(200, 21);
-            this.txtPhone.TabIndex = 10;
-            // 
-            // txtIdenID
-            // 
-            this.txtIdenID.Location = new System.Drawing.Point(140, 182);
-            this.txtIdenID.Name = "txtIdenID";
-            this.txtIdenID.Size = new System.Drawing.Size(199, 21);
-            this.txtIdenID.TabIndex = 11;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(140, 221);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(199, 21);
-            this.txtAddress.TabIndex = 12;
-            // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(91, 275);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(83, 37);
-            this.btnOK.TabIndex = 13;
-            this.btnOK.Text = "修改";
-            this.btnOK.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(217, 274);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(89, 37);
-            this.btnCancel.TabIndex = 14;
-            this.btnCancel.Text = "取消";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(355, 70);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(11, 12);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "*";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(241, 115);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(11, 12);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "*";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(355, 154);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(11, 12);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "*";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(355, 191);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(11, 12);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "*";
+            this.rbMale.AutoSize = true;
+            this.rbMale.Location = new System.Drawing.Point(140, 111);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(35, 16);
+            this.rbMale.TabIndex = 8;
+            this.rbMale.TabStop = true;
+            this.rbMale.Text = "男";
+            this.rbMale.UseVisualStyleBackColor = true;
             // 
             // ModifyStudentForm
             // 

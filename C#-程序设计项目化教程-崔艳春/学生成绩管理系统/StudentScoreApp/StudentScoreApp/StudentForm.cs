@@ -51,5 +51,15 @@ namespace StudentScoreApp {
             ModifyStudentForm modifyStudentForm = new ModifyStudentForm();
             modifyStudentForm.ShowDialog();
         }
+
+        private void toolStripButton5_Click(object sender, EventArgs e) {
+            StudentIDForm studentIDForm = new StudentIDForm();
+            studentIDForm.ShowDialog();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e) {
+            MyScoreForm myScoreForm = new MyScoreForm();
+            myScoreForm.ShowDialog();
+        }
     }
 }

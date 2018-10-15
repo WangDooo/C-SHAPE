@@ -12,3 +12,10 @@ D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩�
 D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.LoginForm.resources
 D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.StudentForm.resources
 D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.ModifyPwdForm.resources
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.ModifyStudentForm.resources
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.StudentIDForm.resources
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.MyScoreForm.resources
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\bin\Debug\StudentScoreApp.exe.manifest
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\bin\Debug\StudentScoreApp.application
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.exe.manifest
+D:\Coding\Github\C-SHAPE\C#-程序设计项目化教程-崔艳春\学生成绩管理系统\StudentScoreApp\StudentScoreApp\obj\Debug\StudentScoreApp.application

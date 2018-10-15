@@ -58,6 +58,7 @@ namespace StudentScoreApp {
                     } 
                     catch(Exception e1) {
                         MessageBox.Show("数据库连接存在问题");
+                        throw e1;
                     }
                 }
             } 

@@ -1,0 +1,10 @@
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\打字小游戏\打字小游戏\obj\Debug\打字小游戏.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\打字小游戏\打字小游戏\obj\Debug\打字小游戏.Form1.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\打字小游戏\打字小游戏\obj\Debug\打字小游戏.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\打字小游戏\打字小游戏\obj\Debug\打字小游戏.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\打字小游戏\打字小游戏\obj\Debug\打字小游戏.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\打字小游戏\打字小游戏\bin\Debug\打字小游戏.exe.config
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\打字小游戏\打字小游戏\bin\Debug\打字小游戏.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\打字小游戏\打字小游戏\bin\Debug\打字小游戏.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\打字小游戏\打字小游戏\obj\Debug\打字小游戏.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\打字小游戏\打字小游戏\obj\Debug\打字小游戏.pdb
