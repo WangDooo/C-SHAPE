@@ -1,0 +1,7 @@
+C:\Users\123\AppData\Local\Temporary Projects\DelegateAndEvent\bin\Debug\DelegateAndEvent.exe.config
+C:\Users\123\AppData\Local\Temporary Projects\DelegateAndEvent\bin\Debug\DelegateAndEvent.exe
+C:\Users\123\AppData\Local\Temporary Projects\DelegateAndEvent\bin\Debug\DelegateAndEvent.pdb
+C:\Users\123\AppData\Local\Temporary Projects\DelegateAndEvent\obj\Debug\Delegate.csprojResolveAssemblyReference.cache
+C:\Users\123\AppData\Local\Temporary Projects\DelegateAndEvent\obj\Debug\Delegate.csproj.CoreCompileInputs.cache
+C:\Users\123\AppData\Local\Temporary Projects\DelegateAndEvent\obj\Debug\DelegateAndEvent.exe
+C:\Users\123\AppData\Local\Temporary Projects\DelegateAndEvent\obj\Debug\DelegateAndEvent.pdb
