@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MyProject.Models
 {
     public class User{
-        public string Username;
+        public string UserName;
         public string UserPassword;
     }
 }

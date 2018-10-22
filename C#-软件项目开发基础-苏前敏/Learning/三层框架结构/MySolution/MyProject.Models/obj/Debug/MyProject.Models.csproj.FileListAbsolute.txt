@@ -1,0 +1,6 @@
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\三层框架结构\MySolution\MyProject.Models\bin\Debug\MyProject.Models.dll
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\三层框架结构\MySolution\MyProject.Models\bin\Debug\MyProject.Models.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\三层框架结构\MySolution\MyProject.Models\obj\Debug\MyProject.Models.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\三层框架结构\MySolution\MyProject.Models\obj\Debug\MyProject.Models.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\三层框架结构\MySolution\MyProject.Models\obj\Debug\MyProject.Models.dll
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\三层框架结构\MySolution\MyProject.Models\obj\Debug\MyProject.Models.pdb
