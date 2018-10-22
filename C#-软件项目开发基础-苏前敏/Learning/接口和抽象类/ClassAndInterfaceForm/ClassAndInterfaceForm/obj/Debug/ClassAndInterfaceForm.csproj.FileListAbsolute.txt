@@ -1,0 +1,20 @@
+C:\Users\123\AppData\Local\Temporary Projects\ClassAndInterfaceForm\bin\Debug\ClassAndInterfaceForm.exe.config
+C:\Users\123\AppData\Local\Temporary Projects\ClassAndInterfaceForm\bin\Debug\ClassAndInterfaceForm.exe
+C:\Users\123\AppData\Local\Temporary Projects\ClassAndInterfaceForm\bin\Debug\ClassAndInterfaceForm.pdb
+C:\Users\123\AppData\Local\Temporary Projects\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.csprojResolveAssemblyReference.cache
+C:\Users\123\AppData\Local\Temporary Projects\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.Form1.resources
+C:\Users\123\AppData\Local\Temporary Projects\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.Properties.Resources.resources
+C:\Users\123\AppData\Local\Temporary Projects\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.csproj.GenerateResource.Cache
+C:\Users\123\AppData\Local\Temporary Projects\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.csproj.CoreCompileInputs.cache
+C:\Users\123\AppData\Local\Temporary Projects\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.exe
+C:\Users\123\AppData\Local\Temporary Projects\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\接口和抽象类\ClassAndInterfaceForm\ClassAndInterfaceForm\bin\Debug\ClassAndInterfaceForm.exe.config
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\接口和抽象类\ClassAndInterfaceForm\ClassAndInterfaceForm\bin\Debug\ClassAndInterfaceForm.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\接口和抽象类\ClassAndInterfaceForm\ClassAndInterfaceForm\bin\Debug\ClassAndInterfaceForm.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\接口和抽象类\ClassAndInterfaceForm\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\接口和抽象类\ClassAndInterfaceForm\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.Form1.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\接口和抽象类\ClassAndInterfaceForm\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\接口和抽象类\ClassAndInterfaceForm\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\接口和抽象类\ClassAndInterfaceForm\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\接口和抽象类\ClassAndInterfaceForm\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\接口和抽象类\ClassAndInterfaceForm\ClassAndInterfaceForm\obj\Debug\ClassAndInterfaceForm.pdb

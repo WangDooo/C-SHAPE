@@ -1,0 +1,10 @@
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\聪明猪-类的应用\SmartPigForm\SmartPigForm\bin\Debug\SmartPigForm.exe.config
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\聪明猪-类的应用\SmartPigForm\SmartPigForm\bin\Debug\SmartPigForm.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\聪明猪-类的应用\SmartPigForm\SmartPigForm\bin\Debug\SmartPigForm.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\聪明猪-类的应用\SmartPigForm\SmartPigForm\obj\Debug\SmartPigForm.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\聪明猪-类的应用\SmartPigForm\SmartPigForm\obj\Debug\SmartPigForm.Form1.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\聪明猪-类的应用\SmartPigForm\SmartPigForm\obj\Debug\SmartPigForm.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\聪明猪-类的应用\SmartPigForm\SmartPigForm\obj\Debug\SmartPigForm.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\聪明猪-类的应用\SmartPigForm\SmartPigForm\obj\Debug\SmartPigForm.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\聪明猪-类的应用\SmartPigForm\SmartPigForm\obj\Debug\SmartPigForm.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\聪明猪-类的应用\SmartPigForm\SmartPigForm\obj\Debug\SmartPigForm.pdb
