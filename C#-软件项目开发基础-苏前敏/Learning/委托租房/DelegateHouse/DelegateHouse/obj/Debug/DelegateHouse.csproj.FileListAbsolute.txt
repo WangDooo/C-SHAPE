@@ -1,0 +1,7 @@
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\委托租房\DelegateHouse\DelegateHouse\bin\Debug\DelegateHouse.exe.config
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\委托租房\DelegateHouse\DelegateHouse\bin\Debug\DelegateHouse.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\委托租房\DelegateHouse\DelegateHouse\bin\Debug\DelegateHouse.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\委托租房\DelegateHouse\DelegateHouse\obj\Debug\DelegateHouse.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\委托租房\DelegateHouse\DelegateHouse\obj\Debug\DelegateHouse.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\委托租房\DelegateHouse\DelegateHouse\obj\Debug\DelegateHouse.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\委托租房\DelegateHouse\DelegateHouse\obj\Debug\DelegateHouse.pdb
