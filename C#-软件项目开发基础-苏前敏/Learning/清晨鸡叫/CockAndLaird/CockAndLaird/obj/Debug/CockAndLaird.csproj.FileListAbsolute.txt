@@ -1,0 +1,10 @@
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\清晨鸡叫\CockAndLaird\CockAndLaird\bin\Debug\CockAndLaird.exe.config
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\清晨鸡叫\CockAndLaird\CockAndLaird\bin\Debug\CockAndLaird.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\清晨鸡叫\CockAndLaird\CockAndLaird\bin\Debug\CockAndLaird.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\清晨鸡叫\CockAndLaird\CockAndLaird\obj\Debug\CockAndLaird.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\清晨鸡叫\CockAndLaird\CockAndLaird\obj\Debug\CockAndLaird.Form1.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\清晨鸡叫\CockAndLaird\CockAndLaird\obj\Debug\CockAndLaird.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\清晨鸡叫\CockAndLaird\CockAndLaird\obj\Debug\CockAndLaird.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\清晨鸡叫\CockAndLaird\CockAndLaird\obj\Debug\CockAndLaird.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\清晨鸡叫\CockAndLaird\CockAndLaird\obj\Debug\CockAndLaird.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\清晨鸡叫\CockAndLaird\CockAndLaird\obj\Debug\CockAndLaird.pdb
