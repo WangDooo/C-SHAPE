@@ -1,0 +1,25 @@
+C:\Users\123\AppData\Local\Temporary Projects\GraphicsForm\bin\Debug\GraphicsForm.exe.config
+C:\Users\123\AppData\Local\Temporary Projects\GraphicsForm\bin\Debug\GraphicsForm.exe
+C:\Users\123\AppData\Local\Temporary Projects\GraphicsForm\bin\Debug\GraphicsForm.pdb
+C:\Users\123\AppData\Local\Temporary Projects\GraphicsForm\obj\Debug\GraphicsForm.csprojResolveAssemblyReference.cache
+C:\Users\123\AppData\Local\Temporary Projects\GraphicsForm\obj\Debug\GraphicsForm.Form1.resources
+C:\Users\123\AppData\Local\Temporary Projects\GraphicsForm\obj\Debug\GraphicsForm.FormMain.resources
+C:\Users\123\AppData\Local\Temporary Projects\GraphicsForm\obj\Debug\GraphicsForm.Properties.Resources.resources
+C:\Users\123\AppData\Local\Temporary Projects\GraphicsForm\obj\Debug\GraphicsForm.csproj.GenerateResource.Cache
+C:\Users\123\AppData\Local\Temporary Projects\GraphicsForm\obj\Debug\GraphicsForm.csproj.CoreCompileInputs.cache
+C:\Users\123\AppData\Local\Temporary Projects\GraphicsForm\obj\Debug\GraphicsForm.exe
+C:\Users\123\AppData\Local\Temporary Projects\GraphicsForm\obj\Debug\GraphicsForm.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\bin\Debug\GraphicsForm.exe.config
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\bin\Debug\GraphicsForm.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\bin\Debug\GraphicsForm.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\obj\Debug\GraphicsForm.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\obj\Debug\GraphicsForm.Form1.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\obj\Debug\GraphicsForm.Form2.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\obj\Debug\GraphicsForm.FormMain.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\obj\Debug\GraphicsForm.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\obj\Debug\GraphicsForm.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\obj\Debug\GraphicsForm.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\obj\Debug\GraphicsForm.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\obj\Debug\GraphicsForm.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\obj\Debug\GraphicsForm.Form3.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\绘图程序\GraphicsForm\GraphicsForm\obj\Debug\GraphicsForm.Form4.resources
