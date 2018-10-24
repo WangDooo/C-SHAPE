@@ -1,0 +1,10 @@
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\图片处理\BitmapForm\BitmapForm\bin\Debug\BitmapForm.exe.config
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\图片处理\BitmapForm\BitmapForm\bin\Debug\BitmapForm.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\图片处理\BitmapForm\BitmapForm\bin\Debug\BitmapForm.pdb
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\图片处理\BitmapForm\BitmapForm\obj\Debug\BitmapForm.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\图片处理\BitmapForm\BitmapForm\obj\Debug\BitmapForm.Form1.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\图片处理\BitmapForm\BitmapForm\obj\Debug\BitmapForm.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\图片处理\BitmapForm\BitmapForm\obj\Debug\BitmapForm.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\图片处理\BitmapForm\BitmapForm\obj\Debug\BitmapForm.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\图片处理\BitmapForm\BitmapForm\obj\Debug\BitmapForm.exe
+D:\Coding\Github\C-SHAPE\C#-软件项目开发基础-苏前敏\Learning\图片处理\BitmapForm\BitmapForm\obj\Debug\BitmapForm.pdb
