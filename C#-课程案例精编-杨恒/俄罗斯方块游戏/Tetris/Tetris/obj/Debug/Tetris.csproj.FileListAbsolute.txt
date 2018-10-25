@@ -1,0 +1,15 @@
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\bin\Debug\Tetris.exe.config
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\bin\Debug\Tetris.exe
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\bin\Debug\Tetris.pdb
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\bin\Debug\Interop.WMPLib.dll
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\bin\Debug\AxInterop.WMPLib.dll
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\obj\Debug\Tetris.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\obj\Debug\Interop.WMPLib.dll
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\obj\Debug\AxInterop.WMPLib.dll
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\obj\Debug\Tetris.csproj.ResolveComReference.cache
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\obj\Debug\Tetris.MainForm.resources
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\obj\Debug\Tetris.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\obj\Debug\Tetris.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\obj\Debug\Tetris.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\obj\Debug\Tetris.exe
+D:\Coding\Github\C-SHAPE\C#-课程案例精编-杨恒\俄罗斯方块游戏\Tetris\Tetris\obj\Debug\Tetris.pdb
