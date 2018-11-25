@@ -56,5 +56,14 @@ namespace Self_BalancedMethod {
                 this.Close();               //执行动作
             }
         }
+
+        private void timer1_Tick(object sender, EventArgs e) {
+            this.toolStripStatusLabelTime.Text = DateTime.Now.ToString();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e) {
+            //10毫秒定时，主要用来网络定时周期性数据读取
+
+        }
     }
 }
