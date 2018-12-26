@@ -99,14 +99,6 @@ namespace Self_BalancedMethod {
 
                     connectDone.Reset();
                     string ip_str;
-                    /*XmlDocument xml = new XmlDocument();
-                    string str;
-                    str = "SetupTSI.xml";
-
-                    xml.Load(str);
-                    var node0 = xml.GetElementsByTagName("TSI_ip");
-                    ip_str = node0[0].Attributes["ip"].InnerText;
-                     * */
                     ip_str = "192.168.0.2";//默认是这个IP地址，固定了，用户可以根据需要修改，比如主界面的编辑框里的字符串付给ip_str
                     tcp.BeginConnect(ip_str, 1001,new AsyncCallback(ConnectCallback), tcp);//端口号1001 固定。
 
@@ -132,7 +124,6 @@ namespace Self_BalancedMethod {
             {
                 workstream.Close();//标准的TCP断开操作
                 tcp.Close();
-                // MainFrame.mfs.SetConnect_text(UsrLibs.usrlib.ReadXML_ID("SetupTSI.xml", "language", "已断开", MainFrame.mfs.language)[0]);
                 Main.mfs.SetConnect_state(0);
             }
         }
