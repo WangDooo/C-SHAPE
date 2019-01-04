@@ -31,3 +31,4 @@ C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod
 C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.csproj.GenerateResource.Cache
 C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.exe
 C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self-BalancedMethod.pdb
+D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.CreateNewFolderForm.resources

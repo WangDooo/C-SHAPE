@@ -51,6 +51,12 @@
     <Compile Include="AboutUsForm.Designer.cs">
       <DependentUpon>AboutUsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateNewFolderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewFolderForm.Designer.cs">
+      <DependentUpon>CreateNewFolderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EquivalentParametersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,8 +72,12 @@
     <Compile Include="mysocket.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShareClass.cs" />
     <EmbeddedResource Include="AboutUsForm.resx">
       <DependentUpon>AboutUsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewFolderForm.resx">
+      <DependentUpon>CreateNewFolderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EquivalentParametersForm.resx">
       <DependentUpon>EquivalentParametersForm.cs</DependentUpon>

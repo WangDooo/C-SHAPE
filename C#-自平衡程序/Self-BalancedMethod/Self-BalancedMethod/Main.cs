@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace Self_BalancedMethod {
     public partial class Main : Form {
@@ -19,6 +21,7 @@ namespace Self_BalancedMethod {
             InitializeComponent();
             mfs = this;
         }
+        // 退出程序
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e) {
             Application.Exit();
         }
@@ -108,5 +111,31 @@ namespace Self_BalancedMethod {
                 //client.StartClient(0);
             }
         }
+
+
+
+        //-------新建文件--------------------------------------------------------------------------
+        private void 新建ToolStripMenuItem_Click(object sender, EventArgs e) {
+            CreateNewFolderForm createNewFolderForm = new CreateNewFolderForm();
+            createNewFolderForm.ShowDialog();
+            lblProjectNumber.Text = ShareClass.ProjectNumber;
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            dialog.Description = "请选择文件存放路径";
+            string strPath; //文件夹完整的路径名
+            if (dialog.ShowDialog() == DialogResult.OK) {
+                try {
+                    strPath = dialog.SelectedPath;
+                    FileStream fs = new FileStream(strPath+"\\"+ShareClass.ProjectNumber+".txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    //strPath = ofd.FileName.Replace("\\", "\\\\");
+                    //MessageBox.Show(dialog.FileName);
+                    //string filePath = strPath.Substring(0, strPath.LastIndexOf("\\") + 1);
+                    MessageBox.Show(strPath);
+                    
+                } catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        //------------------------------------------------------------------------------------------
     }
 }
