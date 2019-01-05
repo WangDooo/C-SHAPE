@@ -20,7 +20,14 @@ namespace Self_BalancedMethod {
 
         private void button1_Click(object sender, EventArgs e) {
             try{
-                ShareClass.ProjectNumber = textBox1.Text;
+                ShareClass.ProjectNumber = txtProjectNumber.Text;
+                ShareClass.TestYear = txtTestYear.Text;
+                ShareClass.TestMonth = txtTestMonth.Text;
+                ShareClass.TestDay = txtTestDay.Text;
+                ShareClass.SiteName = txtSiteName.Text;
+                ShareClass.PileNumber = txtPileNumber.Text;
+                ShareClass.PileLength = txtPileLength.Text;
+                ShareClass.PileDiameter = txtPileDiameter.Text;
                 this.Close();
             } 
             catch(Exception ex) {

@@ -29,9 +29,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -45,13 +42,13 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtPileDiameter = new System.Windows.Forms.TextBox();
+            this.txtPileLength = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPileNumber = new System.Windows.Forms.TextBox();
+            this.txtSiteName = new System.Windows.Forms.TextBox();
+            this.txtTestTime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -149,7 +146,11 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.label16 = new System.Windows.Forms.Label();
-            this.lblProjectNumber = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.位移 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtProjectNumber = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -221,29 +222,15 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.Column3,
             this.Column2,
-            this.Column3});
+            this.位移});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(310, 568);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "序号";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "荷载(kN)";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "历时";
-            this.Column3.Name = "Column3";
             // 
             // tabPage2
             // 
@@ -314,7 +301,7 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(9, 25);
+            this.radioButton5.Location = new System.Drawing.Point(14, 25);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(47, 16);
             this.radioButton5.TabIndex = 0;
@@ -336,7 +323,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(63, 24);
+            this.radioButton4.Location = new System.Drawing.Point(63, 26);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(41, 16);
             this.radioButton4.TabIndex = 1;
@@ -347,7 +334,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(8, 24);
+            this.radioButton3.Location = new System.Drawing.Point(15, 26);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(35, 16);
             this.radioButton3.TabIndex = 0;
@@ -369,7 +356,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(63, 20);
+            this.radioButton2.Location = new System.Drawing.Point(63, 26);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(47, 16);
             this.radioButton2.TabIndex = 1;
@@ -380,7 +367,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(8, 20);
+            this.radioButton1.Location = new System.Drawing.Point(16, 26);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(35, 16);
             this.radioButton1.TabIndex = 0;
@@ -390,15 +377,15 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblProjectNumber);
+            this.groupBox2.Controls.Add(this.txtProjectNumber);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txtPileDiameter);
+            this.groupBox2.Controls.Add(this.txtPileLength);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtPileNumber);
+            this.groupBox2.Controls.Add(this.txtSiteName);
+            this.groupBox2.Controls.Add(this.txtTestTime);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
@@ -409,58 +396,63 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "项目信息";
             // 
-            // textBox7
+            // txtPileDiameter
             // 
-            this.textBox7.Location = new System.Drawing.Point(91, 160);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(186, 21);
-            this.textBox7.TabIndex = 9;
+            this.txtPileDiameter.Location = new System.Drawing.Point(91, 160);
+            this.txtPileDiameter.Name = "txtPileDiameter";
+            this.txtPileDiameter.ReadOnly = true;
+            this.txtPileDiameter.Size = new System.Drawing.Size(187, 21);
+            this.txtPileDiameter.TabIndex = 9;
             // 
-            // textBox6
+            // txtPileLength
             // 
-            this.textBox6.Location = new System.Drawing.Point(91, 134);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(186, 21);
-            this.textBox6.TabIndex = 8;
+            this.txtPileLength.Location = new System.Drawing.Point(91, 134);
+            this.txtPileLength.Name = "txtPileLength";
+            this.txtPileLength.ReadOnly = true;
+            this.txtPileLength.Size = new System.Drawing.Size(187, 21);
+            this.txtPileLength.TabIndex = 8;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(28, 167);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.Size = new System.Drawing.Size(59, 12);
             this.label7.TabIndex = 7;
-            this.label7.Text = "桩    径";
+            this.label7.Text = "桩径（m）";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(28, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.Size = new System.Drawing.Size(59, 12);
             this.label6.TabIndex = 6;
-            this.label6.Text = "桩    长";
+            this.label6.Text = "桩长（m）";
             // 
-            // textBox3
+            // txtPileNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(91, 104);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(185, 21);
-            this.textBox3.TabIndex = 5;
+            this.txtPileNumber.Location = new System.Drawing.Point(91, 104);
+            this.txtPileNumber.Name = "txtPileNumber";
+            this.txtPileNumber.ReadOnly = true;
+            this.txtPileNumber.Size = new System.Drawing.Size(187, 21);
+            this.txtPileNumber.TabIndex = 5;
             // 
-            // textBox2
+            // txtSiteName
             // 
-            this.textBox2.Location = new System.Drawing.Point(91, 72);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 21);
-            this.textBox2.TabIndex = 4;
+            this.txtSiteName.Location = new System.Drawing.Point(91, 72);
+            this.txtSiteName.Name = "txtSiteName";
+            this.txtSiteName.ReadOnly = true;
+            this.txtSiteName.Size = new System.Drawing.Size(186, 21);
+            this.txtSiteName.TabIndex = 4;
             // 
-            // textBox1
+            // txtTestTime
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 21);
-            this.textBox1.TabIndex = 3;
+            this.txtTestTime.Location = new System.Drawing.Point(91, 45);
+            this.txtTestTime.Name = "txtTestTime";
+            this.txtTestTime.ReadOnly = true;
+            this.txtTestTime.Size = new System.Drawing.Size(187, 21);
+            this.txtTestTime.TabIndex = 3;
             // 
             // label3
             // 
@@ -944,6 +936,7 @@
             this.撤销UCtrlZToolStripMenuItem.Name = "撤销UCtrlZToolStripMenuItem";
             this.撤销UCtrlZToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.撤销UCtrlZToolStripMenuItem.Text = "撤销(&U)             Ctrl+Z";
+            this.撤销UCtrlZToolStripMenuItem.Click += new System.EventHandler(this.撤销UCtrlZToolStripMenuItem_Click);
             // 
             // toolStripSeparator9
             // 
@@ -1194,6 +1187,7 @@
             this.toolStripButtonNew.Size = new System.Drawing.Size(28, 28);
             this.toolStripButtonNew.Text = "toolStripButtonNew";
             this.toolStripButtonNew.ToolTipText = "新建";
+            this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
             // toolStripButtonOpen
             // 
@@ -1244,6 +1238,7 @@
             this.toolStripButtonUndo.Size = new System.Drawing.Size(28, 28);
             this.toolStripButtonUndo.Text = "toolStripButton1";
             this.toolStripButtonUndo.ToolTipText = "撤销";
+            this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
             // 
             // toolStripSeparator12
             // 
@@ -1271,13 +1266,34 @@
             this.label16.TabIndex = 10;
             this.label16.Text = "项目编号";
             // 
-            // lblProjectNumber
+            // Column1
             // 
-            this.lblProjectNumber.AutoSize = true;
-            this.lblProjectNumber.Location = new System.Drawing.Point(89, 24);
-            this.lblProjectNumber.Name = "lblProjectNumber";
-            this.lblProjectNumber.Size = new System.Drawing.Size(0, 12);
-            this.lblProjectNumber.TabIndex = 11;
+            this.Column1.HeaderText = "序号";
+            this.Column1.Name = "Column1";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "时间t(s)";
+            this.Column3.Name = "Column3";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "荷载@(kN)";
+            this.Column2.Name = "Column2";
+            // 
+            // 位移
+            // 
+            this.位移.HeaderText = "位移s(mm)";
+            this.位移.Name = "位移";
+            this.位移.ReadOnly = true;
+            // 
+            // txtProjectNumber
+            // 
+            this.txtProjectNumber.Location = new System.Drawing.Point(91, 18);
+            this.txtProjectNumber.Name = "txtProjectNumber";
+            this.txtProjectNumber.ReadOnly = true;
+            this.txtProjectNumber.Size = new System.Drawing.Size(187, 21);
+            this.txtProjectNumber.TabIndex = 12;
             // 
             // Main
             // 
@@ -1413,9 +1429,9 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPileNumber;
+        private System.Windows.Forms.TextBox txtSiteName;
+        private System.Windows.Forms.TextBox txtTestTime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -1426,11 +1442,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtPileDiameter;
+        private System.Windows.Forms.TextBox txtPileLength;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button4;
@@ -1453,8 +1466,12 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblProjectNumber;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 位移;
+        private System.Windows.Forms.TextBox txtProjectNumber;
     }
 }
 

@@ -116,26 +116,72 @@ namespace Self_BalancedMethod {
 
         //-------新建文件--------------------------------------------------------------------------
         private void 新建ToolStripMenuItem_Click(object sender, EventArgs e) {
+            CreateNewTxt();
+        }
+
+        private void toolStripButtonNew_Click(object sender, EventArgs e) {
+            CreateNewTxt();
+        }
+
+        private void CreateNewTxt() {
             CreateNewFolderForm createNewFolderForm = new CreateNewFolderForm();
             createNewFolderForm.ShowDialog();
-            lblProjectNumber.Text = ShareClass.ProjectNumber;
+            InitProjectInfo();
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             dialog.Description = "请选择文件存放路径";
             string strPath; //文件夹完整的路径名
             if (dialog.ShowDialog() == DialogResult.OK) {
                 try {
                     strPath = dialog.SelectedPath;
-                    FileStream fs = new FileStream(strPath+"\\"+ShareClass.ProjectNumber+".txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
-                    //strPath = ofd.FileName.Replace("\\", "\\\\");
-                    //MessageBox.Show(dialog.FileName);
-                    //string filePath = strPath.Substring(0, strPath.LastIndexOf("\\") + 1);
-                    MessageBox.Show(strPath);
-                    
+                    string subPath = strPath + "\\" + ShareClass.ProjectNumber + "\\";
+                    string txtProjectInfo =  ShareClass.ProjectNumber + "-" + ShareClass.PileNumber + "-项目信息";
+                    if (System.IO.Directory.Exists(subPath) == false){
+                        System.IO.Directory.CreateDirectory(subPath);
+                        FileStream fs = new FileStream(subPath+"\\"+txtProjectInfo+".txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    } else {
+                        FileStream fs = new FileStream(subPath+"\\"+txtProjectInfo+".txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    }
+    
                 } catch (Exception ex) {
                     MessageBox.Show(ex.Message);
                 }
             }
         }
         //------------------------------------------------------------------------------------------
+
+
+        //-------初始化项目信息---------------------------------------------------------------------
+        private void InitProjectInfo() {
+            txtProjectNumber.Text = ShareClass.ProjectNumber;
+            txtTestTime.Text = ShareClass.TestYear + "年" + ShareClass.TestMonth + "月" + ShareClass.TestDay + "日";
+            txtSiteName.Text = ShareClass.SiteName;
+            txtPileNumber.Text = ShareClass.PileNumber;
+            txtPileLength.Text = ShareClass.PileLength;
+            txtPileDiameter.Text = ShareClass.PileDiameter;
+        }
+        //------------------------------------------------------------------------------------------
+
+        //--------撤销功能--------------------------------------------------------------------------
+        private void toolStripButtonUndo_Click(object sender, EventArgs e) {
+            Undo();
+        }
+
+        private void 撤销UCtrlZToolStripMenuItem_Click(object sender, EventArgs e) {
+            Undo();
+        }
+
+        private void Undo() {
+            SendKeys.Send("^(z)");
+        }
+        //------------------------------------------------------------------------------------------
+
+
+        //------------------------------------------------------------------------------------------
+
+        //------------------------------------------------------------------------------------------
+
+        //------------------------------------------------------------------------------------------
+
+
     }
 }
