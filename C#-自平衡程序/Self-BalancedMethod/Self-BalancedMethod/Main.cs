@@ -123,7 +123,7 @@ namespace Self_BalancedMethod {
             CreateNewTxt();
         }
 
-        private void CreateNewTxt() {
+        void CreateNewTxt() {
             CreateNewFolderForm createNewFolderForm = new CreateNewFolderForm();
             createNewFolderForm.ShowDialog();
             InitProjectInfo();
@@ -137,14 +137,19 @@ namespace Self_BalancedMethod {
                     string txtProjectInfo =  ShareClass.ProjectNumber + "-" + ShareClass.PileNumber + "-项目信息";
                     if (System.IO.Directory.Exists(subPath) == false){
                         System.IO.Directory.CreateDirectory(subPath);
-                        FileStream fs = new FileStream(subPath+"\\"+txtProjectInfo+".txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                        CreateTxtProjectInfo(subPath, txtProjectInfo);
                     } else {
-                        FileStream fs = new FileStream(subPath+"\\"+txtProjectInfo+".txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                        CreateTxtProjectInfo(subPath, txtProjectInfo); 
                     }
     
                 } catch (Exception ex) {
                     MessageBox.Show(ex.Message);
                 }
+            }
+
+            // 创建txt文件，写入相关信息
+            void CreateTxtProjectInfo(string subPath, string txtProjectInfo) {
+                FileStream fs = new FileStream(subPath+"\\"+txtProjectInfo+".txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             }
         }
         //------------------------------------------------------------------------------------------
@@ -170,7 +175,7 @@ namespace Self_BalancedMethod {
             Undo();
         }
 
-        private void Undo() {
+        void Undo() {
             SendKeys.Send("^(z)");
         }
         //------------------------------------------------------------------------------------------

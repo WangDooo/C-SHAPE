@@ -739,7 +739,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(827, 356);
+            this.tabPage5.Size = new System.Drawing.Size(831, 358);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Q-s曲线";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -749,7 +749,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(827, 356);
+            this.tabPage6.Size = new System.Drawing.Size(831, 358);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "s-lgt曲线";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -758,7 +758,7 @@
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(827, 356);
+            this.tabPage7.Size = new System.Drawing.Size(831, 358);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "s-lgQ曲线";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -767,7 +767,7 @@
             // 
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(827, 356);
+            this.tabPage8.Size = new System.Drawing.Size(831, 358);
             this.tabPage8.TabIndex = 4;
             this.tabPage8.Text = "Q-s等效曲线";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1168,9 +1168,9 @@
             this.toolStripButtonOpen,
             this.toolStripButtonSave,
             this.toolStripSeparator10,
-            this.toolStripButtonConnect,
-            this.toolStripSeparator11,
             this.toolStripButtonUndo,
+            this.toolStripSeparator11,
+            this.toolStripButtonConnect,
             this.toolStripSeparator12});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
