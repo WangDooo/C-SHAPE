@@ -43,9 +43,9 @@ namespace Self_BalancedMethod {
                     System.Threading.Thread.Sleep(100);
                 }
             }
-            catch (Exception se)
+            catch (Exception ex)
             {
-                Console.WriteLine("error");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -82,9 +82,10 @@ namespace Self_BalancedMethod {
                     //Console.WriteLine("已断开");
                 }
             }
-            catch (SocketException se)
+            catch (SocketException ex)
             {
                 Console.WriteLine("ConnectCallback excp=" + t.Connected.ToString());//se.ToString()
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -111,9 +112,10 @@ namespace Self_BalancedMethod {
                     }
 
                 }
-                catch (Exception se)
+                catch (Exception ex)
                 {
-                    Console.WriteLine("Connect() excp");//se.ToString() 如果异常，会打印信息
+                    MessageBox.Show("Connect() excp");//se.ToString() 如果异常，会打印信息
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -140,9 +142,10 @@ namespace Self_BalancedMethod {
                     IAsyncResult ar = stream.BeginRead(state.buffer, 0,
                         StateObject.BufferSize, new AsyncCallback(TCPReadCallBack), state);//设置回调函数为：TCPReadCallBack，会执行这个函数
                 }
-                catch (Exception se)
+                catch (Exception ex)
                 {
-                    Console.WriteLine("asyncread excp");
+                    MessageBox.Show("asyncread excp");
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
