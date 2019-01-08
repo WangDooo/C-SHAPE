@@ -25,15 +25,15 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EquivalentParametersForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtParmAp = new System.Windows.Forms.TextBox();
+            this.txtParmEp = new System.Windows.Forms.TextBox();
+            this.txtParmLu = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtParmGamma1 = new System.Windows.Forms.TextBox();
+            this.txtParmW = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -43,18 +43,59 @@
             // 
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtParmAp);
+            this.groupBox1.Controls.Add(this.txtParmEp);
+            this.groupBox1.Controls.Add(this.txtParmLu);
             this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtParmGamma1);
+            this.groupBox1.Controls.Add(this.txtParmW);
             this.groupBox1.Location = new System.Drawing.Point(12, 289);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(648, 221);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "等效参数";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(347, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(242, 68);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "取消";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(347, 40);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(242, 68);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "确定";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtParmAp
+            // 
+            this.txtParmAp.Location = new System.Drawing.Point(104, 194);
+            this.txtParmAp.Name = "txtParmAp";
+            this.txtParmAp.Size = new System.Drawing.Size(177, 21);
+            this.txtParmAp.TabIndex = 5;
+            // 
+            // txtParmEp
+            // 
+            this.txtParmEp.Location = new System.Drawing.Point(104, 151);
+            this.txtParmEp.Name = "txtParmEp";
+            this.txtParmEp.Size = new System.Drawing.Size(177, 21);
+            this.txtParmEp.TabIndex = 4;
+            // 
+            // txtParmLu
+            // 
+            this.txtParmLu.Location = new System.Drawing.Point(104, 110);
+            this.txtParmLu.Name = "txtParmLu";
+            this.txtParmLu.Size = new System.Drawing.Size(177, 21);
+            this.txtParmLu.TabIndex = 3;
             // 
             // pictureBox2
             // 
@@ -66,19 +107,19 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // textBox2
+            // txtParmGamma1
             // 
-            this.textBox2.Location = new System.Drawing.Point(104, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 21);
-            this.textBox2.TabIndex = 1;
+            this.txtParmGamma1.Location = new System.Drawing.Point(104, 67);
+            this.txtParmGamma1.Name = "txtParmGamma1";
+            this.txtParmGamma1.Size = new System.Drawing.Size(177, 21);
+            this.txtParmGamma1.TabIndex = 1;
             // 
-            // textBox1
+            // txtParmW
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 21);
-            this.textBox1.TabIndex = 0;
+            this.txtParmW.Location = new System.Drawing.Point(104, 20);
+            this.txtParmW.Name = "txtParmW";
+            this.txtParmW.Size = new System.Drawing.Size(177, 21);
+            this.txtParmW.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -89,45 +130,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(672, 283);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(104, 110);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(177, 21);
-            this.textBox3.TabIndex = 3;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(104, 151);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(177, 21);
-            this.textBox4.TabIndex = 4;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(104, 194);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(177, 21);
-            this.textBox5.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(347, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(242, 68);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "确定";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(347, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(242, 68);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "取消";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // EquivalentParametersForm
             // 
@@ -152,14 +154,14 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtParmGamma1;
+        private System.Windows.Forms.TextBox txtParmW;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtParmLu;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtParmAp;
+        private System.Windows.Forms.TextBox txtParmEp;
     }
 }

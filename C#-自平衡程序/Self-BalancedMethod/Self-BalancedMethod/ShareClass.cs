@@ -52,5 +52,41 @@ namespace Self_BalancedMethod {
             get { return ShareClass._PileDiameter; }
             set { ShareClass._PileDiameter = value; }
         }
+        // 等效转换参数 W 荷载箱上部桩的自重与附和重量之和(kN)
+        private static double _ParmW = 0;
+        public static double ParmW {
+            get { return ShareClass._ParmW; }
+            set { ShareClass._ParmW = value; }
+        }
+        // 等效转换参数 gamma1 受检桩的抗压摩阻力转换系数
+        private static double _ParmGamma1 = 0;
+        public static double ParmGamma1 {
+            get { return ShareClass._ParmGamma1; }
+            set { ShareClass._ParmGamma1 = value; }
+        }
+        // 等效转换参数 Lu(m) 上段桩长度
+        private static double _ParmLu = 0;
+        public static double ParmLu {
+            get { return ShareClass._ParmLu; }
+            set { ShareClass._ParmLu = value; }
+        }
+        // 等效转换参数 Ep(Mpa) 桩身弹性模量
+        private static double _ParmEp = 0;
+        public static double ParmEp {
+            get { return ShareClass._ParmEp; }
+            set { ShareClass._ParmEp = value; }
+        }
+        // 等效转换参数 Ap(mm^2) 桩身截面积 
+        private static double _ParmAp = 0;
+        public static double ParmAp {
+            get { return ShareClass._ParmAp; }
+            set { ShareClass._ParmAp = value; }
+        }
+        // 等效转换参数是否有输入 bool判断
+        private static bool _ParmBool = false;
+        public static bool ParmBool {
+            get { return ShareClass._ParmBool; }
+            set { ShareClass._ParmBool = value; }
+        }
     }
 }
