@@ -183,7 +183,7 @@ namespace Self_BalancedMethod {
                     mas.BeginRead(state.buffer, 0, StateObject.BufferSize,
                     new AsyncCallback(TCPReadCallBack), false);//标准调用
                     Main.mfs.process_receive(dd, numberofBytesRead);//处理dd数组中接收到的数据
-                    MessageBox.Show("Get len={0}" + numberofBytesRead.ToString());
+                    MessageBox.Show("Get len = " + numberofBytesRead.ToString());
                 }
                 else
                 {
