@@ -158,7 +158,6 @@ namespace Self_BalancedMethod {
         public void TCPReadCallBack(IAsyncResult ar)//回调函数，TCP接收导数据会进入到这里。
         {
             StateObject state = null;
-
             try
             {
                 state = (StateObject)ar.AsyncState;
@@ -172,10 +171,9 @@ namespace Self_BalancedMethod {
             int numberofBytesRead;
             try
             {
-
                 NetworkStream mas = state.client.GetStream();
                 string type = null;
-                numberofBytesRead = mas.EndRead(ar);//获得网口有的数据量
+                numberofBytesRead = mas.EndRead(ar); // 获得网口有的数据量
                 state.totalBytesRead += numberofBytesRead;
                 if (numberofBytesRead > 0)
                 {
@@ -184,8 +182,8 @@ namespace Self_BalancedMethod {
                     OnGetData(dd);//not used
                     mas.BeginRead(state.buffer, 0, StateObject.BufferSize,
                     new AsyncCallback(TCPReadCallBack), false);//标准调用
-    // 暂时注册掉的                // Main.mfs.process_receive(dd, numberofBytesRead);//处理dd数组中接收到的数据
-                    Console.WriteLine("Get len={0}", numberofBytesRead);
+                    Main.mfs.process_receive(dd, numberofBytesRead);//处理dd数组中接收到的数据
+                    MessageBox.Show("Get len={0}" + numberofBytesRead.ToString());
                 }
                 else
                 {

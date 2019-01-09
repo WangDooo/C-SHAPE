@@ -10,17 +10,98 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Runtime.InteropServices;
 
 namespace Self_BalancedMethod {
     public partial class Main : Form {
+        //------------------------------------------------------------------------------------------
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1), Serializable]
+        public struct Modbus_memory//结构体定义法，严重不同于c语言
+        {
+            public ushort slave_addr;
+            public ushort slave_baud;
+            public ushort slave_rtu;//用来存是否RTU
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
+            public long[] range;// = new long[12];//先下限，后上限
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
+            public float[] i_data;//= new float[12];
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
+            public float[] pa_data;//= new float[12];
 
-        public static uint Is_connected = 0;
+
+        }
+        public static Modbus_memory modbus_mem = new Modbus_memory();
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1), Serializable]
+        public struct slave_memory{  
+            public ushort start;
+	        public ushort addr;//
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+            public float[] range_low;			//
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+            public float[] range_top;			//
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+            public float[] range_zero;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+            public float[] ch;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]//
+            public float[] I;	//
+            public byte relay_status;	//
+            public byte empty;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
+            public byte[] UID;		//
+            public byte YYYY;
+            public byte MM;
+            public byte DD;
+            public byte hh;
+            public byte mm;
+            public byte ss;
+            public byte end;
+        }
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1), Serializable]
+        public struct slave_memory_all{
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 6)]
+            public byte[] head;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
+            public slave_memory[] slave_data;
+        }
+        public static slave_memory_all slave_mem = new slave_memory_all();
+        //------------------------------------------------------------------------------------------
+
+        //-------初始定义的一些变量-----------------------------------------------------------------
+        public static uint Is_connected = 0; // 网络连接状态
+        public static float[] CH_RANGE = new float[12]; // 量程
+        public static float[] CH_RANGE_BIG = new float[12]; // 量程（大端）
+        public byte[] Realy_status = new byte[8]; // 继电器状态
         mysocket sock = new mysocket();
         public static Main mfs;
-
+        
+        //------------------------------------------------------------------------------------------
         public Main() { //界面启动后第一个执行的。
             InitializeComponent();
             mfs = this;
+        }
+        
+        // 按字节排列的数据搬运给结构体
+        public static object BytesToStruct(byte[] bytes, Type strcutType)
+        {
+            int size =  Marshal.SizeOf(strcutType);
+            IntPtr buffer = Marshal.AllocHGlobal(size);
+            try
+            {
+                Marshal.Copy(bytes, 0, buffer, size);
+                return Marshal.PtrToStructure(buffer, strcutType);
+            }
+            finally
+            {
+                Marshal.FreeHGlobal(buffer);
+            }
+        }    
+        //习惯于c语言中的地址搬运函数
+        public void memcpy_byte(byte[] dec,int off,byte[] src,int offset,int len){
+            for (int i = 0; i < len; i++)
+                dec[off+i] = src[offset + i];
         }
         // 退出程序
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -65,7 +146,7 @@ namespace Self_BalancedMethod {
         private void timer1_Tick(object sender, EventArgs e) {
             this.toolStripStatusLabelTime.Text = DateTime.Now.ToString();
         }
-        //10毫秒定时，主要用来网络定时周期性数据读取
+        // 10ms定时，主要用来网络定时周期性数据读取
         private void timer2_Tick(object sender, EventArgs e) {  
             if (Is_connected == 1)
             {
@@ -81,11 +162,11 @@ namespace Self_BalancedMethod {
                 toolStripButtonConnect.Text=("连接");
             }
         }
-        //设置tcp连接状态字符串
+        // 设置tcp连接状态字符串
         public void SetConnect_text(String str){ 
             toolStripStatusLabelConnect.Text = str;
         }
-        //读取连接状态
+        // 读取连接状态
         public uint GetConnect_state(){
             return Is_connected;
         }
@@ -98,7 +179,7 @@ namespace Self_BalancedMethod {
                 sock.Connect();//网络连接命令，
                 byte[] data = new byte[10];
                 data[0] = 0;
-                //Send_Data_Client(data, (byte)'v', 1);
+                // Send_Data_Client(data, (byte)'v', 1);
             }
             else{
                 sock.DisConnect();
@@ -107,8 +188,7 @@ namespace Self_BalancedMethod {
         }
 
 
-
-        //-------新建文件、保存项目信息到txt--------------------------------------------------------------------------
+        # region 新建文件、保存项目信息到txt
         private void 新建ToolStripMenuItem_Click(object sender, EventArgs e) {
             CreateNewTxt();
         }
@@ -156,10 +236,9 @@ namespace Self_BalancedMethod {
                 fs.Close();
             }
         }
-        //------------------------------------------------------------------------------------------
-
-
-        //-------初始化项目信息---------------------------------------------------------------------
+        # endregion
+        
+        # region 初始化项目信息
         private void InitProjectInfo() {
             txtProjectNumber.Text = ShareClass.ProjectNumber;
             txtTestTime.Text = ShareClass.TestYear + "年" + ShareClass.TestMonth + "月" + ShareClass.TestDay + "日";
@@ -168,9 +247,9 @@ namespace Self_BalancedMethod {
             txtPileLength.Text = ShareClass.PileLength;
             txtPileDiameter.Text = ShareClass.PileDiameter;
         }
-        //------------------------------------------------------------------------------------------
+        # endregion
 
-        //--------撤销功能--------------------------------------------------------------------------
+        # region 简易实现撤销功能
         private void toolStripButtonUndo_Click(object sender, EventArgs e) {
             Undo();
         }
@@ -182,11 +261,9 @@ namespace Self_BalancedMethod {
         void Undo() {
             SendKeys.Send("^(z)");
         }
+        # endregion
 
-        //------------------------------------------------------------------------------------------
-
-
-        //--------定时器实时读取txt数据，写入datatable，显示成Q-s曲线-------------------------------
+        # region 定时器实时读取txt数据，写入datatable，显示成Q-s曲线
         List<double> Q = new List<double>();
         List<double> s = new List<double>();
         List<double> lgt = new List<double>();
@@ -505,7 +582,7 @@ namespace Self_BalancedMethod {
             }
         }
         
-        //------------------------------------------------------------------------------------------
+        # endregion
 
         //------Qs等效曲线判断是否已经输入相关参数--------------------------------------------------
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e) {
@@ -553,12 +630,14 @@ namespace Self_BalancedMethod {
 
         //------------------------------------------------------------------------------------------
 
+        //------------------------------------------------------------------------------------------
+
         //--------测试专用--------------------------------------------------------------------------
         private void toolStripButton1_Click(object sender, EventArgs e) {
             string testpath = @"C:\Users\123\Desktop\test\testdata.txt";
             DataTable dt = GetTxt(testpath);
-            // TestWriteTxt(testpath,dt); 
-            BackupTxt();
+            // TestWriteTxt(testpath,dt);  // 模拟数据采集
+            // BackupTxt(); // 备份文件
 
             // 用于模拟数据采集
             void TestWriteTxt(string path, DataTable testdt){ 
@@ -582,5 +661,257 @@ namespace Self_BalancedMethod {
         }
         //------------------------------------------------------------------------------------------
 
+
+        //-------所有接收到的数据都在这里处理，按命令处理，参考通讯协议文档。-----------------------
+        //-------注意：这里都是接收到的数据，不是发送命令的地方-------------------------------------
+        public void process_receive(byte[] data, int len)
+        {
+            //uint id = 0;
+            uint total, index;
+            if (data[5] == 's'){ /*
+                //MessageBox.Show("start ！");
+                for (int i = 0; i < HY.CARD_TOTAL_NUM; i++){ //默认设置为所有板卡序列名字为正常，扫描存在后会改变字体 
+                    button[i].Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular);
+                }
+                if (data[6] == (data[7] + 1))//6:total,7:index{
+                    usrlib.memcpy_byte(has_card_list, 0, data, 8, HY.CARD_TOTAL_NUM);
+                    for (int i = 0; i < HY.CARD_TOTAL_NUM; i++){
+                        if ((has_card_list[i] > 0) && (has_card_list[i] <= HY.CARD_TOTAL_NUM)){
+                            //存在子模块，1-9
+                            total = (uint)Marshal.SizeOf(typeof(CH_PARAS)) % 1000;
+                            byte[] sdata = new byte[1];
+                            sdata[0] = has_card_list[i];
+                            Get_Para_Client(sdata, (byte)'p', total, 0, 1);
+                            //Send_Data_Client(sdata, (byte)'p', 1);
+                            break;//只发送第一个，剩下的有接收完响应后继续发送  p
+                        }
+                    }
+                }
+                //MessageBox.Show("正在处理数据请稍后...");
+              * */
+            }
+            else if (data[5] == 't') { // 同步时间，使得下位机的时间和电脑同步
+                if (data[6] == 1){
+                    //把接收到的数据发送到界面的最下面那个文本框内，net_msg_text
+                    string str="";
+                    for (int z = 0; z < data.Length; z++) {
+                        str += data[z].ToString("X2"); // 转化为大写的16进制
+                    }
+                    net_msg_text.Text = str;
+                    MessageBox.Show("Sync Time Completed ！");
+                }
+            }
+            else if (data[5] == 'r') { // 读取量程的返回数据，
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                } 
+                net_msg_text.Text = str;
+                for(int i = 0; i < 4; i++){
+                    CH_RANGE[i] = BitConverter.ToSingle(data, 6+4*i); // 量程的小端
+                    CH_RANGE_BIG[i] = BitConverter.ToSingle(data, 6 + 4 * i+32); // 量程的大端
+                    listView_ch.Items[i].SubItems[1].Text = String.Format("{0}~{1} mm", CH_RANGE[i], CH_RANGE_BIG[i]); // 显示在界面的主机动态数据
+                }
+            }
+            else if (data[5] == 'R') { // 设置量程 返回包
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }  
+                net_msg_text.Text = str;
+            }
+            else if (data[5] == 'h') { // 设置远端机是否在线的返回包
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }
+                net_msg_text.Text = str;     
+            }
+            else if (data[5] == 'w') { // 设置有线传输还是无线433的返回包
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }  
+                net_msg_text.Text = str;
+            }
+            else if (data[5] == 'a') { // 下载4~20mA输入的a系数的返回包
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                } 
+                net_msg_text.Text = str;
+            }
+            else if (data[5] == 'k') { // 下载4~20mA输入的k系数的返回包
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }
+                net_msg_text.Text = str;
+            }
+            else if (data[5] == 'p') { // 设置报警上下限阈值的返回包
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }   
+                net_msg_text.Text = str;
+            }
+            else if (data[5] == 'g') { // 发送4G数据的返回包
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }      
+                net_msg_text.Text = str;
+            }
+            else if (data[5] == 'e') { // 设置继电器动作命令的返回包
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }   
+                net_msg_text.Text = str;
+            }
+            else if (data[5] == 'D') { //收到3个远端机的数据了
+                slave_mem = (slave_memory_all)BytesToStruct(data, slave_mem.GetType()); // 把远端机的数据放到结构体中
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }    
+                net_msg_text.Text = str;
+                for (int i = 0; i < 8; i++) { // 8个通道的远端数据显示在界面上
+                        listView_slave.Items[i].SubItems[1].Text = slave_mem.slave_data[0].ch[i].ToString("F5") + " mm";
+                        listView_slave.Items[i].SubItems[2].Text = slave_mem.slave_data[1].ch[i].ToString("F5") + " mm";
+                        listView_slave.Items[i].SubItems[3].Text = slave_mem.slave_data[2].ch[i].ToString("F5") + " mm";
+                }
+            }
+            else if (data[5] == 'd') { // 获取到实时电流数据
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }
+                net_msg_text.Text = str;
+                float aaa;
+                for (int i = 0; i < 4; i++) { // 4个通道的电流数据显示
+                    aaa = BitConverter.ToSingle(data, 6+34+4*i); // 这些数字都是要根据ARM发过来的结构体中的所在位置算地址便宜的。即主机动态数据所在结构体的位置偏移。
+                    modbus_mem.i_data[i] = aaa;
+                    listView_ch.Items[i].SubItems[2].Text = aaa.ToString("F5") + " mA";
+                    aaa = BitConverter.ToSingle(data, 6 + 2 + 4 * i);
+                    listView_ch.Items[i].SubItems[3].Text = aaa.ToString("F5") + " mm";      
+                }
+                str = "GPS:  ";
+                UInt32 latitude = BitConverter.ToUInt32(data,222+6);//纬度
+                byte[] nshemi=new byte[2] ;
+                nshemi[0]= data[222 + 4 + 6];//北纬南纬
+                UInt32 longitude = BitConverter.ToUInt32(data, 222+5+6);//经度
+                byte[] ewhemi=new byte[2];
+                ewhemi[0]= data[222 + 9 + 6];//东经西经
+                float lat = (float)latitude / 100000;//小数点后面的进制为60进位，未转化为分秒。
+                float lon = (float)longitude / 100000;
+                string str0 = Encoding.ASCII.GetString(nshemi).Substring(0, 1);
+                string str1 = ":";
+                string str2 = lat.ToString();
+                string str3 = Encoding.ASCII.GetString(ewhemi).Substring(0, 1);
+                string str4 = ":";
+                string str5 = lon.ToString();
+                str += str0 + str1+str2+"   "+str3+str4+str5;
+                gps_text.Text = str;
+                for (int j = 0; j < 8; j++) { //8个继电器的状态显示，
+                    Realy_status[j] = data[j+6+66];
+                    if (j == 0){
+                        if (Realy_status[j] == 0)
+                            btn1.Text = "OFF";
+                        else
+                            btn1.Text = "ON";
+                    }
+                    else if (j == 1){
+                        if (Realy_status[j] == 0)
+                            btn2.Text = "OFF";
+                        else
+                            btn2.Text = "ON";
+                    }
+                    else if (j == 2){
+                        if (Realy_status[j] == 0)
+                            btn3.Text = "OFF";
+                        else
+                            btn3.Text = "ON";
+                    }
+                    else if (j == 3){
+                        if (Realy_status[j] == 0)
+                            btn4.Text = "OFF";
+                        else
+                            btn4.Text = "ON";
+                    }
+                    else if (j == 4){
+                        if (Realy_status[j] == 0)
+                            btn5.Text = "OFF";
+                        else
+                            btn5.Text = "ON";
+                    }
+                    else if (j == 5){
+                        if (Realy_status[j] == 0)
+                            btn6.Text = "OFF";
+                        else
+                            btn6.Text = "ON";
+                    }
+                    else if (j == 6){
+                        if (Realy_status[j] == 0)
+                            btn7.Text = "OFF";
+                        else
+                            btn7.Text = "ON";
+                    }
+                    else if (j == 7){
+                        if (Realy_status[j] == 0)
+                            btn8.Text = "OFF";
+                        else
+                            btn8.Text = "ON";
+                    }
+                }
+            }
+            else if (data[5] == 'i') { // 设置4~20mA输出大小的返回包
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }  
+                net_msg_text.Text = str;           
+            }
+            else if (data[5] == 'j') { // 下载4~20mA输出的标定a和k系数的返回包
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                } 
+                net_msg_text.Text = str;
+            }
+            else if (data[5] == 'y') { // 需要发送到远端机的数据的返回包
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }
+                net_msg_text.Text = str;
+                if (data[6] == 0x01){
+                    if (data[7] == 0) 
+                        checkBox1.Checked = false;
+                    else
+                        checkBox1.Checked = true;
+                    if (data[8] == 0)
+                        checkBox2.Checked = false;
+                    else
+                        checkBox2.Checked = true;
+                    if (data[9] == 0)
+                        checkBox3.Checked = false;
+                    else
+                        checkBox3.Checked = true;
+                }
+            }
+        }
+        //------------------------------------------------------------------------------------------
+
+
+        //--------判断继电器开关状态----------------------------------------------------------------
+
+        //------------------------------------------------------------------------------------------
+
+        //------------------------------------------------------------------------------------------
+
+        //------------------------------------------------------------------------------------------
+
+        //------------------------------------------------------------------------------------------
     }
 }
