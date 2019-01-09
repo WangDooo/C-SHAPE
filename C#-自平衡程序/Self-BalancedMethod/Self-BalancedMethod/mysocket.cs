@@ -91,7 +91,7 @@ namespace Self_BalancedMethod {
 
         public void Connect()
         {
-            if ((tcp == null) || (!tcp.Connected))//网络没有连接的情况下，下面尝试连接主控板ARM
+            if ((tcp == null) || (!tcp.Connected)) //网络没有连接的情况下，下面尝试连接主控板ARM
             {
                 try
                 {
@@ -140,7 +140,7 @@ namespace Self_BalancedMethod {
                 try
                 {
                     IAsyncResult ar = stream.BeginRead(state.buffer, 0,
-                        StateObject.BufferSize, new AsyncCallback(TCPReadCallBack), state);//设置回调函数为：TCPReadCallBack，会执行这个函数
+                    StateObject.BufferSize, new AsyncCallback(TCPReadCallBack), state);//设置回调函数为：TCPReadCallBack，会执行这个函数
                 }
                 catch (Exception ex)
                 {
@@ -183,7 +183,7 @@ namespace Self_BalancedMethod {
                     Array.Copy(state.buffer, 0, dd, 0, numberofBytesRead);//把从网口读到的数据复制给dd数组
                     OnGetData(dd);//not used
                     mas.BeginRead(state.buffer, 0, StateObject.BufferSize,
-                        new AsyncCallback(TCPReadCallBack), false);//标准调用
+                    new AsyncCallback(TCPReadCallBack), false);//标准调用
     // 暂时注册掉的                // Main.mfs.process_receive(dd, numberofBytesRead);//处理dd数组中接收到的数据
                     Console.WriteLine("Get len={0}", numberofBytesRead);
                 }

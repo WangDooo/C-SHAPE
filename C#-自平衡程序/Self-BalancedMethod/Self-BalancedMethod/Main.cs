@@ -57,13 +57,6 @@ namespace Self_BalancedMethod {
             EquivalentParametersForm equivalentParametersForm = new EquivalentParametersForm();
             equivalentParametersForm.ShowDialog();
         }
-        // 监听快捷键动作 Ctrl+Z
-        private void Main_KeyDown(object sender, KeyEventArgs e) {
-            if (e.KeyCode == Keys.X && e.Control) {
-                e.Handled = true;       //将Handled设置为true，指示已经处理过KeyDown事件   
-                this.Close();               //执行动作
-            }
-        }
         // 设置连接状态
         public void SetConnect_state(uint ok){
             Is_connected = ok;
@@ -524,9 +517,6 @@ namespace Self_BalancedMethod {
         }
         //------------------------------------------------------------------------------------------
 
-
-        
-
         //--------软件升级 链接至百度云盘--------------------------------------------------------------------------
         private void 升级测试软件UToolStripMenuItem_Click(object sender, EventArgs e) {
             MessageBox.Show("提取码 : hvaz ");
@@ -534,8 +524,31 @@ namespace Self_BalancedMethod {
         }
         //------------------------------------------------------------------------------------------
 
-        //------------------------------------------------------------------------------------------
+        //--------每十分钟备份一次TxT----------------------------------------------------------------------------------
+        private void timerBackupTxT_Tick(object sender, EventArgs e) {
 
+        }
+
+        // 备份txt
+        void BackupTxt(){
+            String dir = "C:\\Users\\123\\Desktop\\test\\"; 
+            String bakDir = dir + "backup\\";  // 创建备份文件夹，
+            if (Directory.Exists(bakDir) == false){
+                Directory.CreateDirectory(bakDir);
+            }
+            string[] files = Directory.GetFiles(dir);
+            if (files.Length != 0) {
+                foreach (string file in files) {
+                    FileInfo fileinfo = new FileInfo(file);
+                    try{
+                        string fileName =  DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")+".txt"; // 按时间命名
+                        File.Copy(file,Path.Combine(bakDir,fileName)); //备份文件
+                    } catch (Exception ex) {
+                        MessageBox.Show(ex.Message);
+                    } 
+                }
+            }
+        }
         //------------------------------------------------------------------------------------------
 
         //------------------------------------------------------------------------------------------
@@ -544,7 +557,8 @@ namespace Self_BalancedMethod {
         private void toolStripButton1_Click(object sender, EventArgs e) {
             string testpath = @"C:\Users\123\Desktop\test\testdata.txt";
             DataTable dt = GetTxt(testpath);
-            TestWriteTxt(testpath,dt); 
+            // TestWriteTxt(testpath,dt); 
+            BackupTxt();
 
             // 用于模拟数据采集
             void TestWriteTxt(string path, DataTable testdt){ 
@@ -566,8 +580,6 @@ namespace Self_BalancedMethod {
                 fs.Close();
             }
         }
-
-       
         //------------------------------------------------------------------------------------------
 
     }
