@@ -27,5 +27,14 @@ namespace Self_BalancedMethod {
         private void button2_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+        // 只允许键入数字
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e) {
+            if( e.KeyChar != '\b') { // 这是允许输入退格键    
+                if ((e.KeyChar<'0') || (e.KeyChar>'9')) {  //这是允许输入0-9数字  
+                    e.Handled = true;  
+                }  
+            }
+        }
     }
 }

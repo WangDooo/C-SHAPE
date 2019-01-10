@@ -1086,9 +1086,10 @@ namespace Self_BalancedMethod {
         //------------------------------------------------------------------------------------------
         # endregion
 
-        //------------------------------------------------------------------------------------------
+        //-------设置采样间隔-----------------------------------------------------------------------
         private void setTimerForm_SetTimerEvent(string str){
-            MessageBox.Show(str);
+            int interval = (int)Convert.ToDouble(str) * 1000;
+            timerSystemTime.Interval = interval; // 暂时用系统时间做测试
         }
 
         private void 修改采样间隔GToolStripMenuItem_Click(object sender, EventArgs e) {
