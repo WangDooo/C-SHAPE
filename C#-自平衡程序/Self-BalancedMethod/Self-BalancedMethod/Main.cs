@@ -124,6 +124,14 @@ namespace Self_BalancedMethod {
                 listView_ch.Items[i].SubItems[2].Text = Convert.ToString(modbus_mem.i_data[i]) + " mA";
                 listView_ch.Items[i].SubItems[3].Text = Convert.ToString(modbus_mem.pa_data[i]) + " mm";
             }
+            // 判断testpath是否存在
+            if (File.Exists(testpath) == false){
+                MessageBox.Show("未找到测试文件，请选择测试文件位置");
+                OpenFileDialog fileName = new OpenFileDialog(); //创建一个对话框
+                if(fileName.ShowDialog() == DialogResult.OK){   
+                    testpath = fileName.FileName.ToString();
+                }
+            }
         }
         //------------------------------------------------------------------------------------------
 
@@ -318,13 +326,13 @@ namespace Self_BalancedMethod {
         List<double> lgQ = new List<double>();
         List<double> Qzph = new List<double>();
         List<double> szph = new List<double>();
+        string testpath = @"C:\Users\123\Desktop\test\testdata.txt";
         // 每1s读取一次txt中的数据，进行图像绘制
         private void timer3_Tick(object sender, EventArgs e) {
             Q.Clear(); // 每Tick都清空原来的List，待改进，可直接添加采集到的数据
             s.Clear();
             lgt.Clear();
             lgQ.Clear();
-            string testpath = @"C:\Users\123\Desktop\test\testdata.txt";
             DataTable dt = GetTxt(testpath); // 将TxT内容写入datatable
             dataGridView1.DataSource = dt;
             for(int i=0; i<dt.Rows.Count; i++) {
@@ -1099,10 +1107,14 @@ namespace Self_BalancedMethod {
             setTimerForm.ShowDialog();
         }
 
-        //------------------------------------------------------------------------------------------
+        
 
         //------------------------------------------------------------------------------------------
 
+        //-------开始采集-----------------------------------------------------------------------------------
+        private void btnTestBegin_Click(object sender, EventArgs e) {
+            timerDrawLine.Enabled = true;
+        }
         //------------------------------------------------------------------------------------------
     }
 }
