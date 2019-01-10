@@ -130,6 +130,7 @@ namespace Self_BalancedMethod {
         public Main() { //界面启动后第一个执行的。
             InitializeComponent();
             mfs = this;
+            Control.CheckForIllegalCrossThreadCalls = false; // 允许跨线程调用此类控件
         }
         
         // 按字节排列的数据搬运给结构体
