@@ -77,10 +77,16 @@ namespace Self_BalancedMethod {
         mysocket sock = new mysocket();
         public static Main mfs;
         string msg_not_connect = "未与主机建立连接";
+        
         //------------------------------------------------------------------------------------------
 
         //--------初始化界面Load--------------------------------------------------------------
         private void Main_Load(object sender, EventArgs e) {
+            // Timer的初始设置
+            timerNetdata.Interval = 10;
+            timerSystemTime.Interval = 1000;
+            timerDrawLine.Interval = 1000;
+            timerBackupTxT.Interval = 600000; // 10min
             //界面listview外观设置
             listView_ch.CheckBoxes = false;
             listView_ch.Columns.Add("通道", 60, HorizontalAlignment.Left);
@@ -193,9 +199,7 @@ namespace Self_BalancedMethod {
         private void timer2_Tick(object sender, EventArgs e) {  
             if (Is_connected == 1)
             {
-                // client.clientreceive();
-                // Receive_Data_client();
-                sock.ReadData();//定时的读网口操作
+                sock.ReadData(); // 定时的读网口操作
                 SetConnect_text(("已连接"));
                 toolStripButtonConnect.Text=("断开");
             }
@@ -1083,7 +1087,19 @@ namespace Self_BalancedMethod {
         # endregion
 
         //------------------------------------------------------------------------------------------
+        private void setTimerForm_SetTimerEvent(string str){
+            MessageBox.Show(str);
+        }
 
+        private void 修改采样间隔GToolStripMenuItem_Click(object sender, EventArgs e) {
+            SetTimerForm setTimerForm = new SetTimerForm();
+            setTimerForm.SetTimerEvent += setTimerForm_SetTimerEvent;
+            setTimerForm.ShowDialog();
+        }
+
+        //------------------------------------------------------------------------------------------
+
+        //------------------------------------------------------------------------------------------
 
         //------------------------------------------------------------------------------------------
     }
