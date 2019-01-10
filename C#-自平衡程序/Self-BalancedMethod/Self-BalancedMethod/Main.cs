@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 
 namespace Self_BalancedMethod {
     public partial class Main : Form {
-        //------------------------------------------------------------------------------------------
+        //--------结构体定义------------------------------------------------------------------------
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1), Serializable]
         public struct Modbus_memory//结构体定义法，严重不同于c语言
         {
@@ -76,8 +76,59 @@ namespace Self_BalancedMethod {
         public byte[] Realy_status = new byte[8]; // 继电器状态
         mysocket sock = new mysocket();
         public static Main mfs;
-        
+        string msg_not_connect = "未与主机建立连接";
         //------------------------------------------------------------------------------------------
+
+        //--------初始化界面Load--------------------------------------------------------------
+        private void Main_Load(object sender, EventArgs e) {
+            //界面listview外观设置
+            listView_ch.CheckBoxes = false;
+            listView_ch.Columns.Add("通道", 60, HorizontalAlignment.Left);
+            listView_ch.Columns.Add("量程", 80, HorizontalAlignment.Right);
+            listView_ch.Columns.Add("电流", 80, HorizontalAlignment.Right);
+            listView_ch.Columns.Add("位移", 80, HorizontalAlignment.Right);
+            listView_ch.GridLines = true;
+            listView_ch.BeginUpdate();
+            for (int i = 0; i < 4; i++){
+                CH_RANGE[i] = 0; 
+                CH_RANGE_BIG[i] = 100;
+                ListViewItem vi = new ListViewItem();
+                vi.ImageIndex = i + 1;
+                vi.Text = "CH" + Convert.ToString(i + 1);
+                vi.SubItems.Add(String.Format("{0}~{1} mm", CH_RANGE[i], CH_RANGE_BIG[i]));
+                vi.SubItems.Add(i + " mA");
+                vi.SubItems.Add(0 + " mm");
+                listView_ch.Items.Add(vi);
+            }
+            listView_ch.EndUpdate();
+            listView_ch.FullRowSelect = true;
+            //结构体需要分配空间，然后初始化一些数据
+            modbus_mem.range = new long[12];
+            modbus_mem.i_data = new float[12];
+            modbus_mem.pa_data = new float[12];
+            for (int i = 0; i < 4; i++){
+                modbus_mem.range[i] = 0x0000001000003020;
+                modbus_mem.i_data[i] = (float)(10.0 * (i + 1));
+                modbus_mem.pa_data[i] = (float)(20.0 * (i + 1));
+            }
+            for (int i = 0; i < 4; i++){
+                CH_RANGE[i] = (int)((modbus_mem.range[i] >> 32) & 0xffffffff);
+                CH_RANGE_BIG[i] = (int)((modbus_mem.range[i] >> 0) & 0xffffffff);
+                listView_ch.Items[i].SubItems[1].Text = String.Format("{0}~{1} mm", CH_RANGE[i], CH_RANGE_BIG[i]);
+                listView_ch.Items[i].SubItems[2].Text = Convert.ToString(modbus_mem.i_data[i]) + " mA";
+                listView_ch.Items[i].SubItems[3].Text = Convert.ToString(modbus_mem.pa_data[i]) + " mm";
+            }
+            // 继电器按钮委托
+            btnR2.Click += new System.EventHandler(this.btnR1_Click);
+            btnR3.Click += new System.EventHandler(this.btnR1_Click);
+            btnR4.Click += new System.EventHandler(this.btnR1_Click);
+            btnR5.Click += new System.EventHandler(this.btnR1_Click);
+            btnR6.Click += new System.EventHandler(this.btnR1_Click);
+            btnR7.Click += new System.EventHandler(this.btnR1_Click);
+            btnR8.Click += new System.EventHandler(this.btnR1_Click);
+        }
+        //------------------------------------------------------------------------------------------
+
         public Main() { //界面启动后第一个执行的。
             InitializeComponent();
             mfs = this;
@@ -661,13 +712,12 @@ namespace Self_BalancedMethod {
         }
         //------------------------------------------------------------------------------------------
 
-
-        //-------所有接收到的数据都在这里处理，按命令处理，参考通讯协议文档。-----------------------
+        # region 所有接收到的数据都在这里处理，按命令处理，参考通讯协议文档
         //-------注意：这里都是接收到的数据，不是发送命令的地方-------------------------------------
         public void process_receive(byte[] data, int len)
         {
             //uint id = 0;
-            uint total, index;
+            // uint total, index;
             if (data[5] == 's'){ /*
                 //MessageBox.Show("start ！");
                 for (int i = 0; i < HY.CARD_TOTAL_NUM; i++){ //默认设置为所有板卡序列名字为正常，扫描存在后会改变字体 
@@ -813,7 +863,7 @@ namespace Self_BalancedMethod {
                 string str5 = lon.ToString();
                 str += str0 + str1+str2+"   "+str3+str4+str5;
                 gps_text.Text = str;
-                for (int j = 0; j < 8; j++) { //8个继电器的状态显示，
+                for (int j = 0; j < 8; j++) { // 8个继电器的状态显示，
                     Realy_status[j] = data[j+6+66];
                     if (j == 0){
                         if (Realy_status[j] == 0)
@@ -902,15 +952,119 @@ namespace Self_BalancedMethod {
             }
         }
         //------------------------------------------------------------------------------------------
+        # endregion
 
+        
+        //-------发送命令函数 和 crc值处理-----------------------------------------------------------
+        //最主要的发送命令函数，data是数据区，type是类型，total是总共有几个包需要发送，index是当前是第几个包，len是发送长度
+        public uint Get_Para_Client(byte[] data, byte type, uint total, uint index, int len)
+        {
+            uint length;
+            // UInt16 l = 0;
+            length = (uint)len;
+            unsafe{
+                byte[] ll = new byte[2];
+                byte[] p = new byte[1024];
 
+                p[0] = 0x7e; p[1] = 0x7e; p[2] = 0x7e;
+
+                p[5] = (byte)type;//ascll 
+
+                p[6] = (byte)total; 
+                p[7] = (byte)index;
+                memcpy_byte(p, 8, data, 0, (int)length);
+                ll = BitConverter.GetBytes((UInt16)length + 9);
+                p[3] = ll[0]; p[4] = ll[1];//len 
+                p[length + 8] = get_crc_frame(p, (int)(length + 8));
+
+                sock.SendData(p, (int)length + 9);
+
+                //显示每条发出去的数据
+                string str = "";
+                for (int z = 0; z < ((int)length + 9); z++) {
+                    str += p[z].ToString("X2");
+                } 
+                m_send_msg.Text = str;
+            }
+            return 1;
+        }
+
+        //计算通讯协议的crc值
+        public byte get_crc_frame(byte[] data, int len){
+            byte result = 0;
+            int ll = len;
+            for (int i = 3; i < ll; i++){
+                result += data[i];
+            }
+            return result;
+        }
+        //计算tcp包的crc位
+        public byte Cal_CRC(byte[] data, uint len){
+            uint i;
+            byte crc_r = 0;
+            for (i = 0; i < len; i++)
+                crc_r += data[i];
+            return crc_r;
+        }
+        //------------------------------------------------------------------------------------------   
+            
+            
         //--------判断继电器开关状态----------------------------------------------------------------
 
         //------------------------------------------------------------------------------------------
 
+
+        # region 同步时间函数
+        //--------同步时间的响应，把arm的时间同步的和电脑一致---------------------------------------
+        private void btnTimeSame_Click(object sender, EventArgs e) {
+            SynchronizeTime();
+        }
+        void SynchronizeTime() {
+            if (GetConnect_state() == 1){
+                byte[] datas = new byte[100];
+                UInt16 year = (UInt16)(System.DateTime.Now.Year-2000);
+                datas[0] = (byte)(year & 0xff);
+                datas[1] = (byte)System.DateTime.Now.Month;
+                datas[2] = (byte)System.DateTime.Now.Day;
+                datas[3] = (byte)System.DateTime.Now.Hour;
+                datas[4] = (byte)System.DateTime.Now.Minute;
+                datas[5] = (byte)System.DateTime.Now.Second;
+                Get_Para_Client(datas, (byte)'t', 1, 0, 6);
+            } else {
+                MessageBox.Show(msg_not_connect);
+            }
+        } 
+        //------------------------------------------------------------------------------------------
+        #endregion
+
+
+        //---------继电器的开关---------------------------------------------------------------------
+        private void btnR1_Click(object sender, EventArgs e) {
+            TurnONorOFFRealy();
+        }
+
+        void TurnONorOFFRealy() {
+            if (GetConnect_state() == 1) {
+                byte[] datas = new byte[100];
+                datas[0] = 0;
+                if (Realy_status[datas[0]] == 0)
+                    datas[1] = 1;
+                else
+                    datas[1] = 0;
+                Get_Para_Client(datas, (byte)'e', 1, 0, 2);
+                // 获取电流数据 为了实时更新 开关状态 后续应该会在Timer中实时获取电流状态
+                byte[] datas2 = new byte[100];
+                Get_Para_Client(datas2, (byte)'d', 1, 0, 0);
+            } else {
+                MessageBox.Show(msg_not_connect);
+            }  
+        }
+        
+      
         //------------------------------------------------------------------------------------------
 
         //------------------------------------------------------------------------------------------
+
 
         //------------------------------------------------------------------------------------------
     }

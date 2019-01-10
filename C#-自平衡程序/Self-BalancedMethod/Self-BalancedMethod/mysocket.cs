@@ -104,7 +104,12 @@ namespace Self_BalancedMethod {
                     tcp.BeginConnect(ip_str, 1001,new AsyncCallback(ConnectCallback), tcp);//端口号1001 固定。
 
                     connectDone.WaitOne(1000);//1s超时，设置连接
-                    MessageBox.Show(tcp.Connected.ToString());
+                    if(tcp.Connected == true) {
+                         MessageBox.Show("连接成功！");
+                    } else {
+                        MessageBox.Show("连接失败！");
+                    }
+                   
                     if ((tcp != null) && (tcp.Connected))
                     {
                         workstream = tcp.GetStream();//标准的TCP连接操作
@@ -172,7 +177,7 @@ namespace Self_BalancedMethod {
             try
             {
                 NetworkStream mas = state.client.GetStream();
-                string type = null;
+                // string type = null;
                 numberofBytesRead = mas.EndRead(ar); // 获得网口有的数据量
                 state.totalBytesRead += numberofBytesRead;
                 if (numberofBytesRead > 0)
