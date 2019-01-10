@@ -24,18 +24,18 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea33 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend33 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series33 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea34 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend34 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series34 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea35 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend35 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series35 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea36 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend36 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series36 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -829,17 +829,17 @@
             // 
             // chartQs
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartQs.ChartAreas.Add(chartArea5);
+            chartArea33.Name = "ChartArea1";
+            this.chartQs.ChartAreas.Add(chartArea33);
             this.chartQs.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.Name = "Legend1";
-            this.chartQs.Legends.Add(legend5);
+            legend33.Name = "Legend1";
+            this.chartQs.Legends.Add(legend33);
             this.chartQs.Location = new System.Drawing.Point(3, 3);
             this.chartQs.Name = "chartQs";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartQs.Series.Add(series5);
+            series33.ChartArea = "ChartArea1";
+            series33.Legend = "Legend1";
+            series33.Name = "Series1";
+            this.chartQs.Series.Add(series33);
             this.chartQs.Size = new System.Drawing.Size(821, 350);
             this.chartQs.TabIndex = 0;
             this.chartQs.Text = "chart1";
@@ -858,17 +858,17 @@
             // 
             // chartslgt
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartslgt.ChartAreas.Add(chartArea6);
+            chartArea34.Name = "ChartArea1";
+            this.chartslgt.ChartAreas.Add(chartArea34);
             this.chartslgt.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend6.Name = "Legend1";
-            this.chartslgt.Legends.Add(legend6);
+            legend34.Name = "Legend1";
+            this.chartslgt.Legends.Add(legend34);
             this.chartslgt.Location = new System.Drawing.Point(3, 3);
             this.chartslgt.Name = "chartslgt";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartslgt.Series.Add(series6);
+            series34.ChartArea = "ChartArea1";
+            series34.Legend = "Legend1";
+            series34.Name = "Series1";
+            this.chartslgt.Series.Add(series34);
             this.chartslgt.Size = new System.Drawing.Size(821, 350);
             this.chartslgt.TabIndex = 0;
             this.chartslgt.Text = "chart1";
@@ -886,17 +886,17 @@
             // 
             // chartslgQ
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartslgQ.ChartAreas.Add(chartArea7);
+            chartArea35.Name = "ChartArea1";
+            this.chartslgQ.ChartAreas.Add(chartArea35);
             this.chartslgQ.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend7.Name = "Legend1";
-            this.chartslgQ.Legends.Add(legend7);
+            legend35.Name = "Legend1";
+            this.chartslgQ.Legends.Add(legend35);
             this.chartslgQ.Location = new System.Drawing.Point(0, 0);
             this.chartslgQ.Name = "chartslgQ";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartslgQ.Series.Add(series7);
+            series35.ChartArea = "ChartArea1";
+            series35.Legend = "Legend1";
+            series35.Name = "Series1";
+            this.chartslgQ.Series.Add(series35);
             this.chartslgQ.Size = new System.Drawing.Size(827, 356);
             this.chartslgQ.TabIndex = 0;
             this.chartslgQ.Text = "chart1";
@@ -914,17 +914,17 @@
             // 
             // chartQszph
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartQszph.ChartAreas.Add(chartArea8);
+            chartArea36.Name = "ChartArea1";
+            this.chartQszph.ChartAreas.Add(chartArea36);
             this.chartQszph.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend8.Name = "Legend1";
-            this.chartQszph.Legends.Add(legend8);
+            legend36.Name = "Legend1";
+            this.chartQszph.Legends.Add(legend36);
             this.chartQszph.Location = new System.Drawing.Point(0, 0);
             this.chartQszph.Name = "chartQszph";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartQszph.Series.Add(series8);
+            series36.ChartArea = "ChartArea1";
+            series36.Legend = "Legend1";
+            series36.Name = "Series1";
+            this.chartQszph.Series.Add(series36);
             this.chartQszph.Size = new System.Drawing.Size(827, 356);
             this.chartQszph.TabIndex = 0;
             this.chartQszph.Text = "chart1";
@@ -1065,6 +1065,7 @@
             this.btnR8.TabIndex = 23;
             this.btnR8.Text = "切";
             this.btnR8.UseVisualStyleBackColor = true;
+            this.btnR8.Click += new System.EventHandler(this.btnR8_Click);
             // 
             // btnR7
             // 
@@ -1074,6 +1075,7 @@
             this.btnR7.TabIndex = 22;
             this.btnR7.Text = "切";
             this.btnR7.UseVisualStyleBackColor = true;
+            this.btnR7.Click += new System.EventHandler(this.btnR7_Click);
             // 
             // btnR6
             // 
@@ -1083,6 +1085,7 @@
             this.btnR6.TabIndex = 21;
             this.btnR6.Text = "切";
             this.btnR6.UseVisualStyleBackColor = true;
+            this.btnR6.Click += new System.EventHandler(this.btnR6_Click);
             // 
             // btnR5
             // 
@@ -1092,6 +1095,7 @@
             this.btnR5.TabIndex = 20;
             this.btnR5.Text = "切";
             this.btnR5.UseVisualStyleBackColor = true;
+            this.btnR5.Click += new System.EventHandler(this.btnR5_Click);
             // 
             // btnR4
             // 
@@ -1101,6 +1105,7 @@
             this.btnR4.TabIndex = 19;
             this.btnR4.Text = "切";
             this.btnR4.UseVisualStyleBackColor = true;
+            this.btnR4.Click += new System.EventHandler(this.btnR4_Click);
             // 
             // btnR3
             // 
@@ -1110,6 +1115,7 @@
             this.btnR3.TabIndex = 18;
             this.btnR3.Text = "切";
             this.btnR3.UseVisualStyleBackColor = true;
+            this.btnR3.Click += new System.EventHandler(this.btnR3_Click);
             // 
             // btnR2
             // 
@@ -1119,6 +1125,7 @@
             this.btnR2.TabIndex = 17;
             this.btnR2.Text = "切";
             this.btnR2.UseVisualStyleBackColor = true;
+            this.btnR2.Click += new System.EventHandler(this.btnR2_Click);
             // 
             // btnR1
             // 

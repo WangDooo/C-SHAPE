@@ -118,14 +118,6 @@ namespace Self_BalancedMethod {
                 listView_ch.Items[i].SubItems[2].Text = Convert.ToString(modbus_mem.i_data[i]) + " mA";
                 listView_ch.Items[i].SubItems[3].Text = Convert.ToString(modbus_mem.pa_data[i]) + " mm";
             }
-            // 继电器按钮委托
-            btnR2.Click += new System.EventHandler(this.btnR1_Click);
-            btnR3.Click += new System.EventHandler(this.btnR1_Click);
-            btnR4.Click += new System.EventHandler(this.btnR1_Click);
-            btnR5.Click += new System.EventHandler(this.btnR1_Click);
-            btnR6.Click += new System.EventHandler(this.btnR1_Click);
-            btnR7.Click += new System.EventHandler(this.btnR1_Click);
-            btnR8.Click += new System.EventHandler(this.btnR1_Click);
         }
         //------------------------------------------------------------------------------------------
 
@@ -1039,14 +1031,10 @@ namespace Self_BalancedMethod {
 
 
         //---------继电器的开关---------------------------------------------------------------------
-        private void btnR1_Click(object sender, EventArgs e) {
-            TurnONorOFFRealy();
-        }
-
-        void TurnONorOFFRealy() {
+        void TurnONorOFFRealy(byte n) {
             if (GetConnect_state() == 1) {
                 byte[] datas = new byte[100];
-                datas[0] = 0;
+                datas[0] = n;
                 if (Realy_status[datas[0]] == 0)
                     datas[1] = 1;
                 else
@@ -1059,8 +1047,40 @@ namespace Self_BalancedMethod {
                 MessageBox.Show(msg_not_connect);
             }  
         }
-        
-      
+
+        private void btnR1_Click(object sender, EventArgs e) {
+            TurnONorOFFRealy(0);
+        }
+
+        private void btnR2_Click(object sender, EventArgs e) {
+            TurnONorOFFRealy(1);
+        }
+
+        private void btnR3_Click(object sender, EventArgs e) {
+            TurnONorOFFRealy(2);
+        }
+
+        private void btnR4_Click(object sender, EventArgs e) {
+            TurnONorOFFRealy(3);
+        }
+
+        private void btnR5_Click(object sender, EventArgs e) {
+            TurnONorOFFRealy(4);
+        }
+
+        private void btnR6_Click(object sender, EventArgs e) {
+            TurnONorOFFRealy(5);
+        }
+
+        private void btnR7_Click(object sender, EventArgs e) {
+            TurnONorOFFRealy(6);
+        }
+
+        private void btnR8_Click(object sender, EventArgs e) {
+            TurnONorOFFRealy(7);
+        }
+
+
         //------------------------------------------------------------------------------------------
 
         //------------------------------------------------------------------------------------------
