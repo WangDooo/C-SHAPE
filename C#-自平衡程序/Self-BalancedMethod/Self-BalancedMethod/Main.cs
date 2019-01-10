@@ -740,7 +740,7 @@ namespace Self_BalancedMethod {
                         str += data[z].ToString("X2"); // 转化为大写的16进制
                     }
                     net_msg_text.Text = str;
-                    MessageBox.Show("Sync Time Completed ！");
+                    MessageBox.Show("时间同步已完成！");
                 }
             }
             else if (data[5] == 'r') { // 读取量程的返回数据，
@@ -1029,7 +1029,7 @@ namespace Self_BalancedMethod {
         //------------------------------------------------------------------------------------------
         #endregion
 
-
+        # region 继电器测试
         //---------继电器的开关---------------------------------------------------------------------
         void TurnONorOFFRealy(byte n) {
             if (GetConnect_state() == 1) {
@@ -1079,9 +1079,8 @@ namespace Self_BalancedMethod {
         private void btnR8_Click(object sender, EventArgs e) {
             TurnONorOFFRealy(7);
         }
-
-
         //------------------------------------------------------------------------------------------
+        # endregion
 
         //------------------------------------------------------------------------------------------
 
