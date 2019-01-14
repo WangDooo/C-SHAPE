@@ -716,29 +716,7 @@ namespace Self_BalancedMethod {
         {
             //uint id = 0;
             // uint total, index;
-            if (data[5] == 's'){ /*
-                //MessageBox.Show("start ！");
-                for (int i = 0; i < HY.CARD_TOTAL_NUM; i++){ //默认设置为所有板卡序列名字为正常，扫描存在后会改变字体 
-                    button[i].Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular);
-                }
-                if (data[6] == (data[7] + 1))//6:total,7:index{
-                    usrlib.memcpy_byte(has_card_list, 0, data, 8, HY.CARD_TOTAL_NUM);
-                    for (int i = 0; i < HY.CARD_TOTAL_NUM; i++){
-                        if ((has_card_list[i] > 0) && (has_card_list[i] <= HY.CARD_TOTAL_NUM)){
-                            //存在子模块，1-9
-                            total = (uint)Marshal.SizeOf(typeof(CH_PARAS)) % 1000;
-                            byte[] sdata = new byte[1];
-                            sdata[0] = has_card_list[i];
-                            Get_Para_Client(sdata, (byte)'p', total, 0, 1);
-                            //Send_Data_Client(sdata, (byte)'p', 1);
-                            break;//只发送第一个，剩下的有接收完响应后继续发送  p
-                        }
-                    }
-                }
-                //MessageBox.Show("正在处理数据请稍后...");
-              * */
-            }
-            else if (data[5] == 't') { // 同步时间，使得下位机的时间和电脑同步
+            if (data[5] == 't') { // 同步时间，使得下位机的时间和电脑同步
                 if (data[6] == 1){
                     //把接收到的数据发送到界面的最下面那个文本框内，net_msg_text
                     string str="";
@@ -947,6 +925,13 @@ namespace Self_BalancedMethod {
                     else
                         checkBox3.Checked = true;
                 }
+            } 
+            else {
+                string str = "";
+                for (int z = 0; z < data.Length; z++) {
+                    str += data[z].ToString("X2");
+                }
+                net_msg_text.Text = str;
             }
         }
         //------------------------------------------------------------------------------------------
