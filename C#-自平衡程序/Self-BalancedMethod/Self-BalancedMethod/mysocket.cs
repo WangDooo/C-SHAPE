@@ -186,7 +186,7 @@ namespace Self_BalancedMethod {
                     Array.Copy(state.buffer, 0, dd, 0, numberofBytesRead);//把从网口读到的数据复制给dd数组
                     mas.BeginRead(state.buffer, 0, StateObject.BufferSize, new AsyncCallback(TCPReadCallBack), false);//标准调用
                     Main.mfs.process_receive(dd, numberofBytesRead);//处理dd数组中接收到的数据
-                    // MessageBox.Show("Get len = " + numberofBytesRead.ToString());
+                    MessageBox.Show("Get len = " + numberofBytesRead.ToString());
                     // 内存释放 这个不管用
                     //dd = null;
                     // GC.Collect(); //强制对所有代进行垃圾回收
@@ -200,10 +200,6 @@ namespace Self_BalancedMethod {
                     // MainFrame.mfs.SetConnect_text(UsrLibs.usrlib.ReadXML_ID("SetupTSI.xml", "language", "已断开", MainFrame.mfs.language)[0]);
                     Main.mfs.SetConnect_state(0);
                 }
-                mas.Close();
-                state.client.Close();
-                mas = null;
-                state = null;
             }
             catch
             {
