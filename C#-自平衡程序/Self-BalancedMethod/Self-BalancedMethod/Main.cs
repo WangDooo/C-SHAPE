@@ -1071,8 +1071,8 @@ namespace Self_BalancedMethod {
             try {
                 int interval = (int)(Convert.ToDouble(str) * 1000);
                 // timerSystemTime.Interval = interval; // 暂时用系统时间做测试
-                // timerNetdata.Interval = interval;
-                timerDrawLine.Interval = interval;
+                timerNetdata.Interval = interval;
+                // timerDrawLine.Interval = interval;
                 MessageBox.Show("已设置为"+interval.ToString()+"ms");
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
