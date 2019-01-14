@@ -191,7 +191,7 @@ namespace Self_BalancedMethod {
                     // MessageBox.Show("Get len = " + numberofBytesRead.ToString());
                     // 内存释放 这个不管用
                     //dd = null;
-                    // GC.Collect();
+                    // GC.Collect(); //强制对所有代进行垃圾回收
                 }
                 else
                 {
@@ -207,6 +207,9 @@ namespace Self_BalancedMethod {
             {
                 return;
             }
+            // 内存释放
+            state = null;
+            GC.Collect(); //强制对所有代进行垃圾回收
         }
     }
 }
