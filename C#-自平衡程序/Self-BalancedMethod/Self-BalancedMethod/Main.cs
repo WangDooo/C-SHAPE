@@ -85,7 +85,7 @@ namespace Self_BalancedMethod {
             // Timer的初始设置
             timerNetdata.Interval = 10;
             timerSystemTime.Interval = 1000;
-            timerDrawLine.Interval = 1000;
+            timerDrawLine.Interval = 10000;
             timerBackupTxT.Interval = 600000; // 10min
             //界面listview外观设置
             listView_ch.CheckBoxes = false;
@@ -925,13 +925,6 @@ namespace Self_BalancedMethod {
                     else
                         checkBox3.Checked = true;
                 }
-            } 
-            else {
-                string str = "";
-                for (int z = 0; z < data.Length; z++) {
-                    str += data[z].ToString("X2");
-                }
-                net_msg_text.Text = str;
             }
         }
         //------------------------------------------------------------------------------------------
