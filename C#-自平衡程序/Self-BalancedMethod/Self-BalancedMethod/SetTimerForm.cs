@@ -32,7 +32,9 @@ namespace Self_BalancedMethod {
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e) {
             if( e.KeyChar != '\b') { // 这是允许输入退格键    
                 if ((e.KeyChar<'0') || (e.KeyChar>'9')) {  //这是允许输入0-9数字  
-                    e.Handled = true;  
+                    if(e.KeyChar != '.'){ 
+                        e.Handled = true; 
+                    }  
                 }  
             }
         }

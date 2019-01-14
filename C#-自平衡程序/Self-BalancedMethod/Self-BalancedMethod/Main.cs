@@ -208,7 +208,7 @@ namespace Self_BalancedMethod {
         private void timer2_Tick(object sender, EventArgs e) {  
             if (Is_connected == 1){
                 sock.ReadData(); // 定时的读网口操作
-                GC.Collect();
+                // GC.Collect(); 这个没用，内存还是涨
                 SetConnect_text("已连接");
                 toolStripButtonConnect.Text=("断开");
             }
@@ -1090,8 +1090,14 @@ namespace Self_BalancedMethod {
 
         //-------设置采样间隔-----------------------------------------------------------------------
         private void setTimerForm_SetTimerEvent(string str){
-            int interval = (int)Convert.ToDouble(str) * 1000;
-            timerSystemTime.Interval = interval; // 暂时用系统时间做测试
+            try {
+                int interval = (int)(Convert.ToDouble(str) * 1000);
+                // timerSystemTime.Interval = interval; // 暂时用系统时间做测试
+                timerNetdata.Interval = interval;
+                MessageBox.Show("已设置为"+interval.ToString()+"ms");
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }         
         }
 
         private void 修改采样间隔GToolStripMenuItem_Click(object sender, EventArgs e) {
