@@ -200,6 +200,10 @@ namespace Self_BalancedMethod {
                     // MainFrame.mfs.SetConnect_text(UsrLibs.usrlib.ReadXML_ID("SetupTSI.xml", "language", "已断开", MainFrame.mfs.language)[0]);
                     Main.mfs.SetConnect_state(0);
                 }
+                mas.Close();
+                state.client.Close();
+                mas = null;
+                state = null;
             }
             catch
             {

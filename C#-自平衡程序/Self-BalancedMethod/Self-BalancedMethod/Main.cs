@@ -85,7 +85,7 @@ namespace Self_BalancedMethod {
             // Timer的初始设置
             timerNetdata.Interval = 10;
             timerSystemTime.Interval = 1000;
-            timerDrawLine.Interval = 10000;
+            timerDrawLine.Interval = 1000;
             timerBackupTxT.Interval = 600000; // 10min
             //界面listview外观设置
             listView_ch.CheckBoxes = false;
@@ -422,7 +422,7 @@ namespace Self_BalancedMethod {
             chartQs.ChartAreas[0].AxisX.Minimum = 0;  // 设置显示范围
             //chartQs.ChartAreas[0].AxisX.Maximum = 10;
             chartQs.ChartAreas[0].AxisY.Minimum = 0;
-            chartQs.ChartAreas[0].AxisY.Maximum = Math.Ceiling(Convert.ToDouble(s[s.Count-1])); // 向上取整
+            chartQs.ChartAreas[0].AxisY.Maximum = Math.Ceiling(Convert.ToDouble(s[s.Count-1])); // 向上取整     
 
             Qs.ToolTip = "Q：#VALX \n s：#VALY"; // #VALX #VALY 鼠标悬停显示
 
@@ -1071,7 +1071,8 @@ namespace Self_BalancedMethod {
             try {
                 int interval = (int)(Convert.ToDouble(str) * 1000);
                 // timerSystemTime.Interval = interval; // 暂时用系统时间做测试
-                timerNetdata.Interval = interval;
+                // timerNetdata.Interval = interval;
+                timerDrawLine.Interval = interval;
                 MessageBox.Show("已设置为"+interval.ToString()+"ms");
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);

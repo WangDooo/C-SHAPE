@@ -5,3 +5,9 @@
     	public byte[] buffer = new byte[BufferSize];
 
     byte[] dd = new byte[numberofBytesRead];
+
+2. chart的大小目前是 Fill
+若采集的数据多了，显示的不清楚，会增加显示大小设置功能
+
+3. 目前datatable中数据是实时读取的，1s刷新，这样没有办法点击修改了
+会不会后续就是采集到一个数据，我们就画一下，没有采集数据就不动
