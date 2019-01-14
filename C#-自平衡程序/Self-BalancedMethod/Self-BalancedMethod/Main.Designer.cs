@@ -24,18 +24,18 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -102,10 +102,21 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.chartQszph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.btn_Read_slave = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.m_send_msg = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.btnTimeSame = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.Choose_device = new System.Windows.Forms.Button();
+            this.Scan_device = new System.Windows.Forms.Button();
+            this.button_send_mode = new System.Windows.Forms.Button();
+            this.is_sending_use_line = new System.Windows.Forms.CheckBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -207,14 +218,8 @@
             this.timerNetdata = new System.Windows.Forms.Timer(this.components);
             this.timerDrawLine = new System.Windows.Forms.Timer(this.components);
             this.timerBackupTxT = new System.Windows.Forms.Timer(this.components);
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label30 = new System.Windows.Forms.Label();
-            this.is_sending_use_line = new System.Windows.Forms.CheckBox();
-            this.button_send_mode = new System.Windows.Forms.Button();
+            this.btn_Read_host = new System.Windows.Forms.Button();
+            this.btn_Read_range = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -263,8 +268,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1175, 604);
-            this.splitContainer1.SplitterDistance = 328;
+            this.splitContainer1.Size = new System.Drawing.Size(1184, 672);
+            this.splitContainer1.SplitterDistance = 330;
             this.splitContainer1.TabIndex = 0;
             // 
             // tabControl1
@@ -277,7 +282,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(324, 600);
+            this.tabControl1.Size = new System.Drawing.Size(326, 668);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -286,7 +291,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(316, 574);
+            this.tabPage1.Size = new System.Drawing.Size(318, 642);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "总汇表";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -300,7 +305,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(310, 568);
+            this.dataGridView1.Size = new System.Drawing.Size(312, 636);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage2
@@ -308,7 +313,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(316, 574);
+            this.tabPage2.Size = new System.Drawing.Size(318, 642);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "加载详情表";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -318,7 +323,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(316, 574);
+            this.tabPage3.Size = new System.Drawing.Size(318, 642);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "卸载详情表";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -343,8 +348,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tabControl2);
-            this.splitContainer2.Size = new System.Drawing.Size(843, 604);
-            this.splitContainer2.SplitterDistance = 183;
+            this.splitContainer2.Size = new System.Drawing.Size(850, 672);
+            this.splitContainer2.SplitterDistance = 229;
             this.splitContainer2.TabIndex = 0;
             // 
             // groupBox5
@@ -630,7 +635,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(839, 413);
+            this.tabControl2.Size = new System.Drawing.Size(846, 435);
             this.tabControl2.TabIndex = 0;
             this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             // 
@@ -661,7 +666,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(831, 358);
+            this.tabPage4.Size = new System.Drawing.Size(838, 409);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "测试参数表";
             // 
@@ -831,25 +836,25 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(831, 358);
+            this.tabPage5.Size = new System.Drawing.Size(834, 407);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Q-s曲线";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // chartQs
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartQs.ChartAreas.Add(chartArea5);
+            chartArea13.Name = "ChartArea1";
+            this.chartQs.ChartAreas.Add(chartArea13);
             this.chartQs.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.Name = "Legend1";
-            this.chartQs.Legends.Add(legend5);
+            legend13.Name = "Legend1";
+            this.chartQs.Legends.Add(legend13);
             this.chartQs.Location = new System.Drawing.Point(3, 3);
             this.chartQs.Name = "chartQs";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartQs.Series.Add(series5);
-            this.chartQs.Size = new System.Drawing.Size(825, 352);
+            series13.ChartArea = "ChartArea1";
+            series13.Legend = "Legend1";
+            series13.Name = "Series1";
+            this.chartQs.Series.Add(series13);
+            this.chartQs.Size = new System.Drawing.Size(828, 401);
             this.chartQs.TabIndex = 0;
             this.chartQs.Text = "chart1";
             this.chartQs.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chartQs_MouseMove);
@@ -860,25 +865,25 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(827, 356);
+            this.tabPage6.Size = new System.Drawing.Size(834, 407);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "s-lgt曲线";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // chartslgt
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartslgt.ChartAreas.Add(chartArea6);
+            chartArea14.Name = "ChartArea1";
+            this.chartslgt.ChartAreas.Add(chartArea14);
             this.chartslgt.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend6.Name = "Legend1";
-            this.chartslgt.Legends.Add(legend6);
+            legend14.Name = "Legend1";
+            this.chartslgt.Legends.Add(legend14);
             this.chartslgt.Location = new System.Drawing.Point(3, 3);
             this.chartslgt.Name = "chartslgt";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartslgt.Series.Add(series6);
-            this.chartslgt.Size = new System.Drawing.Size(821, 350);
+            series14.ChartArea = "ChartArea1";
+            series14.Legend = "Legend1";
+            series14.Name = "Series1";
+            this.chartslgt.Series.Add(series14);
+            this.chartslgt.Size = new System.Drawing.Size(828, 401);
             this.chartslgt.TabIndex = 0;
             this.chartslgt.Text = "chart1";
             this.chartslgt.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chartslgt_MouseMove);
@@ -888,25 +893,25 @@
             this.tabPage7.Controls.Add(this.chartslgQ);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(827, 356);
+            this.tabPage7.Size = new System.Drawing.Size(834, 407);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "s-lgQ曲线";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // chartslgQ
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartslgQ.ChartAreas.Add(chartArea7);
+            chartArea15.Name = "ChartArea1";
+            this.chartslgQ.ChartAreas.Add(chartArea15);
             this.chartslgQ.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend7.Name = "Legend1";
-            this.chartslgQ.Legends.Add(legend7);
+            legend15.Name = "Legend1";
+            this.chartslgQ.Legends.Add(legend15);
             this.chartslgQ.Location = new System.Drawing.Point(0, 0);
             this.chartslgQ.Name = "chartslgQ";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartslgQ.Series.Add(series7);
-            this.chartslgQ.Size = new System.Drawing.Size(827, 356);
+            series15.ChartArea = "ChartArea1";
+            series15.Legend = "Legend1";
+            series15.Name = "Series1";
+            this.chartslgQ.Series.Add(series15);
+            this.chartslgQ.Size = new System.Drawing.Size(834, 407);
             this.chartslgQ.TabIndex = 0;
             this.chartslgQ.Text = "chart1";
             this.chartslgQ.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chartslgQ_MouseMove);
@@ -916,25 +921,25 @@
             this.tabPage8.Controls.Add(this.chartQszph);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(827, 356);
+            this.tabPage8.Size = new System.Drawing.Size(834, 407);
             this.tabPage8.TabIndex = 4;
             this.tabPage8.Text = "Q-s等效曲线";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // chartQszph
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartQszph.ChartAreas.Add(chartArea8);
+            chartArea16.Name = "ChartArea1";
+            this.chartQszph.ChartAreas.Add(chartArea16);
             this.chartQszph.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend8.Name = "Legend1";
-            this.chartQszph.Legends.Add(legend8);
+            legend16.Name = "Legend1";
+            this.chartQszph.Legends.Add(legend16);
             this.chartQszph.Location = new System.Drawing.Point(0, 0);
             this.chartQszph.Name = "chartQszph";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartQszph.Series.Add(series8);
-            this.chartQszph.Size = new System.Drawing.Size(827, 356);
+            series16.ChartArea = "ChartArea1";
+            series16.Legend = "Legend1";
+            series16.Name = "Series1";
+            this.chartQszph.Series.Add(series16);
+            this.chartQszph.Size = new System.Drawing.Size(834, 407);
             this.chartQszph.TabIndex = 0;
             this.chartQszph.Text = "chart1";
             this.chartQszph.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chartQszph_MouseMove);
@@ -943,6 +948,9 @@
             // 
             this.tabPage9.AutoScroll = true;
             this.tabPage9.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage9.Controls.Add(this.btn_Read_range);
+            this.tabPage9.Controls.Add(this.btn_Read_host);
+            this.tabPage9.Controls.Add(this.btn_Read_slave);
             this.tabPage9.Controls.Add(this.button5);
             this.tabPage9.Controls.Add(this.label32);
             this.tabPage9.Controls.Add(this.textBox6);
@@ -963,22 +971,77 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(831, 387);
+            this.tabPage9.Size = new System.Drawing.Size(838, 409);
             this.tabPage9.TabIndex = 5;
             this.tabPage9.Text = "Test主板功能";
             // 
+            // btn_Read_slave
+            // 
+            this.btn_Read_slave.Location = new System.Drawing.Point(542, 182);
+            this.btn_Read_slave.Name = "btn_Read_slave";
+            this.btn_Read_slave.Size = new System.Drawing.Size(101, 22);
+            this.btn_Read_slave.TabIndex = 41;
+            this.btn_Read_slave.Text = "读取远端机数据";
+            this.btn_Read_slave.UseVisualStyleBackColor = true;
+            this.btn_Read_slave.Click += new System.EventHandler(this.btn_Read_slave_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(682, 375);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(65, 26);
+            this.button5.TabIndex = 40;
+            this.button5.Text = "发送";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(308, 383);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(29, 12);
+            this.label32.TabIndex = 39;
+            this.label32.Text = "DATA";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(343, 373);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(333, 32);
+            this.textBox6.TabIndex = 38;
+            this.textBox6.Text = "firstname=Wang&lastname=Test&age=25";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(36, 380);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(266, 21);
+            this.textBox1.TabIndex = 33;
+            this.textBox1.Text = "http://www.buseu.cn/php/mysql/insert2.php";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(13, 383);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(17, 12);
+            this.label29.TabIndex = 32;
+            this.label29.Text = "IP";
+            // 
             // m_send_msg
             // 
-            this.m_send_msg.Location = new System.Drawing.Point(16, 248);
+            this.m_send_msg.Location = new System.Drawing.Point(16, 320);
             this.m_send_msg.Multiline = true;
             this.m_send_msg.Name = "m_send_msg";
-            this.m_send_msg.Size = new System.Drawing.Size(335, 41);
+            this.m_send_msg.Size = new System.Drawing.Size(165, 41);
             this.m_send_msg.TabIndex = 31;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(14, 233);
+            this.label28.Location = new System.Drawing.Point(14, 305);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(65, 12);
             this.label28.TabIndex = 30;
@@ -986,9 +1049,9 @@
             // 
             // btnTimeSame
             // 
-            this.btnTimeSame.Location = new System.Drawing.Point(229, 301);
+            this.btnTimeSame.Location = new System.Drawing.Point(753, 278);
             this.btnTimeSame.Name = "btnTimeSame";
-            this.btnTimeSame.Size = new System.Drawing.Size(63, 23);
+            this.btnTimeSame.Size = new System.Drawing.Size(75, 51);
             this.btnTimeSame.TabIndex = 29;
             this.btnTimeSame.Text = "同步时间";
             this.btnTimeSame.UseVisualStyleBackColor = true;
@@ -997,23 +1060,74 @@
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.FloralWhite;
+            this.groupBox7.Controls.Add(this.Choose_device);
+            this.groupBox7.Controls.Add(this.Scan_device);
             this.groupBox7.Controls.Add(this.button_send_mode);
             this.groupBox7.Controls.Add(this.is_sending_use_line);
             this.groupBox7.Controls.Add(this.label30);
             this.groupBox7.Controls.Add(this.checkBox3);
             this.groupBox7.Controls.Add(this.checkBox2);
             this.groupBox7.Controls.Add(this.checkBox1);
-            this.groupBox7.Location = new System.Drawing.Point(370, 177);
+            this.groupBox7.Location = new System.Drawing.Point(370, 208);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(369, 68);
+            this.groupBox7.Size = new System.Drawing.Size(462, 68);
             this.groupBox7.TabIndex = 28;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "远端设备";
             // 
+            // Choose_device
+            // 
+            this.Choose_device.Location = new System.Drawing.Point(363, 14);
+            this.Choose_device.Name = "Choose_device";
+            this.Choose_device.Size = new System.Drawing.Size(66, 22);
+            this.Choose_device.TabIndex = 7;
+            this.Choose_device.Text = "设备选定";
+            this.Choose_device.UseVisualStyleBackColor = true;
+            this.Choose_device.Click += new System.EventHandler(this.Choose_device_Click);
+            // 
+            // Scan_device
+            // 
+            this.Scan_device.Location = new System.Drawing.Point(291, 14);
+            this.Scan_device.Name = "Scan_device";
+            this.Scan_device.Size = new System.Drawing.Size(66, 22);
+            this.Scan_device.TabIndex = 6;
+            this.Scan_device.Text = "扫描设备";
+            this.Scan_device.UseVisualStyleBackColor = true;
+            this.Scan_device.Click += new System.EventHandler(this.Scan_device_Click);
+            // 
+            // button_send_mode
+            // 
+            this.button_send_mode.Location = new System.Drawing.Point(290, 39);
+            this.button_send_mode.Name = "button_send_mode";
+            this.button_send_mode.Size = new System.Drawing.Size(67, 23);
+            this.button_send_mode.TabIndex = 5;
+            this.button_send_mode.Text = "通讯设置";
+            this.button_send_mode.UseVisualStyleBackColor = true;
+            this.button_send_mode.Click += new System.EventHandler(this.button_send_mode_Click);
+            // 
+            // is_sending_use_line
+            // 
+            this.is_sending_use_line.AutoSize = true;
+            this.is_sending_use_line.Location = new System.Drawing.Point(194, 43);
+            this.is_sending_use_line.Name = "is_sending_use_line";
+            this.is_sending_use_line.Size = new System.Drawing.Size(90, 16);
+            this.is_sending_use_line.TabIndex = 4;
+            this.is_sending_use_line.Text = "485有线传输";
+            this.is_sending_use_line.UseVisualStyleBackColor = true;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(26, 46);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(161, 12);
+            this.label30.TabIndex = 3;
+            this.label30.Text = "远端数据接收方式(默认无线)";
+            // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(267, 20);
+            this.checkBox3.Location = new System.Drawing.Point(187, 20);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(78, 16);
             this.checkBox3.TabIndex = 2;
@@ -1023,7 +1137,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(144, 20);
+            this.checkBox2.Location = new System.Drawing.Point(109, 20);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(78, 16);
             this.checkBox2.TabIndex = 1;
@@ -1067,9 +1181,9 @@
             this.groupBox6.Controls.Add(this.label22);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label20);
-            this.groupBox6.Location = new System.Drawing.Point(367, 248);
+            this.groupBox6.Location = new System.Drawing.Point(370, 279);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(369, 93);
+            this.groupBox6.Size = new System.Drawing.Size(380, 89);
             this.groupBox6.TabIndex = 27;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "继电器";
@@ -1309,24 +1423,25 @@
             // gps_text
             // 
             this.gps_text.AutoSize = true;
-            this.gps_text.Location = new System.Drawing.Point(14, 305);
+            this.gps_text.Location = new System.Drawing.Point(649, 188);
             this.gps_text.Name = "gps_text";
-            this.gps_text.Size = new System.Drawing.Size(47, 12);
+            this.gps_text.Size = new System.Drawing.Size(95, 12);
             this.gps_text.TabIndex = 26;
-            this.gps_text.Text = "label20";
+            this.gps_text.Text = "用于显示GPS信息";
             // 
             // listView_slave
             // 
-            this.listView_slave.Location = new System.Drawing.Point(370, 30);
+            this.listView_slave.Location = new System.Drawing.Point(370, 22);
             this.listView_slave.Name = "listView_slave";
-            this.listView_slave.Size = new System.Drawing.Size(366, 141);
+            this.listView_slave.Size = new System.Drawing.Size(458, 159);
             this.listView_slave.TabIndex = 25;
             this.listView_slave.UseCompatibleStateImageBehavior = false;
+            this.listView_slave.View = System.Windows.Forms.View.Details;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(14, 15);
+            this.label18.Location = new System.Drawing.Point(14, 7);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(53, 12);
             this.label18.TabIndex = 23;
@@ -1334,17 +1449,18 @@
             // 
             // listView_ch
             // 
-            this.listView_ch.Location = new System.Drawing.Point(16, 30);
+            this.listView_ch.Location = new System.Drawing.Point(16, 22);
             this.listView_ch.Name = "listView_ch";
-            this.listView_ch.Size = new System.Drawing.Size(335, 141);
+            this.listView_ch.Size = new System.Drawing.Size(335, 159);
             this.listView_ch.TabIndex = 22;
             this.listView_ch.UseCompatibleStateImageBehavior = false;
             this.listView_ch.View = System.Windows.Forms.View.Details;
+            this.listView_ch.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView_ch_MouseDoubleClick);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(368, 15);
+            this.label19.Location = new System.Drawing.Point(368, 7);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(131, 12);
             this.label19.TabIndex = 24;
@@ -1353,7 +1469,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(14, 174);
+            this.label17.Location = new System.Drawing.Point(185, 305);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 12);
             this.label17.TabIndex = 21;
@@ -1361,10 +1477,10 @@
             // 
             // net_msg_text
             // 
-            this.net_msg_text.Location = new System.Drawing.Point(16, 189);
+            this.net_msg_text.Location = new System.Drawing.Point(187, 320);
             this.net_msg_text.Multiline = true;
             this.net_msg_text.Name = "net_msg_text";
-            this.net_msg_text.Size = new System.Drawing.Size(335, 41);
+            this.net_msg_text.Size = new System.Drawing.Size(150, 42);
             this.net_msg_text.TabIndex = 20;
             // 
             // menuStrip1
@@ -1379,7 +1495,7 @@
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1175, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1184, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1707,17 +1823,17 @@
             this.toolStripStatusLabel3,
             this.toolStripStatusLabelCoordinate,
             this.toolStripStatusLabelTime});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 660);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 728);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(1175, 33);
+            this.statusStrip1.Size = new System.Drawing.Size(1184, 33);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel4
             // 
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(788, 28);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(797, 28);
             this.toolStripStatusLabel4.Spring = true;
             // 
             // toolStripStatusLabelConnect
@@ -1773,7 +1889,7 @@
             this.btnTestBegin});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1175, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1184, 31);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1886,85 +2002,31 @@
             // 
             this.timerBackupTxT.Tick += new System.EventHandler(this.timerBackupTxT_Tick);
             // 
-            // label29
+            // btn_Read_host
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(13, 358);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(17, 12);
-            this.label29.TabIndex = 32;
-            this.label29.Text = "IP";
+            this.btn_Read_host.Location = new System.Drawing.Point(441, 183);
+            this.btn_Read_host.Name = "btn_Read_host";
+            this.btn_Read_host.Size = new System.Drawing.Size(95, 22);
+            this.btn_Read_host.TabIndex = 42;
+            this.btn_Read_host.Text = "读取主机数据";
+            this.btn_Read_host.UseVisualStyleBackColor = true;
+            this.btn_Read_host.Click += new System.EventHandler(this.btn_Read_host_Click);
             // 
-            // textBox1
+            // btn_Read_range
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 355);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(266, 21);
-            this.textBox1.TabIndex = 33;
-            this.textBox1.Text = "http://www.buseu.cn/php/mysql/insert2.php";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(343, 344);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(333, 32);
-            this.textBox6.TabIndex = 38;
-            this.textBox6.Text = "firstname=Wang&lastname=Test&age=25";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(308, 358);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(29, 12);
-            this.label32.TabIndex = 39;
-            this.label32.Text = "DATA";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(682, 350);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(65, 26);
-            this.button5.TabIndex = 40;
-            this.button5.Text = "发送";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(26, 46);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(161, 12);
-            this.label30.TabIndex = 3;
-            this.label30.Text = "远端数据接收方式(默认无线)";
-            // 
-            // is_sending_use_line
-            // 
-            this.is_sending_use_line.AutoSize = true;
-            this.is_sending_use_line.Location = new System.Drawing.Point(194, 43);
-            this.is_sending_use_line.Name = "is_sending_use_line";
-            this.is_sending_use_line.Size = new System.Drawing.Size(90, 16);
-            this.is_sending_use_line.TabIndex = 4;
-            this.is_sending_use_line.Text = "485有线传输";
-            this.is_sending_use_line.UseVisualStyleBackColor = true;
-            // 
-            // button_send_mode
-            // 
-            this.button_send_mode.Location = new System.Drawing.Point(282, 36);
-            this.button_send_mode.Name = "button_send_mode";
-            this.button_send_mode.Size = new System.Drawing.Size(75, 23);
-            this.button_send_mode.TabIndex = 5;
-            this.button_send_mode.Text = "通讯设置";
-            this.button_send_mode.UseVisualStyleBackColor = true;
-            this.button_send_mode.Click += new System.EventHandler(this.button_send_mode_Click);
+            this.btn_Read_range.Location = new System.Drawing.Point(370, 183);
+            this.btn_Read_range.Name = "btn_Read_range";
+            this.btn_Read_range.Size = new System.Drawing.Size(65, 22);
+            this.btn_Read_range.TabIndex = 43;
+            this.btn_Read_range.Text = "读取量程";
+            this.btn_Read_range.UseVisualStyleBackColor = true;
+            this.btn_Read_range.Click += new System.EventHandler(this.btn_Read_range_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 693);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -2203,6 +2265,11 @@
         private System.Windows.Forms.CheckBox is_sending_use_line;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button button_send_mode;
+        private System.Windows.Forms.Button Choose_device;
+        private System.Windows.Forms.Button Scan_device;
+        private System.Windows.Forms.Button btn_Read_slave;
+        private System.Windows.Forms.Button btn_Read_host;
+        private System.Windows.Forms.Button btn_Read_range;
     }
 }
 

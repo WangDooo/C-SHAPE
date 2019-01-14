@@ -32,26 +32,26 @@ namespace Self_BalancedMethod {
 
         }
         public static Modbus_memory modbus_mem = new Modbus_memory();
-
+        //远端机的测量数据
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1), Serializable]
         public struct slave_memory{  
-            public ushort start;
-	        public ushort addr;//
+            public ushort start; //用不到
+	        public ushort addr; //用不到
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
-            public float[] range_low;			//
+            public float[] range_low;			// 远端机有8个模拟通道，它是量程下限
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
-            public float[] range_top;			//
+            public float[] range_top;			// 量程上限
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
-            public float[] range_zero;
+            public float[] range_zero;          // 零位，目前用不到
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
-            public float[] ch;
+            public float[] ch; // 8个测量值，比如多少mm，已标定的
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]//
-            public float[] I;	//
-            public byte relay_status;	//
+            public float[] I;	// 8个电流值，未标定的。
+            public byte relay_status;	// 继电器状态，远端机有个继电器
             public byte empty;
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
-            public byte[] UID;		//
-            public byte YYYY;
+            public byte[] UID;		// 全球唯一码，用不到可能
+            public byte YYYY; // 以下时间
             public byte MM;
             public byte DD;
             public byte hh;
@@ -59,19 +59,20 @@ namespace Self_BalancedMethod {
             public byte ss;
             public byte end;
         }
-
+        // 3个远端机的测量数据在这里的slave_memory[3]中
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1), Serializable]
         public struct slave_memory_all{
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 6)]
-            public byte[] head;
+            public byte[] head; // 无用处，可以理解为结构体头信息
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-            public slave_memory[] slave_data;
+            public slave_memory[] slave_data; // 3个远端机实际存放处
         }
         public static slave_memory_all slave_mem = new slave_memory_all();
         //------------------------------------------------------------------------------------------
 
         //-------初始定义的一些变量-----------------------------------------------------------------
         public static uint Is_connected = 0; // 网络连接状态
+        public static byte CH_SEL_INDEX = 0; // Form间传输数据的标号【暂时理解】
         public static float[] CH_RANGE = new float[12]; // 量程
         public static float[] CH_RANGE_BIG = new float[12]; // 量程（大端）
         public byte[] Realy_status = new byte[8]; // 继电器状态
@@ -124,6 +125,36 @@ namespace Self_BalancedMethod {
                 listView_ch.Items[i].SubItems[1].Text = String.Format("{0}~{1} mm", CH_RANGE[i], CH_RANGE_BIG[i]);
                 listView_ch.Items[i].SubItems[2].Text = Convert.ToString(modbus_mem.i_data[i]) + " mA";
                 listView_ch.Items[i].SubItems[3].Text = Convert.ToString(modbus_mem.pa_data[i]) + " mm";
+            }
+            // 显示远端3个从设备的数据列表
+            listView_slave.CheckBoxes = false;
+            listView_slave.Columns.Add("通道", 60, HorizontalAlignment.Left);
+            listView_slave.Columns.Add("设备1", 80, HorizontalAlignment.Right);
+            listView_slave.Columns.Add("设备2", 80, HorizontalAlignment.Right);
+            listView_slave.Columns.Add("设备3", 80, HorizontalAlignment.Right);
+            listView_slave.GridLines = true;
+            listView_slave.BeginUpdate();
+            for (int i = 0; i < 8; i++){
+                ListViewItem vi = new ListViewItem();
+                vi.ImageIndex = i + 1;
+                vi.Text = "CH" + Convert.ToString(i + 1);
+                vi.SubItems.Add(0 + " mm");
+                vi.SubItems.Add(0 + " mm");
+                vi.SubItems.Add(0 + " mm");
+                listView_slave.Items.Add(vi);
+            }
+            listView_slave.EndUpdate();
+            listView_slave.FullRowSelect = true;
+            // 远端机的数据初始化
+            slave_mem.head = new byte[6];
+            slave_mem.slave_data = new slave_memory[3];
+            for (int i = 0; i < 3; i++){
+                slave_mem.slave_data[i].range_low = new float[8];
+                slave_mem.slave_data[i].range_top = new float[8];
+                slave_mem.slave_data[i].range_zero = new float[8];
+                slave_mem.slave_data[i].ch = new float[8];
+                slave_mem.slave_data[i].I = new float[8];
+                slave_mem.slave_data[i].UID = new byte[12];
             }
             // 判断testpath是否存在
             if (File.Exists(testpath) == false){
@@ -1111,9 +1142,11 @@ namespace Self_BalancedMethod {
         }
         //------------------------------------------------------------------------------------------
 
-
-        //--------//设置是否用有限485线传输，还是433M无线传输---------------------------------------
-        private void button_send_mode_Click(object sender, EventArgs e) {
+        # region 远端机功能
+        //--------远端机通讯设置--------------------------------------------------------------------
+        
+        //设置是否用有限485线传输，还是433M无线传输，1为485
+        private void button_send_mode_Click(object sender, EventArgs e) { 
             if (GetConnect_state() == 1){
                 byte[] datas = new byte[100];
                 datas[0] = (is_sending_use_line.Checked) ? (byte)1 : (byte)0;
@@ -1122,8 +1155,94 @@ namespace Self_BalancedMethod {
                 MessageBox.Show(msg_not_connect);
             }
         }
+        //扫描设备
+        private void Scan_device_Click(object sender, EventArgs e) {
+            if (GetConnect_state() == 1){
+                byte[] datas = new byte[2];
+                datas[0] = 1; // 代表扫描设备Fun=0x01
+                Get_Para_Client(datas, (byte)'y', 1, 0,  1);
+            } else {
+                MessageBox.Show(msg_not_connect);
+            }
+        }
+        // 设置使用哪几个远端机，地址分别固定为2,3,4.其中主机地址为1
+        private void Choose_device_Click(object sender, EventArgs e) {
+            if (GetConnect_state() == 1){
+                byte[] datas = new byte[100];
+                datas[0] = (checkBox1.Checked)?(byte)1:(byte)0;
+                datas[1] = (checkBox2.Checked) ? (byte)1 : (byte)0;
+                datas[2] = (checkBox3.Checked) ? (byte)1 : (byte)0;
+                Get_Para_Client(datas, (byte)'h', 1, 0, 3);
+            } else {
+                MessageBox.Show(msg_not_connect);
+            }
+        }
+        // 发送获取3个远端设备的数据的命令
+        private void btn_Read_slave_Click(object sender, EventArgs e) {
+            if (GetConnect_state() == 1){
+                byte[] datas = new byte[100];
+                datas[0] = 0;
+                Get_Para_Client(datas, (byte)'D', 1, 0, 1);
+            } else {
+                MessageBox.Show(msg_not_connect);
+            }
+        }
         //------------------------------------------------------------------------------------------
+        # endregion
 
+        //-------主机数据读取、标定、【电流输出没写】-----------------------------------------------------------------
+        // 读取主机数据，包括4个通道的电流数据显示、继电器状态、GPS信息
+        private void btn_Read_host_Click(object sender, EventArgs e) {
+            if (GetConnect_state() == 1){
+                byte[] datas = new byte[100];
+                Get_Para_Client(datas, (byte)'d', 1, 0, 0);
+            } else {
+                MessageBox.Show(msg_not_connect);
+            }
+        }
+        // 读取量程，不是电流
+        private void btn_Read_range_Click(object sender, EventArgs e) {
+            if (GetConnect_state() == 1){
+                byte[] datas = new byte[100];
+                Get_Para_Client(datas, (byte)'r', 1, 0, 0);
+            } else {
+                MessageBox.Show(msg_not_connect);
+            }
+        }
+        // 双击打开量程设置对话框
+        private void listView_ch_MouseDoubleClick(object sender, MouseEventArgs e) {
+            ListViewHitTestInfo li = listView_ch.HitTest(e.Location);
+            if (li != null && li.Item != null)
+                li.Item.Checked = !li.Item.Checked;
+            CH_SEL_INDEX = (byte)listView_ch.FocusedItem.Index; //选中哪个通道
+            RangeSetForm dlg = new RangeSetForm();
+            DialogResult re = dlg.ShowDialog(this);
+            if (re == DialogResult.OK) { //量程下限
+                //发送设置量程 下限
+                byte[] tt = new byte[8];
+                listView_ch.Items[CH_SEL_INDEX].SubItems[1].Text = String.Format("{0}~{1} mm", CH_RANGE[CH_SEL_INDEX], CH_RANGE_BIG[CH_SEL_INDEX]);//CH_RANGE，CH_RANGE_big 已经包含了改过后的新量程，下面处理发送给ARM
+                tt = BitConverter.GetBytes(CH_RANGE[CH_SEL_INDEX]);
+                if (GetConnect_state() == 1) {
+                    byte[] datas = new byte[100];
+                    datas[0] = CH_SEL_INDEX; datas[1] = 0; datas[2] = tt[0]; datas[3] = tt[1]; datas[4] = tt[2]; datas[5] = tt[3];
+                    Get_Para_Client(datas, (byte)'R', 1, 0, 6);
+                } else {
+                    MessageBox.Show(msg_not_connect);
+                }
+            }
+            else if (re == DialogResult.Yes) { // 量程上限 发送设置量程  上限
+                byte[] tt = new byte[8];
+                listView_ch.Items[CH_SEL_INDEX].SubItems[1].Text = String.Format("{0}~{1} mm", CH_RANGE[CH_SEL_INDEX], CH_RANGE_BIG[CH_SEL_INDEX]);
+                tt = BitConverter.GetBytes(CH_RANGE_BIG[CH_SEL_INDEX]);
+                if (GetConnect_state() == 1) {
+                    byte[] datas = new byte[100];
+                    datas[0] = CH_SEL_INDEX; datas[1] = 1; datas[2] = tt[0]; datas[3] = tt[1]; datas[4] = tt[2]; datas[5] = tt[3];
+                    Get_Para_Client(datas, (byte)'R', 1, 0, 6);
+                } else {
+                    MessageBox.Show(msg_not_connect);
+                }
+            }
+        }
 
         //------------------------------------------------------------------------------------------
 
