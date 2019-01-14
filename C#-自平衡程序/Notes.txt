@@ -1,2 +1,7 @@
 存在的问题：
-1. 网口数据每10ms读取一次， 内存空间占用增长速度过快 10min-100mb
+1. 网口数据每10ms读取一次， 内存空间占用增长速度过快 10min-100mb 
+    sock.ReadData() --》asyncread(tcp) --》BufferSize 
+    	public const int BufferSize = 1600;
+    	public byte[] buffer = new byte[BufferSize];
+
+    byte[] dd = new byte[numberofBytesRead];

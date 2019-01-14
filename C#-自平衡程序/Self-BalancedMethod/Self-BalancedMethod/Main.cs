@@ -206,15 +206,13 @@ namespace Self_BalancedMethod {
         }
         // 10ms定时，主要用来网络定时周期性数据读取
         private void timer2_Tick(object sender, EventArgs e) {  
-            if (Is_connected == 1)
-            {
+            if (Is_connected == 1){
                 sock.ReadData(); // 定时的读网口操作
-                SetConnect_text(("已连接"));
+                SetConnect_text("已连接");
                 toolStripButtonConnect.Text=("断开");
             }
-            else
-            {
-                SetConnect_text(("已断开"));
+            else{
+                SetConnect_text("已断开");
                 toolStripButtonConnect.Text=("连接");
             }
         }
@@ -230,16 +228,10 @@ namespace Self_BalancedMethod {
         private void toolStripButtonConnect_Click(object sender, EventArgs e) {
             //判别当前是断开状态，那么下面进行连接服务器（ARM主控板）
             if (GetConnect_state() != 1){
-                //AsynchronousClient client = new AsynchronousClient();
-                // client.StartClient(1);
                 sock.Connect();//网络连接命令，
-                byte[] data = new byte[10];
-                data[0] = 0;
-                // Send_Data_Client(data, (byte)'v', 1);
             }
             else{
                 sock.DisConnect();
-                //client.StartClient(0);
             }
         }
 

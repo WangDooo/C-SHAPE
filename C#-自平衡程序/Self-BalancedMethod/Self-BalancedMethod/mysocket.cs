@@ -189,6 +189,9 @@ namespace Self_BalancedMethod {
                     new AsyncCallback(TCPReadCallBack), false);//标准调用
                     Main.mfs.process_receive(dd, numberofBytesRead);//处理dd数组中接收到的数据
                     // MessageBox.Show("Get len = " + numberofBytesRead.ToString());
+                    // 内存释放
+                    dd = null;
+                    GC.Collect();
                 }
                 else
                 {
