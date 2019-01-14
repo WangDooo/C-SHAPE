@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Runtime.InteropServices;
+using System.Net;
 
 namespace Self_BalancedMethod {
     public partial class Main : Form {
@@ -1086,10 +1087,48 @@ namespace Self_BalancedMethod {
         }
         //------------------------------------------------------------------------------------------
 
-        //-------开始采集-----------------------------------------------------------------------------------
+        //-------开始采集---------------------------------------------------------------------------
         private void btnTestBegin_Click(object sender, EventArgs e) {
             timerDrawLine.Enabled = true;
         }
+        //------------------------------------------------------------------------------------------
+
+        //--------发送数据到服务器------------------------------------------------------------------
+        private void button5_Click(object sender, EventArgs e) {
+            Uri uri = new Uri(textBox1.Text); //需要请求的PHP 地址 
+            HttpWebRequest hwr = (HttpWebRequest)HttpWebRequest.Create(uri);
+            string requstData = textBox6.Text; //需要发送的数据 字符串格式
+            byte[] byteArray = Encoding.UTF8.GetBytes(requstData); //将发送数据转换为 字节数组HttpWebRequest hwr = (HttpWebRequest)HttpWebRequest.Create(uri);
+            hwr.Method = "POST";//请求方法 post 还是 get
+            hwr.KeepAlive = false; //是否保持连接
+            hwr.Timeout = 60 * 1000;//请求超时时间 毫秒为单位 这里设置的是 60秒
+            hwr.ContentLength = byteArray.Length; // 发送类容的长度
+            using (Stream rqStream = hwr.GetRequestStream()) {
+                rqStream.Write(byteArray, 0, byteArray.Length);//发送数据
+                rqStream.Dispose();//释放发送资源
+                MessageBox.Show("发送完毕");
+            }
+        }
+        //------------------------------------------------------------------------------------------
+
+
+        //--------//设置是否用有限485线传输，还是433M无线传输---------------------------------------
+        private void button_send_mode_Click(object sender, EventArgs e) {
+            if (GetConnect_state() == 1){
+                byte[] datas = new byte[100];
+                datas[0] = (is_sending_use_line.Checked) ? (byte)1 : (byte)0;
+                Get_Para_Client(datas, (byte)'w', 1, 0, 1);
+            } else {
+                MessageBox.Show(msg_not_connect);
+            }
+        }
+        //------------------------------------------------------------------------------------------
+
+
+        //------------------------------------------------------------------------------------------
+
+
+
         //------------------------------------------------------------------------------------------
     }
 }
