@@ -208,6 +208,7 @@ namespace Self_BalancedMethod {
         private void timer2_Tick(object sender, EventArgs e) {  
             if (Is_connected == 1){
                 sock.ReadData(); // 定时的读网口操作
+                GC.Collect();
                 SetConnect_text("已连接");
                 toolStripButtonConnect.Text=("断开");
             }
@@ -1098,9 +1099,6 @@ namespace Self_BalancedMethod {
             setTimerForm.SetTimerEvent += setTimerForm_SetTimerEvent;
             setTimerForm.ShowDialog();
         }
-
-        
-
         //------------------------------------------------------------------------------------------
 
         //-------开始采集-----------------------------------------------------------------------------------

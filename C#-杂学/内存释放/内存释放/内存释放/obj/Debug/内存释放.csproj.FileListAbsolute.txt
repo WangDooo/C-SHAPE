@@ -1,0 +1,10 @@
+D:\Coding\Github\C-SHAPE\C#-杂学\内存释放\内存释放\内存释放\bin\Debug\内存释放.exe.config
+D:\Coding\Github\C-SHAPE\C#-杂学\内存释放\内存释放\内存释放\bin\Debug\内存释放.exe
+D:\Coding\Github\C-SHAPE\C#-杂学\内存释放\内存释放\内存释放\bin\Debug\内存释放.pdb
+D:\Coding\Github\C-SHAPE\C#-杂学\内存释放\内存释放\内存释放\obj\Debug\内存释放.csprojResolveAssemblyReference.cache
+D:\Coding\Github\C-SHAPE\C#-杂学\内存释放\内存释放\内存释放\obj\Debug\内存释放.Form1.resources
+D:\Coding\Github\C-SHAPE\C#-杂学\内存释放\内存释放\内存释放\obj\Debug\内存释放.Properties.Resources.resources
+D:\Coding\Github\C-SHAPE\C#-杂学\内存释放\内存释放\内存释放\obj\Debug\内存释放.csproj.GenerateResource.Cache
+D:\Coding\Github\C-SHAPE\C#-杂学\内存释放\内存释放\内存释放\obj\Debug\内存释放.csproj.CoreCompileInputs.cache
+D:\Coding\Github\C-SHAPE\C#-杂学\内存释放\内存释放\内存释放\obj\Debug\内存释放.exe
+D:\Coding\Github\C-SHAPE\C#-杂学\内存释放\内存释放\内存释放\obj\Debug\内存释放.pdb

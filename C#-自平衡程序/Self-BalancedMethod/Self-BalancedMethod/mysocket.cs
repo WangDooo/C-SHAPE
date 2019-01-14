@@ -184,9 +184,7 @@ namespace Self_BalancedMethod {
                 {
                     byte[] dd = new byte[numberofBytesRead];
                     Array.Copy(state.buffer, 0, dd, 0, numberofBytesRead);//把从网口读到的数据复制给dd数组
-                    OnGetData(dd);//not used
-                    mas.BeginRead(state.buffer, 0, StateObject.BufferSize,
-                    new AsyncCallback(TCPReadCallBack), false);//标准调用
+                    mas.BeginRead(state.buffer, 0, StateObject.BufferSize, new AsyncCallback(TCPReadCallBack), false);//标准调用
                     Main.mfs.process_receive(dd, numberofBytesRead);//处理dd数组中接收到的数据
                     // MessageBox.Show("Get len = " + numberofBytesRead.ToString());
                     // 内存释放 这个不管用
@@ -207,9 +205,9 @@ namespace Self_BalancedMethod {
             {
                 return;
             }
-            // 内存释放
-            state = null;
-            GC.Collect(); //强制对所有代进行垃圾回收
+            // 内存释放 这个也不管用
+            // state = null;
+            // GC.Collect(); //强制对所有代进行垃圾回收
         }
     }
 }
