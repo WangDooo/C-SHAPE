@@ -1,1 +1,5 @@
-1
+CAD二次开发入门——Hello World以及画一个圆
+https://blog.csdn.net/niuge8905/article/details/78445363
+
+AutoCAD卸载c#.NET模块(NETUNLOAD功能的实现)
+https://jingyan.baidu.com/article/d8072ac4930316ec94cefd67.html
