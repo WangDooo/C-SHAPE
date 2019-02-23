@@ -1,7 +1,0 @@
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_2-C#的基本用法\Unit_2\Unit_2\bin\Debug\Unit_2.exe.config
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_2-C#的基本用法\Unit_2\Unit_2\bin\Debug\Unit_2.exe
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_2-C#的基本用法\Unit_2\Unit_2\bin\Debug\Unit_2.pdb
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_2-C#的基本用法\Unit_2\Unit_2\obj\Debug\Unit_2.csproj.CoreCompileInputs.cache
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_2-C#的基本用法\Unit_2\Unit_2\obj\Debug\Unit_2.exe
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_2-C#的基本用法\Unit_2\Unit_2\obj\Debug\Unit_2.pdb
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit_2-C#的基本用法\Unit_2\Unit_2\obj\Debug\Unit_2.csprojResolveAssemblyReference.cache

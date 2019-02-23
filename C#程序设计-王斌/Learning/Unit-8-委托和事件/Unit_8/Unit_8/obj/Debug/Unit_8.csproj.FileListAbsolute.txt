@@ -1,7 +1,0 @@
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-8-委托和事件\Unit_8\Unit_8\bin\Debug\Unit_8.exe.config
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-8-委托和事件\Unit_8\Unit_8\bin\Debug\Unit_8.exe
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-8-委托和事件\Unit_8\Unit_8\bin\Debug\Unit_8.pdb
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-8-委托和事件\Unit_8\Unit_8\obj\Debug\Unit_8.csprojResolveAssemblyReference.cache
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-8-委托和事件\Unit_8\Unit_8\obj\Debug\Unit_8.csproj.CoreCompileInputs.cache
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-8-委托和事件\Unit_8\Unit_8\obj\Debug\Unit_8.exe
-D:\Coding\Github\C-SHAPE\C#程序设计-王斌\Learning\Unit-8-委托和事件\Unit_8\Unit_8\obj\Debug\Unit_8.pdb
