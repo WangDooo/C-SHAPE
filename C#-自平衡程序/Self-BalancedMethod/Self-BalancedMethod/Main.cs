@@ -82,6 +82,7 @@ namespace Self_BalancedMethod {
         mysocket sock = new mysocket();
         public static Main mfs;
         string msg_not_connect = "未与主机建立连接";
+        FileStream fileStream;
         # endregion
 
         //--------初始化界面Load--------------------------------------------------------------
@@ -271,7 +272,7 @@ namespace Self_BalancedMethod {
         }
 
 
-        # region 新建文件、保存项目信息到zph
+        # region 新建文件、保存项目信息到 *.zph
         private void 新建ToolStripMenuItem_Click(object sender, EventArgs e) {
             CreateNewData();
         }
@@ -280,33 +281,124 @@ namespace Self_BalancedMethod {
             CreateNewData();
         }
 
-        void CreateNewData() {
+        private void toolStripButtonSave_Click(object sender, EventArgs e) {
+            SaveNowData();
+        }
+
+        private void 保存ToolStripMenuItem_Click(object sender, EventArgs e) {
+            SaveNowData();
+        }
+
+        private void 另存为ToolStripMenuItem_Click(object sender, EventArgs e) {
+            SaveAsData();
+        }
+        void CreateNewData() {  // 新建
             CreateNewFolderForm createNewFolderForm = new CreateNewFolderForm();
             if (createNewFolderForm.ShowDialog() == DialogResult.OK) {
                 InitProjectInfo();
-                SaveFileDialog newDlg = new SaveFileDialog();
-                newDlg.Filter = "测试数据|*.zph";
-                string strPath; //文件夹完整的路径名
-                if (newDlg.ShowDialog() == DialogResult.OK) {
-                    try {
-                        strPath = newDlg.FileName;
-                        ShareClass.FileName = strPath;
-                        SaveData scData = new SaveData();
-                        
-                        FileStream fileStream = new FileStream(strPath,FileMode.Create, FileAccess.Write, FileShare.Read);
-                        BinaryFormatter b = new BinaryFormatter();
-                        b.Serialize(fileStream, scData);
-                        // XmlSerializer xs = new XmlSerializer(typeof(SaveData)); // 保存成XML格式
-                        // xs.Serialize(fileStream, scData);
-                        // fileStream.Close(); // 这里不close防止被修改
-                    } catch (Exception ex) {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
+                SaveAsData();
             }            
+        }
+
+        void SaveAsData() { // 另存为
+            SaveFileDialog newDlg = new SaveFileDialog();
+            newDlg.Filter = "测试数据|*.zph";
+            string strPath; //文件夹完整的路径名
+            if (newDlg.ShowDialog() == DialogResult.OK) {
+                try {
+                    strPath = newDlg.FileName;
+                    ShareClass.FileName = strPath;
+                    RefreshShareClass();
+                    SaveData newData = new SaveData();            
+                    fileStream = new FileStream(strPath,FileMode.Create, FileAccess.Write, FileShare.Read);
+                    BinaryFormatter b = new BinaryFormatter();
+                    b.Serialize(fileStream, newData);
+                    // XmlSerializer xs = new XmlSerializer(typeof(SaveData)); // 保存成XML格式
+                    // xs.Serialize(fileStream, scData);
+                    // fileStream.Close(); // 这里不close防止被修改
+                } catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        void SaveNowData() {  // 保存正在执行的文件信息
+            if(ShareClass.FileName == "") {
+                MessageBox.Show("请先打开或新建一个文件");
+            } else {
+                try {
+                    RefreshShareClass();
+                    SaveData newData = new SaveData();        
+                    BinaryFormatter b = new BinaryFormatter();
+                    string strPath = newData.FileName;
+                    if(fileStream != null) {
+                        fileStream.Close();
+                    }
+                    fileStream = new FileStream(strPath,FileMode.Create, FileAccess.Write, FileShare.Read);
+                    b.Serialize(fileStream, newData);
+                } catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }   
+            }
+        }
+
+        void SaveBackup() { // 定时的自动保存
+
+        }
+
+        void RefreshShareClass() {
+            ShareClass.ProjectNumber = txtProjectNumber.Text;
+            ShareClass.SiteName = txtSiteName.Text;
+            ShareClass.PileNumber = txtPileNumber.Text;
+            ShareClass.PileLength = txtPileLength.Text;
+            ShareClass.PileDiameter = txtPileDiameter.Text;
         }
         # endregion
         
+        # region 打开 *.zph
+        private void toolStripButtonOpen_Click(object sender, EventArgs e) {
+             OpenData();
+        }
+
+        private void 打开ToolStripMenuItem_Click(object sender, EventArgs e) {
+             OpenData();
+        }
+
+        void OpenData() {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Multiselect = false; //该值确定是否可以选择多个文件
+            dialog.Title = "请选择文件";
+            dialog.Filter = "测试数据|*.zph";
+            if (dialog.ShowDialog() == DialogResult.OK){
+                try {
+                        string strPath = dialog.FileName;
+                        ShareClass.FileName = strPath;
+                        SaveData openData = new SaveData();            
+                        // fileStream.Close();
+                        fileStream = new FileStream(strPath,FileMode.Open, FileAccess.ReadWrite, FileShare.Read);
+                        BinaryFormatter b = new BinaryFormatter();
+                        openData = b.Deserialize(fileStream) as SaveData;
+                        // fileStream.Close(); // 这里不close防止被修改
+                        ReadData(openData);
+                    } catch (Exception ex) {
+                        MessageBox.Show(ex.Message);
+                    }
+            }
+
+            void ReadData(SaveData data) {
+                ShareClass.ProjectNumber = data.ProjectNumber;
+                ShareClass.PileNumber = data.PileNumber;
+                ShareClass.PileLength = data.PileLength;
+                ShareClass.SiteName = data.SiteName;
+                ShareClass.TestDay = data.TestDay;
+                ShareClass.TestMonth = data.TestMonth;
+                ShareClass.TestYear = data.TestYear;
+                ShareClass.PileDiameter = data.PileDiameter;
+                InitProjectInfo();
+            }
+        }
+        # endregion
+
         # region 初始化项目信息
         private void InitProjectInfo() {
             txtProjectNumber.Text = ShareClass.ProjectNumber;
@@ -1005,10 +1097,7 @@ namespace Self_BalancedMethod {
         //------------------------------------------------------------------------------------------   
             
             
-        //--------判断继电器开关状态----------------------------------------------------------------
-
-        //------------------------------------------------------------------------------------------
-
+    
 
         # region 同步时间函数
         //--------同步时间的响应，把arm的时间同步的和电脑一致---------------------------------------
@@ -1231,6 +1320,10 @@ namespace Self_BalancedMethod {
                 }
             }
         }
+
+        
+
+
 
         //------------------------------------------------------------------------------------------
 
