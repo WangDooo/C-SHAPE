@@ -12,10 +12,13 @@ using System.Data.OleDb;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Runtime.InteropServices;
 using System.Net;
+using System.Runtime.Serialization.Formatters.Binary; // 二进制序列化
+using System.Runtime.Serialization.Formatters.Soap;
+using System.Xml.Serialization;
 
 namespace Self_BalancedMethod {
     public partial class Main : Form {
-        //--------结构体定义------------------------------------------------------------------------
+        # region 结构体定义
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1), Serializable]
         public struct Modbus_memory//结构体定义法，严重不同于c语言
         {
@@ -68,9 +71,9 @@ namespace Self_BalancedMethod {
             public slave_memory[] slave_data; // 3个远端机实际存放处
         }
         public static slave_memory_all slave_mem = new slave_memory_all();
-        //------------------------------------------------------------------------------------------
+        # endregion
 
-        //-------初始定义的一些变量-----------------------------------------------------------------
+        # region 初始定义的一些变量
         public static uint Is_connected = 0; // 网络连接状态
         public static byte CH_SEL_INDEX = 0; // Form间传输数据的标号【暂时理解】
         public static float[] CH_RANGE = new float[12]; // 量程
@@ -79,8 +82,7 @@ namespace Self_BalancedMethod {
         mysocket sock = new mysocket();
         public static Main mfs;
         string msg_not_connect = "未与主机建立连接";
-        
-        //------------------------------------------------------------------------------------------
+        # endregion
 
         //--------初始化界面Load--------------------------------------------------------------
         private void Main_Load(object sender, EventArgs e) {
@@ -188,7 +190,7 @@ namespace Self_BalancedMethod {
                 Marshal.FreeHGlobal(buffer);
             }
         }    
-        //习惯于c语言中的地址搬运函数
+        // 习惯于c语言中的地址搬运函数
         public void memcpy_byte(byte[] dec,int off,byte[] src,int offset,int len){
             for (int i = 0; i < len; i++)
                 dec[off+i] = src[offset + i];
@@ -269,53 +271,39 @@ namespace Self_BalancedMethod {
         }
 
 
-        # region 新建文件、保存项目信息到txt
+        # region 新建文件、保存项目信息到zph
         private void 新建ToolStripMenuItem_Click(object sender, EventArgs e) {
-            CreateNewTxt();
+            CreateNewData();
         }
 
         private void toolStripButtonNew_Click(object sender, EventArgs e) {
-            CreateNewTxt();
+            CreateNewData();
         }
 
-        void CreateNewTxt() {
+        void CreateNewData() {
             CreateNewFolderForm createNewFolderForm = new CreateNewFolderForm();
-            createNewFolderForm.ShowDialog();
-            InitProjectInfo();
-            FolderBrowserDialog dialog = new FolderBrowserDialog();
-            dialog.Description = "请选择文件存放路径";
-            string strPath; //文件夹完整的路径名
-            if (dialog.ShowDialog() == DialogResult.OK) {
-                try {
-                    strPath = dialog.SelectedPath;
-                    string subPath = strPath + "\\" + ShareClass.ProjectNumber + "\\";
-                    string txtProjectInfo =  ShareClass.ProjectNumber + "-" + ShareClass.PileNumber + "-项目信息";
-                    if (System.IO.Directory.Exists(subPath) == false){
-                        System.IO.Directory.CreateDirectory(subPath);
-                        CreateTxtProjectInfo(subPath, txtProjectInfo);
-                    } else {
-                        CreateTxtProjectInfo(subPath, txtProjectInfo); 
+            if (createNewFolderForm.ShowDialog() == DialogResult.OK) {
+                InitProjectInfo();
+                SaveFileDialog newDlg = new SaveFileDialog();
+                newDlg.Filter = "测试数据|*.zph";
+                string strPath; //文件夹完整的路径名
+                if (newDlg.ShowDialog() == DialogResult.OK) {
+                    try {
+                        strPath = newDlg.FileName;
+                        ShareClass.FileName = strPath;
+                        SaveData scData = new SaveData();
+                        
+                        FileStream fileStream = new FileStream(strPath,FileMode.Create, FileAccess.Write, FileShare.Read);
+                        BinaryFormatter b = new BinaryFormatter();
+                        b.Serialize(fileStream, scData);
+                        // XmlSerializer xs = new XmlSerializer(typeof(SaveData)); // 保存成XML格式
+                        // xs.Serialize(fileStream, scData);
+                        // fileStream.Close(); // 这里不close防止被修改
+                    } catch (Exception ex) {
+                        MessageBox.Show(ex.Message);
                     }
-    
-                } catch (Exception ex) {
-                    MessageBox.Show(ex.Message);
                 }
-            }
-
-            // 创建txt文件，写入相关信息
-            void CreateTxtProjectInfo(string subPath, string txtProjectInfo) {
-                FileStream fs = new FileStream(subPath+"\\"+txtProjectInfo+".txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
-                StreamWriter sw = new StreamWriter(fs); 
-                sw.WriteLine("项目编号," + ShareClass.ProjectNumber);//开始写入
-                sw.WriteLine("测试时间," + ShareClass.TestYear + "." + ShareClass.TestMonth + "." + ShareClass.TestDay);
-                sw.WriteLine("工地名称," + ShareClass.SiteName);
-                sw.WriteLine("试桩桩号," + ShareClass.PileNumber);
-                sw.WriteLine("桩长," + ShareClass.PileLength);
-                sw.WriteLine("桩径," + ShareClass.PileDiameter);
-                sw.Flush(); //清空缓冲区
-                sw.Close(); //关闭流
-                fs.Close();
-            }
+            }            
         }
         # endregion
         

@@ -5,15 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Self_BalancedMethod {
+    [Serializable]
     class ShareClass {
         // 记录项目编号
-        private static string _ProjectNumber = "";
+        public static string _ProjectNumber = "";
         public static string ProjectNumber {
             get { return ShareClass._ProjectNumber; }
             set { ShareClass._ProjectNumber = value; }
         }
         // 记录测试时间
-        private static string _TestYear = "";
+        public static string _TestYear = "";
         public static string TestYear {
             get { return ShareClass._TestYear; }
             set { ShareClass._TestYear = value; }
@@ -87,6 +88,12 @@ namespace Self_BalancedMethod {
         public static bool ParmBool {
             get { return ShareClass._ParmBool; }
             set { ShareClass._ParmBool = value; }
+        }
+        // 记录文件保存路径
+        private static string _FileName = "";
+        public static string FileName {
+            get { return ShareClass._FileName; }
+            set { ShareClass._FileName = value; }
         }
     }
 }

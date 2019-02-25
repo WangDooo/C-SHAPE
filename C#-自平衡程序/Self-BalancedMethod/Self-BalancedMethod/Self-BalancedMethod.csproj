@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -80,6 +81,7 @@
     <Compile Include="RangeSetForm.Designer.cs">
       <DependentUpon>RangeSetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaveData.cs" />
     <Compile Include="SetTimerForm.cs">
       <SubType>Form</SubType>
     </Compile>
