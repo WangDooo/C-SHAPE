@@ -352,6 +352,7 @@ namespace Self_BalancedMethod {
             ShareClass.PileNumber = txtPileNumber.Text;
             ShareClass.PileLength = txtPileLength.Text;
             ShareClass.PileDiameter = txtPileDiameter.Text;
+            // 将DataTable中的数据，保存至ShareClass
         }
         # endregion
         
@@ -394,6 +395,7 @@ namespace Self_BalancedMethod {
                 ShareClass.TestMonth = data.TestMonth;
                 ShareClass.TestYear = data.TestYear;
                 ShareClass.PileDiameter = data.PileDiameter;
+                ShareClass.Data = data.Data;
                 InitProjectInfo();
             }
         }
@@ -431,6 +433,7 @@ namespace Self_BalancedMethod {
         List<double> lgQ = new List<double>();
         List<double> Qzph = new List<double>();
         List<double> szph = new List<double>();
+        List<DataClass> testlist = new List<DataClass>(); // 数据Class
         string testpath = @"C:\Users\123\Desktop\test\testdata.txt";
         // 每1s读取一次txt中的数据，进行图像绘制
         private void timer3_Tick(object sender, EventArgs e) {
@@ -438,7 +441,8 @@ namespace Self_BalancedMethod {
             s.Clear();
             lgt.Clear();
             lgQ.Clear();
-            DataTable dt = GetTxt(testpath); // 将TxT内容写入datatable
+            DataTable dt = DataToDataTable(); // 将ShareClass内容写入datatable
+            // GetTxt(testpath); // 将TxT内容写入datatable
             dataGridView1.DataSource = dt;
             for(int i=0; i<dt.Rows.Count; i++) {
                 Q.Add(Convert.ToDouble(dt.Rows[i][2]));  // List Q
@@ -471,6 +475,30 @@ namespace Self_BalancedMethod {
                 }
                 DrawQszphLine(Qzph,szph);
             }
+        }
+
+        // 获取ShareClass中的Data数据，将其写入DataTable
+        public DataTable DataToDataTable() {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("序号", typeof(string)); // 添加表头
+            dt.Columns.Add("时间t(s)", typeof(string));
+            dt.Columns.Add("荷载Q(kN)", typeof(string));
+            dt.Columns.Add("位移s(mm)", typeof(string));
+            dt.Columns.Add("Qu(kN)", typeof(string));
+            dt.Columns.Add("Qd(kN)", typeof(string));
+            dt.Columns.Add("sd(mm)", typeof(string));
+            foreach(DataClass data in ShareClass.Data) {
+                DataRow dr = dt.NewRow();
+                dr[0] = data.Number;
+                dr[1] = data.Time;
+                dr[2] = data.Q;
+                dr[3] = data.s;
+                dr[4] = data.Qu;
+                dr[5] = data.Qd;
+                dr[6] = data.sd;
+                dt.Rows.Add(dr);
+            }
+            return dt;
         }
 
         // 获取Txt 返回datatable
@@ -767,40 +795,16 @@ namespace Self_BalancedMethod {
 
         }
 
-        // 备份txt
-        void BackupTxt(){
-            String dir = "C:\\Users\\123\\Desktop\\test\\"; 
-            String bakDir = dir + "backup\\";  // 创建备份文件夹，
-            if (Directory.Exists(bakDir) == false){
-                Directory.CreateDirectory(bakDir);
-            }
-            string[] files = Directory.GetFiles(dir);
-            if (files.Length != 0) {
-                foreach (string file in files) {
-                    FileInfo fileinfo = new FileInfo(file);
-                    try{
-                        string fileName =  DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")+".txt"; // 按时间命名
-                        File.Copy(file,Path.Combine(bakDir,fileName)); //备份文件
-                    } catch (Exception ex) {
-                        MessageBox.Show(ex.Message);
-                    } 
-                }
-            }
-        }
-        //------------------------------------------------------------------------------------------
-
-        //------------------------------------------------------------------------------------------
-
         //------------------------------------------------------------------------------------------
 
         //--------测试专用--------------------------------------------------------------------------
         private void toolStripButton1_Click(object sender, EventArgs e) {
-            string testpath = @"C:\Users\123\Desktop\test\testdata.txt";
-            DataTable dt = GetTxt(testpath);
+            //string testpath = @"C:\Users\123\Desktop\test\testdata.txt";
+            //DataTable dt = GetTxt(testpath);
             // TestWriteTxt(testpath,dt);  // 模拟数据采集
             // BackupTxt(); // 备份文件
 
-            // 用于模拟数据采集
+            // 用于模拟数据采集 写入TXT
             void TestWriteTxt(string path, DataTable testdt){ 
                 FileStream fs = new FileStream(path,  FileMode.Append, FileAccess.Write, FileShare.Read);
                 StreamWriter sw = new StreamWriter(fs);
@@ -818,6 +822,14 @@ namespace Self_BalancedMethod {
                 sw.Flush(); //清空缓冲区
                 sw.Close(); //关闭流
                 fs.Close();
+            }
+
+            TestWriteData();
+            // 用于模拟数据采集 生成List写入ShareClass
+            void TestWriteData() {
+                DataClass testdata = new DataClass(2,30,1000,0.5,800,1000,0.5);
+                testlist.Add(testdata);
+                ShareClass.Data = testlist;
             }
         }
         //------------------------------------------------------------------------------------------
@@ -1043,7 +1055,7 @@ namespace Self_BalancedMethod {
         # endregion
 
         
-        //-------发送命令函数 和 crc值处理-----------------------------------------------------------
+        # region 发送命令函数 和 crc值处理
         //最主要的发送命令函数，data是数据区，type是类型，total是总共有几个包需要发送，index是当前是第几个包，len是发送长度
         public uint Get_Para_Client(byte[] data, byte type, uint total, uint index, int len)
         {
@@ -1094,7 +1106,7 @@ namespace Self_BalancedMethod {
                 crc_r += data[i];
             return crc_r;
         }
-        //------------------------------------------------------------------------------------------   
+        # endregion
             
             
     
@@ -1321,10 +1333,7 @@ namespace Self_BalancedMethod {
             }
         }
 
-        
-
-
-
+       
         //------------------------------------------------------------------------------------------
 
 

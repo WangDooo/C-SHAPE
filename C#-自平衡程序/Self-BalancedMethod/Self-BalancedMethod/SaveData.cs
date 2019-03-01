@@ -21,8 +21,9 @@ namespace Self_BalancedMethod {
         public string PileLength;
         // 记录桩径
         public string PileDiameter;
+        // 记录试验数据
+        public List<DataClass> Data = new List<DataClass>();
         // 记录文件保存路径
-        [NonSerialized]
         public string FileName;
         //
         public SaveData() {  
@@ -35,6 +36,7 @@ namespace Self_BalancedMethod {
             PileLength = ShareClass.PileLength;
             PileDiameter = ShareClass.PileDiameter;
             FileName = ShareClass.FileName;
+            Data = ShareClass.Data;
         }
     }
 }

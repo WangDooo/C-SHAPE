@@ -95,5 +95,11 @@ namespace Self_BalancedMethod {
             get { return ShareClass._FileName; }
             set { ShareClass._FileName = value; }
         }
+        // 记录表格中的试验数据
+        private static List<DataClass> _Data = new List<DataClass>();
+        public static List<DataClass> Data {
+            get { return ShareClass._Data; }
+            set { ShareClass._Data = value; }
+        }
     }
 }

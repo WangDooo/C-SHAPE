@@ -60,6 +60,7 @@
     <Compile Include="CreateNewFolderForm.Designer.cs">
       <DependentUpon>CreateNewFolderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataClass.cs" />
     <Compile Include="EquivalentParametersForm.cs">
       <SubType>Form</SubType>
     </Compile>
