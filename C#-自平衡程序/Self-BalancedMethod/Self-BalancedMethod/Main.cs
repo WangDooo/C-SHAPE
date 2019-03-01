@@ -387,6 +387,7 @@ namespace Self_BalancedMethod {
             }
 
             void ReadData(SaveData data) {
+                // 项目基本信息
                 ShareClass.ProjectNumber = data.ProjectNumber;
                 ShareClass.PileNumber = data.PileNumber;
                 ShareClass.PileLength = data.PileLength;
@@ -395,13 +396,25 @@ namespace Self_BalancedMethod {
                 ShareClass.TestMonth = data.TestMonth;
                 ShareClass.TestYear = data.TestYear;
                 ShareClass.PileDiameter = data.PileDiameter;
+                // 自平衡参数
+                ShareClass.ParmW = data.ParmW;
+                ShareClass.ParmGamma1 = data.ParmGamma1;
+                ShareClass.ParmLu = data.ParmLu;
+                ShareClass.ParmEp = data.ParmEp;
+                ShareClass.ParmAp = data.ParmAp;
+                ShareClass.ParmBool = data.ParmBool;
+                // 文件地址
+                ShareClass.FileName = data.FileName;
+                // 测试数据
                 ShareClass.Data = data.Data;
                 InitProjectInfo();
+                InitDataInfo();
+                // ！！！！这里应该绘制各条曲线、之后就是监测到DataTable中数据有变化就刷新曲线
             }
         }
         # endregion
 
-        # region 初始化项目信息
+        # region 初始化项目基本信息、初始化读入的测试数据
         private void InitProjectInfo() {
             txtProjectNumber.Text = ShareClass.ProjectNumber;
             txtTestTime.Text = ShareClass.TestYear + "年" + ShareClass.TestMonth + "月" + ShareClass.TestDay + "日";
@@ -409,6 +422,11 @@ namespace Self_BalancedMethod {
             txtPileNumber.Text = ShareClass.PileNumber;
             txtPileLength.Text = ShareClass.PileLength;
             txtPileDiameter.Text = ShareClass.PileDiameter;
+        }
+
+        private void InitDataInfo() {
+            DataTable dt = DataToDataTable();
+            dataGridView1.DataSource = dt;
         }
         # endregion
 
@@ -1207,9 +1225,13 @@ namespace Self_BalancedMethod {
         }
         //------------------------------------------------------------------------------------------
 
-        //-------开始采集---------------------------------------------------------------------------
+        //-------开始、停止采集--后续会合成一个按钮-------------------------------------------------
         private void btnTestBegin_Click(object sender, EventArgs e) {
             timerDrawLine.Enabled = true;
+        }
+
+        private void btnTestStop_Click(object sender, EventArgs e) {
+            timerDrawLine.Enabled = false;
         }
         //------------------------------------------------------------------------------------------
 
@@ -1332,6 +1354,8 @@ namespace Self_BalancedMethod {
                 }
             }
         }
+
+
 
 
 
