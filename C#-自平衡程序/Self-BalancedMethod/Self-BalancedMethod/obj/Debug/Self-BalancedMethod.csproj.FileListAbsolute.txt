@@ -34,3 +34,6 @@ C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod
 D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.CreateNewFolderForm.resources
 D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.SetTimerForm.resources
 D:\Coding\Github\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.RangeSetForm.resources
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.CreateNewFolderForm.resources
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.RangeSetForm.resources
+C:\DDD\GitHub\C-SHAPE\C#-自平衡程序\Self-BalancedMethod\Self-BalancedMethod\obj\Debug\Self_BalancedMethod.SetTimerForm.resources
