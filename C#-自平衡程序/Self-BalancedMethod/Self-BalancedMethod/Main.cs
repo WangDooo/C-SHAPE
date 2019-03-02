@@ -347,12 +347,26 @@ namespace Self_BalancedMethod {
         }
 
         void RefreshShareClass() {
+            // 将textbox中的数据，保存至ShareClass
             ShareClass.ProjectNumber = txtProjectNumber.Text;
             ShareClass.SiteName = txtSiteName.Text;
             ShareClass.PileNumber = txtPileNumber.Text;
             ShareClass.PileLength = txtPileLength.Text;
             ShareClass.PileDiameter = txtPileDiameter.Text;
             // 将DataTable中的数据，保存至ShareClass
+            List<DataClass> DataList = new List<DataClass>();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++) {
+                DataClass data = new DataClass(
+                    Convert.ToDouble(dataGridView1[0, i].Value),
+                    Convert.ToDouble(dataGridView1[1, i].Value),
+                    Convert.ToDouble(dataGridView1[2, i].Value),
+                    Convert.ToDouble(dataGridView1[3, i].Value),
+                    Convert.ToDouble(dataGridView1[4, i].Value),
+                    Convert.ToDouble(dataGridView1[5, i].Value),
+                    Convert.ToDouble(dataGridView1[6, i].Value));
+                DataList.Add(data);
+            }
+            ShareClass.Data = DataList;
         }
         # endregion
         
@@ -372,21 +386,21 @@ namespace Self_BalancedMethod {
             dialog.Filter = "测试数据|*.zph";
             if (dialog.ShowDialog() == DialogResult.OK){
                 try {
-                        string strPath = dialog.FileName;
-                        ShareClass.FileName = strPath;
-                        SaveData openData = new SaveData();            
-                        // fileStream.Close();
-                        fileStream = new FileStream(strPath,FileMode.Open, FileAccess.ReadWrite, FileShare.Read);
-                        BinaryFormatter b = new BinaryFormatter();
-                        openData = b.Deserialize(fileStream) as SaveData;
-                        // fileStream.Close(); // 这里不close防止被修改
-                        ReadData(openData);
-                    } catch (Exception ex) {
-                        MessageBox.Show(ex.Message);
-                    }
+                     string strPath = dialog.FileName;
+                     ShareClass.FileName = strPath;
+                     SaveData openData = new SaveData();            
+                     // fileStream.Close();
+                     fileStream = new FileStream(strPath,FileMode.Open, FileAccess.ReadWrite, FileShare.Read);
+                     BinaryFormatter b = new BinaryFormatter();
+                     openData = b.Deserialize(fileStream) as SaveData;
+                     // fileStream.Close(); // 这里不close防止被修改
+                     DataToShareClass(openData);
+                } catch (Exception ex) {
+                     MessageBox.Show(ex.Message);
+                }
             }
 
-            void ReadData(SaveData data) {
+            void DataToShareClass(SaveData data) {
                 // 项目基本信息
                 ShareClass.ProjectNumber = data.ProjectNumber;
                 ShareClass.PileNumber = data.PileNumber;
@@ -425,7 +439,7 @@ namespace Self_BalancedMethod {
         }
 
         private void InitDataInfo() {
-            DataTable dt = DataToDataTable();
+            DataTable dt = ShareClassToDataTable();
             dataGridView1.DataSource = dt;
         }
         # endregion
@@ -451,7 +465,7 @@ namespace Self_BalancedMethod {
         List<double> lgQ = new List<double>();
         List<double> Qzph = new List<double>();
         List<double> szph = new List<double>();
-        List<DataClass> testlist = new List<DataClass>(); // 数据Class
+        List<DataClass> testlist = new List<DataClass>(); // 数据Class 用于测试
         string testpath = @"C:\Users\123\Desktop\test\testdata.txt";
         // 每1s读取一次txt中的数据，进行图像绘制
         private void timer3_Tick(object sender, EventArgs e) {
@@ -459,7 +473,7 @@ namespace Self_BalancedMethod {
             s.Clear();
             lgt.Clear();
             lgQ.Clear();
-            DataTable dt = DataToDataTable(); // 将ShareClass内容写入datatable
+            DataTable dt = ShareClassToDataTable(); // 将ShareClass内容写入datatable
             // GetTxt(testpath); // 将TxT内容写入datatable
             dataGridView1.DataSource = dt;
             for(int i=0; i<dt.Rows.Count; i++) {
@@ -496,7 +510,7 @@ namespace Self_BalancedMethod {
         }
 
         // 获取ShareClass中的Data数据，将其写入DataTable
-        public DataTable DataToDataTable() {
+        public DataTable ShareClassToDataTable() {
             DataTable dt = new DataTable();
             dt.Columns.Add("序号", typeof(string)); // 添加表头
             dt.Columns.Add("时间t(s)", typeof(string));
@@ -518,32 +532,7 @@ namespace Self_BalancedMethod {
             }
             return dt;
         }
-
-        // 获取Txt 返回datatable
-        public DataTable GetTxt(string pths) {
-            StreamReader sr = new StreamReader(pths);
-            DataTable dt = new DataTable();
-            dt.Columns.Add("序号", typeof(string)); // 添加表头
-            dt.Columns.Add("时间t(s)", typeof(string));
-            dt.Columns.Add("荷载Q(kN)", typeof(string));
-            dt.Columns.Add("位移s(mm)", typeof(string));
-            dt.Columns.Add("Qu(kN)", typeof(string));
-            dt.Columns.Add("Qd(kN)", typeof(string));
-            dt.Columns.Add("sd(mm)", typeof(string));
-            string txt = sr.ReadToEnd().Replace("\r\n", "-"); // 把换行标志替换成"-"
-            string[] nodes = txt.Split('-');
-            foreach (string node in nodes) { //每行
-                string[] strs = node.Split(','); // 每行根据","分割
-                DataRow dr = dt.NewRow();
-                for(int i = 0; i < strs.Length; i++) {
-                    dr[i] = strs[i];
-                }
-                dt.Rows.Add(dr);
-            }
-            sr.Close();
-            return dt;
-        }
-        
+   
         // 使用Chart 进行Q-s曲线显示
         void DrawQsLine(List<double> Q , List<double> s) {
             chartQs.Series.Clear(); //清除默认的series
@@ -580,7 +569,7 @@ namespace Self_BalancedMethod {
             chartQs.ChartAreas[0].AxisX.Minimum = 0;  // 设置显示范围
             //chartQs.ChartAreas[0].AxisX.Maximum = 10;
             chartQs.ChartAreas[0].AxisY.Minimum = 0;
-            chartQs.ChartAreas[0].AxisY.Maximum = Math.Ceiling(Convert.ToDouble(s[s.Count-1])); // 向上取整     
+            // chartQs.ChartAreas[0].AxisY.Maximum = Math.Ceiling(Convert.ToDouble(s[s.Count-1])); // 向上取整     
 
             Qs.ToolTip = "Q：#VALX \n s：#VALY"; // #VALX #VALY 鼠标悬停显示
 
@@ -624,9 +613,9 @@ namespace Self_BalancedMethod {
             chartslgt.ChartAreas[0].AxisY.IsReversed = true; // Y轴反向
 
             chartslgt.ChartAreas[0].AxisX.Minimum = 0;  // 设置显示范围
-            chartslgt.ChartAreas[0].AxisX.Maximum = Math.Ceiling(Convert.ToDouble(lgt[lgt.Count-1]));
+            // chartslgt.ChartAreas[0].AxisX.Maximum = Math.Ceiling(Convert.ToDouble(lgt[lgt.Count-1]));
             chartslgt.ChartAreas[0].AxisY.Minimum = 0;
-            chartslgt.ChartAreas[0].AxisY.Maximum = Math.Ceiling(Convert.ToDouble(s[s.Count-1]));
+            // chartslgt.ChartAreas[0].AxisY.Maximum = Math.Ceiling(Convert.ToDouble(s[s.Count-1]));
 
             slgt.ToolTip = "lgt：#VALX \n s：#VALY"; // #VALX #VALY 鼠标悬停显示
 
@@ -670,9 +659,9 @@ namespace Self_BalancedMethod {
             chartslgQ.ChartAreas[0].AxisY.IsReversed = true; // Y轴反向
 
             chartslgQ.ChartAreas[0].AxisX.Minimum = 0;  // 设置显示范围
-            chartslgQ.ChartAreas[0].AxisX.Maximum = Math.Ceiling(Convert.ToDouble(lgQ[lgQ.Count-1]));
+            // chartslgQ.ChartAreas[0].AxisX.Maximum = Math.Ceiling(Convert.ToDouble(lgQ[lgQ.Count-1]));
             chartslgQ.ChartAreas[0].AxisY.Minimum = 0;
-            chartslgQ.ChartAreas[0].AxisY.Maximum = Math.Ceiling(Convert.ToDouble(s[s.Count-1]));
+            // chartslgQ.ChartAreas[0].AxisY.Maximum = Math.Ceiling(Convert.ToDouble(s[s.Count-1]));
 
             slgQ.ToolTip = "lgQ：#VALX \n s：#VALY"; // #VALX #VALY 鼠标悬停显示
 
@@ -821,26 +810,6 @@ namespace Self_BalancedMethod {
             //DataTable dt = GetTxt(testpath);
             // TestWriteTxt(testpath,dt);  // 模拟数据采集
             // BackupTxt(); // 备份文件
-
-            // 用于模拟数据采集 写入TXT
-            void TestWriteTxt(string path, DataTable testdt){ 
-                FileStream fs = new FileStream(path,  FileMode.Append, FileAccess.Write, FileShare.Read);
-                StreamWriter sw = new StreamWriter(fs);
-                string strtemp = "\r\n";
-                for (int i = 0; i < 7; i++) { // 这个7是暂时设定的
-                    double temp = Convert.ToDouble(testdt.Rows[testdt.Rows.Count - 1][i]);
-                    temp = temp * 1.05;
-                    if (i != 6) { // 这个6是暂时设定的
-                        strtemp = strtemp + temp.ToString("f2") + ",";
-                    } else {
-                        strtemp = strtemp + temp.ToString("f2");
-                    }
-                }
-                sw.Write(strtemp);
-                sw.Flush(); //清空缓冲区
-                sw.Close(); //关闭流
-                fs.Close();
-            }
 
             TestWriteData();
             // 用于模拟数据采集 生成List写入ShareClass
@@ -1354,10 +1323,6 @@ namespace Self_BalancedMethod {
                 }
             }
         }
-
-
-
-
 
 
         //------------------------------------------------------------------------------------------
