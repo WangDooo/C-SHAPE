@@ -355,7 +355,7 @@ namespace Self_BalancedMethod {
             ShareClass.PileDiameter = txtPileDiameter.Text;
             // 将DataTable中的数据，保存至ShareClass
             List<DataClass> DataList = new List<DataClass>();
-            for (int i = 0; i < dataGridView1.Rows.Count; i++) {
+            for (int i = 0; i < dataGridView1.Rows.Count-1; i++) { // 这个地方要-1 不然会有0,0,0,0
                 DataClass data = new DataClass(
                     Convert.ToDouble(dataGridView1[0, i].Value),
                     Convert.ToDouble(dataGridView1[1, i].Value),
