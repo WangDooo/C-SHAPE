@@ -159,14 +159,6 @@ namespace Self_BalancedMethod {
                 slave_mem.slave_data[i].I = new float[8];
                 slave_mem.slave_data[i].UID = new byte[12];
             }
-            // 判断testpath是否存在
-            if (File.Exists(testpath) == false){
-                MessageBox.Show("未找到测试文件，请选择测试文件位置");
-                OpenFileDialog fileName = new OpenFileDialog(); //创建一个对话框
-                if(fileName.ShowDialog() == DialogResult.OK){   
-                    testpath = fileName.FileName.ToString();
-                }
-            }
         }
         //------------------------------------------------------------------------------------------
 
@@ -176,7 +168,7 @@ namespace Self_BalancedMethod {
             Control.CheckForIllegalCrossThreadCalls = false; // 允许跨线程调用此类控件
         }
         
-        // 按字节排列的数据搬运给结构体
+        // 按字节排列的数据搬运给结构体 接收远端机数据
         public static object BytesToStruct(byte[] bytes, Type strcutType)
         {
             int size =  Marshal.SizeOf(strcutType);
@@ -465,8 +457,7 @@ namespace Self_BalancedMethod {
         List<double> lgQ = new List<double>();
         List<double> Qzph = new List<double>();
         List<double> szph = new List<double>();
-        List<DataClass> testlist = new List<DataClass>(); // 数据Class 用于测试
-        string testpath = @"C:\Users\123\Desktop\test\testdata.txt";
+        List<DataClass> testlist = new List<DataClass>(); // 数据Class 用于存放测试数据
         // 每1s读取一次txt中的数据，进行图像绘制
         private void timer3_Tick(object sender, EventArgs e) {
             Q.Clear(); // 每Tick都清空原来的List，待改进，可直接添加采集到的数据
@@ -805,16 +796,13 @@ namespace Self_BalancedMethod {
         //------------------------------------------------------------------------------------------
 
         //--------测试专用--------------------------------------------------------------------------
+        public int testIndex = 1;
         private void toolStripButton1_Click(object sender, EventArgs e) {
-            //string testpath = @"C:\Users\123\Desktop\test\testdata.txt";
-            //DataTable dt = GetTxt(testpath);
-            // TestWriteTxt(testpath,dt);  // 模拟数据采集
-            // BackupTxt(); // 备份文件
-
-            TestWriteData();
+            TestWriteData(testIndex);
+            testIndex += 1;
             // 用于模拟数据采集 生成List写入ShareClass
-            void TestWriteData() {
-                DataClass testdata = new DataClass(2,30,1000,0.5,800,1000,0.5);
+            void TestWriteData(int i) {
+                DataClass testdata = new DataClass(i,i*30,i*800+500,i/2,800,1000,0.5);
                 testlist.Add(testdata);
                 ShareClass.Data = testlist;
             }
@@ -1249,7 +1237,7 @@ namespace Self_BalancedMethod {
         private void Choose_device_Click(object sender, EventArgs e) {
             if (GetConnect_state() == 1){
                 byte[] datas = new byte[100];
-                datas[0] = (checkBox1.Checked)?(byte)1:(byte)0;
+                datas[0] = (checkBox1.Checked) ? (byte)1 : (byte)0;
                 datas[1] = (checkBox2.Checked) ? (byte)1 : (byte)0;
                 datas[2] = (checkBox3.Checked) ? (byte)1 : (byte)0;
                 Get_Para_Client(datas, (byte)'h', 1, 0, 3);

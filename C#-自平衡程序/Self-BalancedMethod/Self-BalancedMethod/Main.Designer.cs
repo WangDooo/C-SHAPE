@@ -270,7 +270,7 @@
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(244, 642);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "总汇表";
@@ -291,7 +291,7 @@
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(244, 642);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "加载详情表";
@@ -301,8 +301,8 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage3.Size = new System.Drawing.Size(246, 667);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(244, 642);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "卸载详情表";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -331,7 +331,7 @@
             this.tabPage10.Controls.Add(this.groupBox2);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage10.Size = new System.Drawing.Size(912, 642);
             this.tabPage10.TabIndex = 6;
             this.tabPage10.Text = "项目信息及参数";
@@ -655,7 +655,7 @@
             this.tabPage5.Controls.Add(this.chartQs);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(912, 642);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Q-s曲线";
@@ -683,7 +683,7 @@
             this.tabPage6.Controls.Add(this.chartslgt);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(912, 642);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "s-lgt曲线";
@@ -711,7 +711,7 @@
             this.tabPage7.Controls.Add(this.chartslgQ);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(913, 667);
+            this.tabPage7.Size = new System.Drawing.Size(912, 642);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "s-lgQ曲线";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -729,7 +729,7 @@
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             this.chartslgQ.Series.Add(series3);
-            this.chartslgQ.Size = new System.Drawing.Size(913, 667);
+            this.chartslgQ.Size = new System.Drawing.Size(912, 642);
             this.chartslgQ.TabIndex = 0;
             this.chartslgQ.Text = "chart1";
             // 
@@ -786,7 +786,7 @@
             this.tabPage9.Controls.Add(this.label17);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage9.Size = new System.Drawing.Size(912, 642);
             this.tabPage9.TabIndex = 5;
             this.tabPage9.Text = "Test主板功能";
@@ -1291,6 +1291,7 @@
             this.listView_ch.TabIndex = 22;
             this.listView_ch.UseCompatibleStateImageBehavior = false;
             this.listView_ch.View = System.Windows.Forms.View.Details;
+            this.listView_ch.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView_ch_MouseDoubleClick);
             // 
             // net_msg_text
             // 
