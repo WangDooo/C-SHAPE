@@ -1633,6 +1633,7 @@
             this.帮助主题HToolStripMenuItem.Name = "帮助主题HToolStripMenuItem";
             this.帮助主题HToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.帮助主题HToolStripMenuItem.Text = "帮助(&H)";
+            this.帮助主题HToolStripMenuItem.Click += new System.EventHandler(this.帮助主题HToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 

@@ -781,10 +781,15 @@ namespace Self_BalancedMethod {
         }
         //------------------------------------------------------------------------------------------
 
-        //--------软件升级 链接至百度云盘--------------------------------------------------------------------------
+        //--------软件升级、帮助 链接至百度云盘--------------------------------------------------------------------------
         private void 升级测试软件UToolStripMenuItem_Click(object sender, EventArgs e) {
             MessageBox.Show("提取码 : hvaz ");
             System.Diagnostics.Process.Start("https://pan.baidu.com/s/15H-Lf4Xn8-bD-nLhSJGJ6w");
+        }
+
+        private void 帮助主题HToolStripMenuItem_Click(object sender, EventArgs e) {
+             MessageBox.Show("提取码 : a8qe ");
+            System.Diagnostics.Process.Start("https://pan.baidu.com/s/1SdPjxTrdpLy1CUjt-TqVug");
         }
         //------------------------------------------------------------------------------------------
 
@@ -1311,6 +1316,8 @@ namespace Self_BalancedMethod {
                 }
             }
         }
+
+        
 
 
         //------------------------------------------------------------------------------------------
