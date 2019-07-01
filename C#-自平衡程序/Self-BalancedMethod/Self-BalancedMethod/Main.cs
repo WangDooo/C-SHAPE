@@ -88,7 +88,7 @@ namespace Self_BalancedMethod {
         //--------初始化界面Load--------------------------------------------------------------
         private void Main_Load(object sender, EventArgs e) {
             // Timer的初始设置
-            timerNetdata.Interval = 10;
+            timerNetdata.Interval = 1000;
             timerSystemTime.Interval = 1000;
             timerDrawLine.Interval = 1000;
             timerBackupTxT.Interval = 600000; // 10min
