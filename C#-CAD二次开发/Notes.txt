@@ -3,3 +3,19 @@ https://blog.csdn.net/niuge8905/article/details/78445363
 
 AutoCAD卸载c#.NET模块(NETUNLOAD功能的实现)
 https://jingyan.baidu.com/article/d8072ac4930316ec94cefd67.html
+
+
+书籍：截止2015.1.19，搜遍所有网络，英文资料很多，但理解困难，中文就以下四本书最符合.net API学习，其余全都看过，不行。只要学好以下四本书就足够了！
+C＃AutoCAD.Net API
+
+（1）AutoCAD VBA和VB.NET开发基础与实例教程（第2版）（C＃版）2013-6 88.00元中国电力出版社曾洪飞，卢择临，张帆页数621 AutoCAD 2012Visual Studio 2010 C＃
+（2）[深入浅出AutoCAD.NET二次开发]。李冠亿中国工业出版社2012.2定价78带光盘P485以.net为主，结合各种二次开发方式。
+（3）基于Visual C＃的AutoCAD开发及其在工程中的应用肖泽云三峡大学2010.4 P218网络版无书用的ActiveX，但内容是土木工程CAD二次开发，主要学习算法思路。
+（4）AutoCAD .NET开发指南2012版官网翻译网络版，P629孙成波2014.2.8 AutoCAD .NET Developer's Guide2012版本翻译，官方权威手册，内容太全，太多，不适合学习，遇到问题查找时用。
+
+2019-10-18 "C#实用计算机绘图与AutoCAD二次开发基础" 柳小波
+
+2019-10-20 "Python pyautocad库" 
+pyautocad仅仅封装了一下接口，加入了一些迭代方式和table操作，可以导入导出excel等文本数据，官方文档也比较简陋，只有一两个简单实例，并未接受所有的方法，而这些方法主要是一个接口，所以这些方法所要求的参数并不太清楚，只能自己测试。
+https://blog.csdn.net/Hulunbuir/article/details/83715279
+https://pyautocad.readthedocs.io/en/latest/gettingstarted.html#retrieving-autocad-activex-documentation
