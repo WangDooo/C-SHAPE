@@ -16,51 +16,60 @@ acad = Autocad(create_if_not_exists = True)
 acad.prompt("Hello! AutoCAD from pyautocad.")
 print(acad.doc.Name)
 
-# 2. 新建图层
-LayerObj = acad.ActiveDocument.Layers.Add("HIT_Layer")
-    # 添加新图层，图层名称为"HIT_Layer"。
-acad.ActiveDocument.ActiveLayer = LayerObj
-    # 将"HIT_Layer"图层设置为当前图层。
 
-# 3. 颜色设置
-ClrNum = 1
-LayerObj.color = ClrNum
-    # ClrNum为颜色索引号，其取值范围为[0,256]；
-    # 标准颜色的颜色索引号指定如下：：1 红、2 黄、3 绿、4 青、5 蓝、6 洋红、7 白/黑；
-    # 0 ByBlock、256 ByLayer；
-    # 其他颜色索引号见 https://wenku.baidu.com/view/9d458b70195f312b3069a505.html。
+"""
+以下代码请不要在一个文件中同时运行，否则会报错，原因是逻辑冲突。
+在D盘创建新文件夹并命名为AutoCAD 
+"""
 
-# 4. 线型设置
+# 2. 打开文件
+acad.ActiveDocument.Application.Documents.Open("D:\\AutoCAD\\PyAutoCAD.dwg")
+    # CAD程序中至少存在一个打开的图形空间，否则报错，报错内容为：无法获取Document对象。
 
-# 5. 线宽设置
 
-# 6. 批量创建
-clr_num = [1, 2, 3]  
-    # 图层颜色列表
-layers_name = ["HIT_图层_1", "HIT_图层_2", "HIT_图层_3"] 
-    # 图层名称列表
+# 3. 新建文件
+DrawingObj = acad.ActiveDocument.Application.Documents.Add("")
+    # 无法直接命名，新建的文件为系统默认名称，即Drawing1、Drawing2等；
+    # 若更改名称，在关闭时定义。
 
-try:
-    len(clr_num) == len(layers_name)
-except:
-    print("图层颜色号个数与图层个数不匹配")
 
-layers_obj = [acad.ActiveDocument.Layers.Add(i) for i in layers_name]  
-    # 批量创建图层
+# 4. 设定当前
+# 4.1 已知文件名设为当前
+acad.ActiveDocument.Application.Documents("PyAutoCAD.dwg").Activate()
+    # 将PyAutoCAD.dwg设为当前文件。
 
-for j in range(len(layers_obj)):
-    layers_obj[j].color = clr_num[j]
-    # 批量指定图层颜色
+# 4.2 未知文件名设为当前
+DrawingObj.Activate()
+    # 将New_Drawing设为当前文件。
 
-# 7. 图层读取
-layers_num = acad.ActiveDocument.Layers.count  
-    # 当前文件模型空间中所包含的图层总数
-layers_name = [acad.ActiveDocument.Layers.Item(i).Name for i in range(layers_num)]
-	# 当前文件模型空间中所包含的所有图层名称
-index = layers_name.index("HIT_图层_2") 
-	# 获取指定图层索引号
-acad.ActiveDocument.ActiveLayer = acad.ActiveDocument.Layers.Item(index)
-	# 将指定图层设定当前
-print("当前文件模型空间中所包含的图层总数 = ",layers_num)
-print("当前文件模型空间中所包含的所有图层名称 = ",layers_name)
-print("获取指定图层索引号 = ",index)
+
+# 5. 关闭并保存变更
+# 5.1 关闭已存在文件
+acad.ActiveDocument.Application.Documents("PyAutoCAD.dwg").Close(True, "PyAutoCAD_已变更.dwg")
+    # 关闭PyAutoCAD.dwg文件。
+    # True 布尔值,为系统默认，表示打开文件后关闭前文件若发生变更，则保存变更，并另存为PyAutoCAD_已变更.dwg
+    # 此时文件夹中同时存在未变更的"PyAutoCAD.dwg"和已变更的"PyAutoCAD_已变更.dwg"
+    # 若第二项空缺，则新文件名为"PyAutoCAD.dwg"，覆盖之前未变更的文件。
+
+# 5.2 关闭新建文件
+DrawingObj .Close(True, "HIT.dwg")
+    # 关闭New_Drawing文件。
+    # 文件夹中仅存在"HIT.dwg"一个文件。
+
+# 5.3 关闭当前文件
+acad.ActiveDocument.Close()
+    # 关闭当前文档。
+
+
+# 6. 另存为
+# 6.1 当前文件另存为 
+acad.ActiveDocument.SaveAs("D:\\AutoCAD\\PyAutoCAD_SaveAs", 61)
+    # 将当前文件另存为PyAutoCAD_SaveAs.dxf；
+    # 此时，程序关闭当前文件，将PyAutoCAD_SaveAs.dxf切换为当前文件。
+    # 61表示另存为文件的类型是AutoCAD 2013 DXF，常用类型如下：
+    # 12 AutoCAD 2000 DWG (*.dwg)，13 AutoCAD 2000 DXF (*.dxf)；
+    # 其它略，系统默认为AutoCAD 2013 DWG (*.dwg)。
+
+# 6.2 指定文件另存为
+acad.ActiveDocument.Application.Documents("PyAutoCAD.dwg").SaveAs("D:\\AutoCAD\\PyAutoCAD_SaveAs", 61)
+    # 将特定文件PyAutoCAD.dwg另存为PyAutoCAD_SaveAs.dxf。
