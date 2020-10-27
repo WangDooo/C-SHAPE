@@ -1,0 +1,8 @@
+2020.10.27
+《C#函数式编程》  编写更优质的C#代码 Enrico Buonanno
+
+Functional Programming		FP
+
+https://github.com/la-yumba/functional-csharp-code
+
+使用http://csharppad.com/ 作为REPL
